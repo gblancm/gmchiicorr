@@ -1,0 +1,744 @@
+SIMPLE  =                    T / Dummy Created by MWRFITS v1.13                 BITPIX  =                    8 / Dummy primary header created by MWRFITS        NAXIS   =                    0 / No data is associated with this header         EXTEND  =                    T / Extensions may (will!) be present              END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             XTENSION= 'BINTABLE'           / Binary table written by MWRFITS v1.13          BITPIX  =                    8 / Required value                                 NAXIS   =                    2 / Required value                                 NAXIS1  =                  402 / Number of bytes per row                        NAXIS2  =                  214 / Number of rows                                 PCOUNT  =                    0 / Normally 0 (no varying arrays)                 GCOUNT  =                    1 / Required value                                 TFIELDS =                   67 / Number of columns in table                     COMMENT                                                                         COMMENT  *** End of mandatory fields ***                                        COMMENT                                                                         COMMENT                                                                         COMMENT  *** Column formats ***                                                 COMMENT                                                                         TFORM1  = 'J       '           /                                                TFORM2  = 'J       '           /                                                TFORM3  = 'E       '           /                                                TFORM4  = 'D       '           /                                                TFORM5  = 'E       '           /                                                TFORM6  = 'D       '           /                                                TFORM7  = 'E       '           /                                                TFORM8  = 'D       '           /                                                TFORM9  = 'E       '           /                                                TFORM10 = 'E       '           /                                                TFORM11 = 'E       '           /                                                TFORM12 = 'E       '           /                                                TFORM13 = 'E       '           /                                                TFORM14 = 'E       '           /                                                TFORM15 = 'E       '           /                                                TFORM16 = 'E       '           /                                                TFORM17 = 'E       '           /                                                TFORM18 = 'E       '           /                                                TFORM19 = 'E       '           /                                                TFORM20 = 'E       '           /                                                TFORM21 = 'E       '           /                                                TFORM22 = 'E       '           /                                                TFORM23 = 'E       '           /                                                TFORM24 = 'E       '           /                                                TFORM25 = 'E       '           /                                                TFORM26 = 'E       '           /                                                TFORM27 = 'E       '           /                                                TFORM28 = 'E       '           /                                                TFORM29 = 'E       '           /                                                TFORM30 = 'E       '           /                                                TFORM31 = 'E       '           /                                                TFORM32 = 'E       '           /                                                TFORM33 = 'E       '           /                                                TFORM34 = 'E       '           /                                                TFORM35 = 'E       '           /                                                TFORM36 = 'E       '           /                                                TFORM37 = 'E       '           /                                                TFORM38 = 'E       '           /                                                TFORM39 = 'E       '           /                                                TFORM40 = 'E       '           /                                                TFORM41 = 'E       '           /                                                TFORM42 = 'E       '           /                                                TFORM43 = 'E       '           /                                                TFORM44 = 'E       '           /                                                TFORM45 = 'E       '           /                                                TFORM46 = 'E       '           /                                                TFORM47 = 'E       '           /                                                TFORM48 = 'E       '           /                                                TFORM49 = 'E       '           /                                                TFORM50 = 'E       '           /                                                TFORM51 = 'E       '           /                                                TFORM52 = 'E       '           /                                                TFORM53 = 'E       '           /                                                TFORM54 = 'E       '           /                                                TFORM55 = 'E       '           /                                                TFORM56 = 'E       '           /                                                TFORM57 = '129A    '           /                                                TFORM58 = 'E       '           /                                                TFORM59 = 'E       '           /                                                TFORM60 = 'E       '           /                                                TFORM61 = 'E       '           /                                                TFORM62 = 'A       '           /                                                TFORM63 = 'E       '           /                                                TFORM64 = 'E       '           /                                                TFORM65 = 'E       '           /                                                TFORM66 = 'E       '           /                                                TFORM67 = 'E       '           /                                                COMMENT                                                                         COMMENT  *** Column names ***                                                   COMMENT                                                                         TTYPE1  = 'NPIX    '           /                                                TTYPE2  = 'CLOUDNUM'           /                                                TTYPE3  = 'XCTR_PIX'           /                                                TTYPE4  = 'XCTR_DEG'           /                                                TTYPE5  = 'YCTR_PIX'           /                                                TTYPE6  = 'YCTR_DEG'           /                                                TTYPE7  = 'VCTR_PIX'           /                                                TTYPE8  = 'VCTR_KMS'           /                                                TTYPE9  = 'POSANG  '           /                                                TTYPE10 = 'MOMXPIX '           /                                                TTYPE11 = 'MOMXPIX_UC'         /                                                TTYPE12 = 'MOMXPIX_NOEX'       /                                                TTYPE13 = 'MOMXPIX_NOEX_UC'    /                                                TTYPE14 = 'MOMYPIX '           /                                                TTYPE15 = 'MOMYPIX_UC'         /                                                TTYPE16 = 'MOMYPIX_NOEX'       /                                                TTYPE17 = 'MOMYPIX_NOEX_UC'    /                                                TTYPE18 = 'MOMMAJPIX'          /                                                TTYPE19 = 'MOMMAJPIX_UC'       /                                                TTYPE20 = 'MOMMAJPIX_NOEX'     /                                                TTYPE21 = 'MOMMAJPIX_NOEX_UC'  /                                                TTYPE22 = 'MOMMINPIX'          /                                                TTYPE23 = 'MOMMINPIX_UC'       /                                                TTYPE24 = 'MOMMINPIX_NOEX'     /                                                TTYPE25 = 'MOMMINPIX_NOEX_UC'  /                                                TTYPE26 = 'MOMVPIX '           /                                                TTYPE27 = 'MOMVPIX_UC'         /                                                TTYPE28 = 'MOMVPIX_NOEX'       /                                                TTYPE29 = 'MOMVPIX_NOEX_UC'    /                                                TTYPE30 = 'RAD_PC  '           /                                                TTYPE31 = 'RAD_UC  '           /                                                TTYPE32 = 'RAD_NODC'           /                                                TTYPE33 = 'RAD_NODC_UC'        /                                                TTYPE34 = 'RAD_NOEX'           /                                                TTYPE35 = 'RAD_NOEX_UC'        /                                                TTYPE36 = 'RAD_NODC_NOEX'      /                                                TTYPE37 = 'RAD_NODC_NOEX_UC'   /                                                TTYPE38 = 'SIGV_KMS'           /                                                TTYPE39 = 'SIGV_UC '           /                                                TTYPE40 = 'SIGV_NODC'          /                                                TTYPE41 = 'SIGV_NODC_UC'       /                                                TTYPE42 = 'SIGV_NOEX'          /                                                TTYPE43 = 'SIGV_NOEX_UC'       /                                                TTYPE44 = 'SIGV_NODC_NOEX'     /                                                TTYPE45 = 'SIGV_NODC_NOEX_UC'  /                                                TTYPE46 = 'FLUX_KKMS_PC2'      /                                                TTYPE47 = 'FLUX_UC '           /                                                TTYPE48 = 'FLUX_NOEX'          /                                                TTYPE49 = 'FLUX_NOEX_UC'       /                                                TTYPE50 = 'MLUM_MSUN'          /                                                TTYPE51 = 'MLUM_UC '           /                                                TTYPE52 = 'MVIR_MSUN'          /                                                TTYPE53 = 'MVIR_UC '           /                                                TTYPE54 = 'FWHM_MAJ_DC'        /                                                TTYPE55 = 'FWHM_MIN_DC'        /                                                TTYPE56 = 'PA_DC   '           /                                                TTYPE57 = 'NAME    '           /                                                TTYPE58 = 'BEAMFWHM_PC'        /                                                TTYPE59 = 'BEAMMAJ_PC'         /                                                TTYPE60 = 'BEAMMIN_PC'         /                                                TTYPE61 = 'SIGCHAN_KMS'        /                                                TTYPE62 = 'GALNAME '           /                                                TTYPE63 = 'RMSTORAD'           /                                                TTYPE64 = 'PPBEAM  '           /                                                TTYPE65 = 'S2N     '           /                                                TTYPE66 = 'TMAX_K  '           /                                                TTYPE67 = 'DISTANCE_PC'        /                                                END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Á   CÄ‰Ó@N|‘“óêC½|_ÀE¬¹ˆªûB1¢@ñˆEÎG?²(?÷zÀ  ?ÍÎ—À  @08ÔÀ  @rÀ  @1l À  @¶vÀ  ?øØeÀ  ?½}+À  @Šä½À  @f›À  B™¡ À  BØ±qÀ  ÿÀ  À  B±%À  A/Ğ;À  A0À  A«ØÀ  A’ŠÀ  HÃk/À  HtœÀ  JÀ  K/À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@íf†?C¦kK€,€  
+   CÅå@N|Œé¿5UC¿UªÀE¬¯oÓ4BOÆq@û$+ü?ˆŸÛ@[¢àÀ  @Px¢À  @‘êfÀ  @Š¿XÀ  @ŸPÀ  @—UtÀ  @3ÌsÀ  @)ŞĞÀ  @œ0OÀ  @‘íÀ  C\ıÀ  C.n(À  CåEÀ  C%Y@À  AEáÍÀ  AF‹ŞÀ  A8ÊÀ  A9€%À  J•lÀ  JƒqüÀ  Kè“AÀ  K¼ËÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%B%5@ˆqK€,€  |   CÁå¼@N|¤ÛCÕCºn\ÀE¬Ê7ŒBaÑœ@C;±µêU=Ø£@RjşÀ  @>ä@À  @6¼zÀ  @&5
+À  @R™VÀ  @?£À  @6–úÀ  @&?À  @ ËtÀ  @‘DúÀ  BöI¶À  CÿÀ  B×=À  Cà¼À  AKÁœÀ  ALfÊÀ  A7óÀ  A8ªtÀ  IüÂÄÀ  IÕ?xÀ  KDµêÀ  KuªÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A°µë@axK€,€  ½   CÂ@±@N|¢10“óCĞ8ÀE¬S:jBxl@Ï£5õ¶„@‰@±EÀ  ?ø°	À  @Bá‘À  @ˆîÀ  @c7»À  @:ñ”À  ?Ä§†À  ?šw!À  @¤“À  @•aºÀ  ÿÀ  À  BÙş¿À  ÿÀ  À  B¯>¡À  AP“‚À  AQ4áÀ  A=2ÜÀ  A=äµÀ  HàI»À  HKıªÀ  J.=À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¾Œ_?û`K€,€  G   C¿ı×@N|³+)–"C·Ö÷ÀE¬Ø^´G_Brâà@ìrìè„@ä8@©¼À  @ÛÀ  @/ªiÀ  @‰nÀ  @9Š;À  @‚À  @âåÀ  @_+À  @GÛÀ  @5& À  B¾O)À  BğÄˆÀ  B’.À  BÏ:‡À  @úôÜÀ  @ıïÀ  @ãúÀ  @æF“À  I%À  Hí‚¬À  Jk!À  J¹½ôÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AføN?»K€,€     CÅÊæ@N|‡šÆãúCÄ«›ÀE¬’KìÁÓBj¹@ôşkQØ?Á ‘@%^ÈÀ  @ÂÀ  @•=ØÀ  @×çÀ  @•À  @À  @$<«À  @ÿ€À  @Ø®À  @Ê}ZÀ  C>ùÀ  C! ¬À  CE2À  C˜ôÀ  A‰hÀ  A‰¥UÀ  A€r(À  A€³³À  JğnÀ  J}8«À  KŞ{ùÀ  L$$5À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Bÿ™@jë?K€,€  C   CÀÍ—@N|­^µ÷CÁz ÀE¬£¼°úôB€ÄÈ@¡ó…”£?åád@]šÀ  @8è»À  @h+À  @v0À  @FTÀ  @y#ÇÀ  @Tõ^À  @4é9À  @À  @q]àÀ  C$ØÂÀ  C4ÄÀ  C­ŠÀ  CĞ À  A3×ûÀ  A4“
+À  A&À  Ai€À  IŠ·.À  IQiªÀ  J×éÀ  K¥A:À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AXä³?´ÅK€,€  ­   C½ÉV@N|Ã»l_C½šIÀE¬¸åÏB€u.@¥¡fñ? °[@R•JÀ  @îÀ  @$·À  @ĞÀ  @S,ïÀ  @ i0À  @ eÀ  ?úxÀ  @€ÜNÀ  @=KÀ  Bà]À  CMÀ  B.&À  BÎ‹YÀ  A# IÀ  A#Î”À  @îmöÀ  @ğ åÀ  HÔRÄÀ  H~%wÀ  J%=~À  K8y©À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A²<?nDÀK€,€  t   	CÅ&'@N|ŒpZ·CÈäHÀE¬{>”–B‚••@|²í‚^?»¶¢@öQÀ  @
+Y­À  @YÌ7À  @OHÅÀ  @[Ï–À  @OëyÀ  @ïsÀ  @	d‰À  @¶ĞæÀ  @«È&À  BØÎ>À  CbMÀ  BÀzúÀ  Bö€@À  AgÓÛÀ  AheÀ  AYÃ±À  AZ^GÀ  Iá$·À  IÊ” À  K/7©À  K´’ÕÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A²@ÏK€,€  H   
+C½C@N|Ç¨Dˆ—CÀ¬ÀE¬«mZ{ôB‰É§@F;L;'ø?˜™ó@#fvÀ  ?óÔºÀ  @U4àÀ  @ ÙÀ  @d#À  @&OÚÀ  @óÀ  ?âgÀ  @ØyÀ  ?É‚|À  BÔ÷À  CÃÿÀ  BzQıÀ  BÈ5À  @²©À  @µ•¬À  @wÌÀ  @€@À  H¤×ªÀ  H0°1À  J IÎÀ  JRK?À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Aª}?\¶0K€,€  =   C½â,@N|Ã I”ŠC·÷ÀE¬×¯ƒœB‡Ø¡@YùÍÑ«–?•M©@*¨EÀ  @ ÒKÀ  @s³À  @Mş
+À  @w±ÔÀ  @VÑíÀ  @!ZzÀ  @ÓÀ  @õ,À  @ÿéÀ  Bø¥À  CÈeÀ  BÔF)À  CcÀ  @±ƒ`À  @´t»À  @¸gÀ  @ºİ‚À  Ia$šÀ  I6ØïÀ  J¯7“À  JrD­À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AÈë?ÒeK€,€   Ì   CÀI@N|²ü®&CÒçüÀE¬DœüBvC@†âwpu?ıo@@<=8À  @ÈåÀ  @Ÿ&ØÀ  @€¤&À  @®$ŞÀ  @Š¾?À  ?÷5·À  ?ºìáÀ  ?ê™À  ?¨ÓµÀ  BåDeÀ  CMnÀ  ÿÀ  À  BêŞàÀ  @‘ˆàÀ  @•$À  @LBÀ  @Vœ±À  HxÓÀ  G«³=À  IÁoÉÀ  JîÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@³\H?x{K€,€  4   C»8Ç@N|ÖıÍşmC¶Ø ÀE¬İËÛ‰ÑB“N’@Œålç ]õ?œ@iÀ  @ 4üÀ  @<ó4À  @&ÒµÀ  @=])À  @+éÀ  @¼°À  ?ò™œÀ  @|HÀ  @ÁäÀ  B©¬|À  Bä˜±À  B¿oÀ  BÒ›À  @¹ñPÀ  @¼Á	À  @ªÉèÀ  @­ØiÀ  I /ìÀ  I
+À  JyT¬À  J5ÓwÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Av„ª?Æ•K€,€  u   C»@N|×ìk£CÁÀE¬¥úXFFB™Õ@Œª•ı™?å`@4vØÀ  @ÑÕÀ  @-à—À  @¨ÖÀ  @=oÀ  @YSÀ  @$YÛÀ  @
+¿ÓÀ  @sšÀ  @_öÀ  BÓşmÀ  C ŠÀ  BU{À  BÖŞÀ  A£¦À  A~sÀ  AŞÿÀ  AÍ€À  Ik.rÀ  I5ª¶À  J·ŒÀ  K‰À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AXs?´~|K€,€  ”   CÃfI@N|™“ã5¨CÉ\™ÀE¬x­©B˜3´@Œ³¥é|Ø?«2@JGGÀ  @89îÀ  @©\À  @‘ŸÁÀ  @¬åÀ  @”7"À  @=?À  @/ÃõÀ  @WL²À  @L@À  C(xiÀ  C:vÙÀ  CåVÀ  C&s‰À  AàÖÀ  AØÀ  A ÍzÀ  AÒ)À  Iû8©À  IÏ›»À  KCƒ4À  K@Ğ2À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Aœ"³@  yK€,€  Å   C¹9$@N|æ wÿøC¼)åÀE¬ÀÁˆà B›×w@Œ¡}}Ñ?_ä¾@$èÀ  @èšÀ  @0÷WÀ  @±À  @B{À  @DÀ  @IjÀ  ?åïÀ  @=¬ºÀ  @%Å«À  B¿Å¥À  Bó4À  BrNVÀ  BÂ°À  @îëLÀ  @ñÀ  @Ğ6ÛÀ  @Òº‘À  HÜöBÀ  H…Ñ‹À  J+ö”À  J©¥À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A¬ø?€ ´K€,€  Ù   C¹BQ@N|å»¸¢C·ÀE¬ÜV4ÕTBŸô@ŒdÑ lö?«¿1@úÀ  @ Ä<À  @0OÀ  @×À  @2İÀ  @!q«À  @Ì›À  ?ıÜÀ  @#ÁÇÀ  @ìÀ  B¬ô†À  Bä"ˆÀ  B’…À  BĞ ÜÀ  @ÍŸ
+À  @Ğ*ÅÀ  @ÄÒÄÀ  @Ç{?À  IP—‡À  I1ûiÀ  J¢VÀ  Jb¦À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AŒˆ¶?ânK€,€  0   C¾G@N|ÁıÔÒCÅ0ÅÀE¬tıï¥B£i`@ŒA¥Ë›?l51@*hrÀ  @À  @JA#À  @&TpÀ  @T¸”À  @6—­À  @nŸÀ  @M*À  @‡ÅHÀ  @eCãÀ  BÙŞÀ  C+„À  Bª¬ÆÀ  BãˆäÀ  A+ÓŒÀ  A,—KÀ  AĞ`À  A¸mÀ  ISRNÀ  I¤~À  J¤uæÀ  KG^(À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Aƒ8İ?ÙÌÅK€,€   5   C¹0@N|æÊËÃ*C²¿ËÀE¬ô+çKàB¬½s@‹âÈg@ ¨€?éj–À  ?€?À  @j‘êÀ  ?ÕÉgÀ  @€ƒ+À  ?æ§À  ?œ¥À  ?dç3À  ?ÚÄÀ  ?„ÔâÀ  ÿÀ  À  BÎ‹sÀ  ÿÀ  À  Bl£×À  @‡5À  @‹_À  @áÀ  @(ÚÙÀ  G’À  Fª9qÀ  Hã^éÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Šÿ–>Ü7K€,€  Í   C¶Êò@N|øAZ¸6C·à±ÀE¬Ø)¼#B³º£@‹›´Ö§È©>ƒãl@1%À  @&wúÀ  @T`À  @
+òäÀ  @3GÀ  @(WCÀ  @MÀ  @¬´À  @k2iÀ  @^IÃÀ  B¶-À  BêuÀ  B¥0ÕÀ  Bİ8¼À  A›oÀ  A}™À  AYÉÀ  AI,À  I›hiÀ  I‡[¢À  JñäGÀ  Jùé‰À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AÓÔ>@*Ì´K€,€   ğ   C·›¦@N|ò!ìš)C¼óÖÀE¬¼r¬_øB­»#@‹Ø´;9¾?'«¶@ÊÀ  ?éş!À  @@âÀ  ?ÕM½À  @'ÌÎÀ  @rcÀ  ?İ;À  ?³gIÀ  @ŠuÀ  @G3À  Bn{À  BÆ¢	À  ÿÀ  À  BÃhÀ  @º›À  @¼ÓÀ  @¨ßÎÀ  @«÷À  H\¢†À  H	“À  I«µjÀ  IÿWÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A?T÷K€,€  ˜   Cº>ş@N|ŞQû™ùCÂ8²ÀE¬Ÿ¬œ·B°†s@‹¼IÒ>Ú]?Œå@3ßÀ  @×SÀ  @‹EãÀ  @`Ş‚À  @›2OÀ  @w²äÀ  ?æ@	À  ?»DJÀ  @?*“À  @1­À  B¿¾ìÀ  C	ÙÀ  ÿÀ  À  BŞçÀ  @ğÕÀ  @ó}À  @ŞÄdÀ  @á€À  IG!À  Hç zÀ  Jq°zÀ  J¬YkÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A' ³?‹CÈK€,€  	d   CÀÂà@N|­dfXïCÌxuÀE¬g²°CB¯?b@‹ÉGëç?ÁŠÆ@Qñ¡À  @ER•À  @Â€ÙÀ  @¨ròÀ  @Ã7†À  @¨¤À  @Oó©À  @Dª\À  @—ûÀ  @ÆjÀ  C?¤|À  COÈìÀ  C*°ˆÀ  C;ÏsÀ  A?ùÎÀ  A@©À  A6VÀ  A6Ä%À  J%­À  J †+À  K€kHÀ  KÚéNÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A©4Ô@	GK€,€  (   C½ó3@N|Âsb¸CÔú¹ÀE¬9:Š¬¤B«ª)@‹í·¯!T@tº@uŞÀ  ?õnÀ  @/ìOÀ  @ĞeÀ  @F¯#À  @,ƒfÀ  ?óœÀ  ?¬ØÀ  @+·BÀ  @'´SÀ  B ·ÛÀ  Bâ¢À  ÿÀ  À  B±ííÀ  @×Û¢À  @ÚHÎÀ  @Ò³+À  @Õ/_À  H„Ë¡À  H)©À  IÎ²À  JhâÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@´6—?©K€,€     C¾s­@N|¾¼4CÔÜpÀE¬9ßìæèB¿†W@‹#¿ÎÆ!Z@!8@ {µÀ  ?Ê6À  @	.ÜÀ  ?ÊÚÀ  @İÀ  ?ßm8À  @	‚TÀ  ?²ÃôÀ  @‰¬¹À  @\—À  B† À  BÅ!ËÀ  ÿÀ  À  B‘¼†À  A.AæÀ  A/îÀ  A
+ìOÀ  AŞ"À  Hf¸£À  GíïsÀ  I³ğÀ  JürÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ i>ı,K€,€  š   Cµ¶ã@N} ZŸÀpC½4#ÀE¬»€€õBÃ`@Šü“Äœ?†4|@GÀ  ?úâúÀ  @Eß£À  @/&~À  @VÛİÀ  @C%ÄÀ  ?ãÂlÀ  ?¶Œ•À  @<['À  @?5À  B—ÖÀ  Bä" À  ÿÀ  À  BÂ¥ZÀ  @í:4À  @ïoöÀ  @Â©rÀ  @ÅYaÀ  H´9üÀ  Ho•ŸÀ  JBÌÀ  JƒÄ=À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ú©?MÅK€,€  ¤   C¹Šî@N|ãšJ·ÉCÂÁ)ÀE¬œÂÏØµBÂñÎ@‹ ø²-¾?– @-åÿÀ  @âpÀ  @š}OÀ  @gD$À  @¦˜DÀ  @w–€À  ?óÒ	À  ?Á@À  @_KÀ  @>aÀ  BÛhWÀ  C÷øÀ  ÿÀ  À  BásÀ  AÑ"À  A¿»À  @ğÀ  @ò=4À  I‡nÀ  HÌ¦}À  Js£À  KÙÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A.B?rkK€,€  ş   C½C¿@N|Ç¦ÇRÕCÌáÀE¬iøÚ#BÅ¦@ŠåxŠqpO?ƒ¥d@ƒ_À  @]³ZÀ  @µQBÀ  @™stÀ  @Ò˜À  @­„À  @ú+À  @7PÀ  @{uÇÀ  @aüƒÀ  C%3ĞÀ  C=ßÀ  C ûÀ  C'ó–À  A ]À  AÓÓÀ  A·{À  A¢ìÀ  JmZÀ  IËCïÀ  KRÊ¶À  Ks.À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A‚£8?Ô4!K€,€  ı   C±8i@N}"HÀ»CµÔÀE¬ç>ıBÌëá@Š›‚İ”‰?ùÇî@K|jÀ  @,şÀ  @£Û*À  @âÀ  @°—ÚÀ  @˜ªyÀ  @1PÀ  @`0À  @Š-qÀ  @l’¿À  CÉÀ  C*¹†À  Bõ€“À  CnpÀ  A.æ;À  A/¦À  A|³À  A]ŠÀ  I³/À  I|
+„À  KsÀ  K‹+RÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AVªb?«.K€,€  ?   C³XR@N}&.öÉC¹•ºÀE¬ÎÖé¼'BË¬G@Š¨5ÙD÷?îÖ@&r²À  @>†À  @?ÉÀ  @-iFÀ  @BƒÀ  @/ÔÔÀ  @"øÀÀ  @SCÀ  @“RÀÀ  @†jŠÀ  BÖiÀ  C²‘À  B²úÀ  Bç†wÀ  A:’zÀ  A;FÑÀ  A*ÊÀ  A*Ş…À  I•AÄÀ  Iz6îÀ  JèQZÀ  KgSÊÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Aˆæ?Şø-K€,€  V   C¶ÈÔ@N|øQ=jCÁ3ÀE¬¥AÕB×ÅS@Š--x˜C“?XËN@‡ãvÀ  @k´À  @Œ³mÀ  @€/À  @µ;ØÀ  @¡šæÀ  @—À  @ÌÀ  @RvQÀ  @9$ËÀ  CÂÀ  C(_TÀ  BìùûÀ  CÀ  AÈ À  AÄïÀ  @éêÀ  @ëZ•À  I¿š0À  IœÔÀ  K6À  K5ÍÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A“÷?õ>OK€,€  Ï    C¶ËÃ@N|ø;42MCÂÈ³ÀE¬œ™¦JÒBæãÆ@‰“l²Œt?NFÎ@Q*ğÀ  @4¦ŠÀ  @JäQÀ  @698À  @b‡À  @GÑlÀ  @7{ŠÀ  @ ùoÀ  @J€ÑÀ  @4ÆÀ  C_ªÀ  C«À  BØyuÀ  CÈ³À  @ÿ]çÀ  A µçÀ  @ã~ÏÀ  @åÌˆÀ  I…‰:À  IM2‡À  JÏÙ,À  K¾øÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A£
+À@®ÅK€,€  z   !C¯aX@N}/í­!C¹ç_ÀE¬ÍïôBé€Ê@‰xÙš!`?ÓA˜@nã£À  @_äªÀ  A-7À  @Ûƒ«À  AtDÀ  @ÜÇÀ  @l«À  @]×ŒÀ  @·) À  @¬ıhÀ  Cq‰À  CA À  CTÂ^À  CcØ‚À  AhDëÀ  AhÕàÀ  A[MçÀ  A[çgÀ  JXÀ  Jf÷gÀ  KŞ¯4À  LI—À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AÈ"E@!sK€,€  	Î   "C¶è>@N|÷eM×CËQÀE¬o}6YBñğL@‰#Ü''ö>%]ö@`ØÀ  @q-À  @
+§LÀ  @d!À  @€…À  @sÁÀ  @6À  @
+²À  @í}ãÀ  @Şš	À  BØ?0À  C%äÀ  BÖ†UÀ  C¤À  A–» À  A–òÿÀ  A@”À  A|1À  JƒğÏÀ  JsTÀ  KÍ]yÀ  LGAÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%B6œº@”’ïK€,€  T   #C²²á@N} ?;CÂGïÀE¬ŸXØ;Bûä@ˆÆš?j‘¬@RlfÀ  @,ÜdÀ  @±&À  @I4‘À  @–­†À  @kğDÀ  @øÅÀ  ?òwgÀ  @†=ãÀ  @Vr”À  BûfÀ  CäÀ  B²ˆìÀ  Bö©À  A)ßÄÀ  A*¥ÁÀ  AU6À  AMiÀ  IMÁÀ  IDqÀ  JŸøÇÀ  Ka À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AH½&?¥W^K€,€  æ   $C±À£@N}Ğ-CÈPçÀE¬~c<¯GCçL@ˆD«ËŠî?;<<@UQJÀ  @QÈÏÀ  @QÔÀ  @HÀ  @|À  @uõ´À  @ L™À  @k÷À  @²ˆŸÀ  @©TÀ  Bù=À  C¹àÀ  BìëxÀ  C§âÀ  Ab^ÇÀ  AbóÀ  AV¢ûÀ  AW?ĞÀ  J¨Ä¸À  JšâíÀ  LWıÀ  KÆ9ñÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%B,5@q8ZK€,€  ı   %C­kv@N}>¥ù¯£CÀÉÊÀE¬§¸;"CÎõ@ˆZñv÷wÁ?¾†0@V¤šÀ  @I"&À  A
+bÀ  AÃ¹À  A
+ÿ}À  A	+XÀ  @Q£À  @D¬_À  @¾˜gÀ  @µ%jÀ  Cg|PÀ  Cx¤íÀ  C\ÕëÀ  Co‹ğÀ  Aq½cÀ  ArH­À  Ae³À  AfE«À  K
+°—À  Jı•òÀ  LWŞÁÀ  LQ£ÉÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%B!àñ@ƒ|oK€,€   ã   &C®V„@N}7ÀÌ^­C½èØÀE¬·8tÌXCÍ@‡9Â<Í®´@P@O+;À  @ ¦À  @O<šÀ  ?÷vÀ  @ÆkÀ  @ÃßÀ  ?Ë½uÀ  ?¢sMÀ  @½àÀ  @enÀ  BhğªÀ  B÷ß*À  ÿÀ  À  B¥ŸÀ  @ÈsÉÀ  @ËÀ  @ÀFÄÀ  @ÂÿÀ  HoÚıÀ  GÒ™ÃÀ  IºªÁÀ  JøÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¦â6?€&K€,€  ~   'C¯f@N}/ÈìŸCÅ&ÀE¬Èê¢1C,Ÿ@‡"j8	À?vŒ«@`‹`À  @5˜œÀ  @|É°À  @LºÀ  @¶uÀ  @`?îÀ  @:,À  @Ú˜À  @Vl4À  @6<À  C*OÀ  C'wNÀ  Bä0cÀ  CÃ£À  AQ!À  AI[À  @å29À  @ç{À  I^,SÀ  IôíÀ  J¬çãÀ  K)O¡À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AJÂ?¥"xK€,€   B   (C­
+¦@N}A}6DCÀ‰_ÀE¬¨ßƒfÎCô%@†oÙ‡ÄKk?Æª³?š €À  ?o|À  @ª£¡À  @BYÕÀ  @ªõÀ  @BaÀÀ  ?šÀ  ?n°¬À  @]'ïÀ  ?ŞºÀ  ÿÀ  À  BìÃ1À  ÿÀ  À  BéÀ  A WÀ  AõÀ  @‰Ë‡À  @ŞÀ  GÖ@õÀ  F×¦zÀ  I&¾À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@—>öHîK€,€   u   )Cİ«2@N{ÔGÎì!C¶ÙÒÀE¬İÂ‚’®B)¾!@`^)=Ñ?+T¤@±>À  @!¯À  @CPÀ  ?øåSÀ  @&HÀ  @)×wÀ  ?íw2À  ?¨ÚfÀ  ?ÏÀ  ?¸„À  BˆyÍÀ  BÌìüÀ  ÿÀ  À  B®¤ŠÀ  @¶À  @ƒšƒÀ  @at#À  @jœÓÀ  G²¦ÇÀ  GXFÀ  I	 À  I‰œKÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@šè>ù`K€,€  X   *D~I@Nyé´*óíC±ÀE¬üıÜ+”BG.@Ê¯hL=->™…@¸_cÀ  @—ç¿À  @3X`À  @Ê‹À  @¾ßÀ  @Ã4À  @Y4À  @ šÀ  ?İCÀ  ?±ÀÀ  C'œÀ  C0íÀ  Bã}'À  C““À  @ˆ³ËÀ  @Œ€¤À  @Xn5À  @aô™À  IgXÀ  HÄ—À  JbQıÀ  J/®À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A2Q]?³^K€,€   V   +DœA@NyQÂÒzC»nAÀE¬Ä¤À.ÜB:™@WÈ?´Ş?é}bÀ  ?§È
+À  @&x³À  ?çÏIÀ  @%P]À  ?éZÀ  ?ìtÚÀ  ?¥¡%À  ?¤æ\À  ?p‘‰À  B†ç À  BËäÔÀ  ÿÀ  À  B\›À  @GPÚÀ  @Q³À  @
+q!À  @ç À  GÃ.À  GB¼‡À  I0ËÀ  I&gÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@´¥?,tWK€,€  "   ,Dğw@Nzj7*¥C½=¯ÀE¬ºĞëBM`æ@«*ãA5? …@Uw¦À  @f×À  Aœ²À  @§ÒÀ  AöµÀ  @¯î’À  ?âŒgÀ  ?¼À  @õÀ  ?ÏbÛÀ  CbHÀ  C@šmÀ  ÿÀ  À  C¤"À  @´ºÀ  @¶ÿrÀ  @‚øÀ  @ƒĞmÀ  H¨ÒÀ  HßBÀ  JËüÀ  J†(À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Óœ_?+IK€,€  •   -Dûp@Ny[!‹úÄC¡w
+ÀE­Rt OBFÍ‡@Ìšs=ÚW?ÍK}@A8À  @WÀ  @–âƒÀ  @}àÀ  @–îFÀ  @}÷ÏÀ  @ACKÀ  @-¸À  ?Æ·iÀ  ?›ÈşÀ  C¥ÑÀ  C0!§À  BçN&À  C'À  @tãÀ  @|›€À  @;šÀ  @FˆÀ  H·
+IÀ  He`_À  Js^À  J†EÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A
+Üz?`‡SK€,€  «   .D¶@Nyn1~ nC•.{ÀE­•Š«%CBO\ß@¡ól?ÏT_?ÿmİÀ  ?İh­À  @p.²À  @@ÌpÀ  @pA°À  @@ôAÀ  ?şåÀ  ?ÜİÓÀ  ?üÆÀ  ?ÎLÀ  BÁPòÀ  Bÿ4ìÀ  BƒJ)À  BÔå*À  @œáMÀ  @ 3ÌÀ  @~ùÀ  @ƒ“À  HÍÀ  H†ˆ	À  J nÀ  JvåÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A4³Å?‘ãÉK€,€  ÷   /D%@Nyg²[Q<C›¬¨ÀE­r’/»BK©õ@³âËu*?¢©®@¯=À  @QÑÀ  @fSyÀ  @D”NÀ  @lùÈÀ  @I°^À  @QüÀ  @ĞVÀ  ?Ë8àÀ  ?º«»À  Bß…~À  C@qÀ  B´Z.À  BíÌ—À  @zîÀ  @*äÀ  @d>lÀ  @mK‹À  HùUÀ  HÀBÍÀ  JAà@À  IØ“ÿÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A^Ié?²ã0K€,€   V   0DSÍ@NyFósª5C«Å¹ÀE­'ü×]BDP@ÙAœûa?ŒÜ?Ò.OÀ  ?«rÀ  @}<À  ?õ—:À  @+ïÀ  @PhÀ  ?¦ªÀ  ?ˆrªÀ  ?“V\À  ?wuyÀ  ÿÀ  À  B®AÀ  ÿÀ  À  B‹şÀ  @/¯—À  @;KgÀ  @C¤À  @HÇÀ  GŞóÀ  G1f+À  Hßï;À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@·?«gK€,€  Ã   1Dô¤@NyX®VC{S§ÀE®öi9BPl´@›­¾İ4v?¼M@<TÅÀ  @4À  @ˆcgÀ  @‚rçÀ  @ˆe!À  @‚ãˆÀ  @=®(À  @ª5À  @—ÏÀ  ?ó\À  Câ-À  C%àSÀ  BïxÀ  CÛ?À  @ÄeÀ  @ÇpÀ  @—À  @šueÀ  I0XæÀ  HÓ¡²À  J‰=îÀ  J°Ë”À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A-?v!’K€,€   ö   2D¤î@Nyçl7ÈÛCªĞÀE­l¡:†BEmÿ@Ó•ìV²¯?[Š@/—®À  @ÖÀ  @8¡¿À  @jÀ  @WÉÀ  @/ÚZÀ  @ÔùÀ  ?éÊäÀ  ?‹píÀ  ?v“ÛÀ  BÃÚ:À  Bú0[À  BŠÀ  BÑÔÀ  @$ñ}À  @1AÄÀ  @¦&À  @¹`À  HlpıÀ  H*k¥À  I¸‘À  I%&¹À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AK·?£&K€,€   e   3D
+ú"@Nz-…˜ûC¥Ÿ²ÀE­;ÉC
+BM6È@¬¼.@Ôá@*:1À  @VÀ  @v ›À  @+–À  @ŒCÀ  @JEÓÀ  ?ÍûÀ  ?™bëÀ  ?Ó{èÀ  ?ƒdßÀ  B{Ã°À  B÷æ5À  ÿÀ  À  Bµ¦vÀ  @‚qÀ  @†k3À  @åÈÀ  @'	À  GÅıøÀ  G?½À  IBÀ  I„ÅÕÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¹¨±?8K€,€     4D
+Ş @Nz/$áKCªÚ»ÀE­8lE	BJÑû@¸,üÍ—Î?|S@aÇmÀ  @!¤©À  @4Ò±À  @
+ö½À  @}Ù3À  @4ÛÀ  @¡ÿÀ  ?á©LÀ  @·ĞÀ  ?°¬LÀ  BİC]À  C	JPÀ  B„ !À  BĞVƒÀ  @¥!À  @¨µåÀ  @W À  @`– À  H’æ À  HGúÀ  Iä¦‘À  J;ùoÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@á}\?5ÄK€,€   q   5D6@Nyà?Ÿ…ĞC+ÑÀE­°îKº"BLfŒ@°#Ü#œ?']o?ıı#À  ?Æk·À  ?ğ¥À  ?½ôÀ  @@À  ?ÒLşÀ  ?ß˜WÀ  ?°YFÀ  ?À  ?z3AÀ  BH+^À  B²¬öÀ  ÿÀ  À  BŒnŠÀ  @+×\À  @7±jÀ  @,ËÀ  @ÔÀ  GÉZ¼À  GŠ=ÈÀ  I´%À  H·4UÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A¶ã?XhwK€,€   à   6D‹E@NzäÎpJCt¿ÀE®)ãÍDÉBVP‰@}ºÀ1%Í?È‰‡@ÓÀ  ?ñı«À  @uvÀ  @4tÀ  @u<«À  @4«À  @ ¦À  ?ñü·À  @&}5À  @2éÀ  BèÂXÀ  C'MÀ  B•xÀ  B×‘¾À  @Ñ"úÀ  @Ó£áÀ  @¢KkÀ  @¥‚À  HtLÀ  GÊCÏÀ  I¾¥À  JÄ¿À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@±+?)wK€,€   ü   7Dœ{@NyöØ@”¶C{T°ÀE® iGkB]ß|@WKñÌ\Ì?4WÚ@W†]À  @$rMÀ  @?+À  @‘À  @€ À  @E]À  @‹§À  ?Îä À  ? ÀAÀ  ?‡P@À  BĞ£÷À  Cİ(À  BPóÀ  BĞ@À  @AÂöÀ  @LXÀ  @J‹À  @,†À  Hq„¢À  HBêÀ  I»öÀ  IrÈOÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AK´?S¦:K€,€  0   8DY@NyÒ?©˜ùC„‹ÀE­ğkå)¨BV@×’²¡?/}@mlIÀ  @N§À  @H„”À  @1…6À  @„¦À  @}EÀ  ?û "À  ?Æ8~À  ?ó²ıÀ  ?¡ï—À  BÑhÀ  C	ëÙÀ  A¿µ„À  BçoÀ  @—t¼À  @šåÀ  @CYuÀ  @MÚ'À  HŠ&¡À  H¹À  I×À  Jâ-À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÄY?öK€,€     9Dèé@Ny§EZ ÅC‰oŸÀE­Õ³‡¢×BOY@¢¡Œº™?„z¡@6{*À  @LaÀ  @_î(À  @YãÀ  @xõTÀ  @tKSÀ  @mÊÀ  ?×:ÏÀ  ?—PÀ  ?ØÀ  BóŞ°À  C]¦À  B·À  BìyÀ  @4¼éÀ  @@
+›À  @=e´À  @H6fÀ  HX±ªÀ  GûâİÀ  I¨¤EÀ  Ivé/À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¯-Ñ?ZøK€,€      :D{Y@Nxù~LTsC Ñ‹ÀE­Uõ_Õ4BLj÷@°gl?
+Ú\@1ÛÀ  @,¦À  @“VÀ  @†œÀ  @/>À  @;ÃÏÀ  @(à”À  ?í›ÃÀ  ?ŒE-À  ?ó‚À  BÍ"qÀ  BúåÈÀ  B•IºÀ  BÙÓ¿À  @&OÀ  @2O”À  @ç°À  @%1€À  H›À  G ¼™À  IxpîÀ  I/\jÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¯YÊ?×ıK€,€   [   ;DÁ—@Ny@‰ÎÿvC·wÀE¬Ü‡0—wBM¼Ê@©W¢²@1@	wx@–÷À  ?´GWÀ  @ÆÀ  ?ÇÁéÀ  @]¹À  ?ÔôJÀ  ?ı´œÀ  ?¤züÀ  ?âŠøÀ  ?£-ÉÀ  B À  BÌ¿(À  ÿÀ  À  BˆzÀ  @ŒHÑÀ  @ıxÀ  @EƒÀ  @On¤À  G»	OÀ  G=–SÀ  I‰À  I­aÍÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@“L–?
+‘K€,€  2   <D»Ê@Nz"ò×C…şäÀE­è„wBSĞ¿@Šoñ;!;@ ¡²@®KÀ  @ƒ?KÀ  @reëÀ  @]¬eÀ  @¿8 À  @—eõÀ  @1«À  @"XçÀ  ?Ê³À  ?†ıZÀ  C*'sÀ  C>©À  Cì›À  C!®!À  @y\À  @€ÕÍÀ  @ØºÀ  @+™%À  HŒi–À  H§ëÀ  IÚ*À  J#öËÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Éa[?!4~K€,€   Å   =D
+SP@Nz7=6VC³ÀE­ÿøæ`B\V @_€æ@t3@uçzÀ  @7¼À  @Oj³À  @!¢ÃÀ  @×ÌÀ  @\
+’À  @ÖHÀ  ?Ö)}À  ?­‚À  ?múÎÀ  Bğ×›À  CJéÀ  B‚˜ÑÀ  BßŞåÀ  @*·ÃÀ  @6¤{À  @ŸUÀ  @BeÀ  HKY;À  G±‰À  IApÀ  IY®À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@«gì?é·K€,€  ?   >Dâ@NzĞl×ÙCå{ÀE­·çìõBRæ¶@õCzy=7ğ@œGXÀ  @„çÀ  @
+•À  ?íWcÀ  @œôÀÀ  @…„À  @}1À  ?ìaÀ  ?ß›ñÀ  ?¤ÕQÀ  BòÀ  Cc|À  B¸!SÀ  CMRÀ  @Š^¯À  @ À  @G:À  @Q‰À  H–A°À  H4„!À  Iéß±À  Jª4À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Ai0?g'zK€,€  F   ?D ¦@NywOSCÂ=ıÀE¬Ÿsôv“BS•Ë@‹›±”÷?œ¢@PWåÀ  @Bñ¾À  @ç¹À  @ºÏŸÀ  @ëSõÀ  @ÄÇ™À  @9İæÀ  @°ÍÀ  ?ğeóÀ  ?¡æ,À  CD/ÁÀ  CW®JÀ  C±€À  C1•ØÀ  @•OCÀ  @˜ËìÀ  @CL×À  @MÎ.À  H»DÀ  H61mÀ  J˜À  J‡À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÃÙö?<$%K€,€   /   @D½v@Ny|çŞ¨îCÈ5JÀE¬~ß5¿7BU	›@„9ii?Ì~?ÄLÀ  ?€ALÀ  @/À  ?Â;!À  @ÁÀ  ?ÂE3À  ?Ä7.À  ?€1 À  ?ÏÀ  ?::DÀ  ÿÀ  À  Bªğ6À  ÿÀ  À  Bf(dÀ  @µ@À  @%!À  ?ÅõÀ  ?ì»NÀ  GRİoÀ  FÜÃ‘À  H¤òÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@£ÿÓ?'iÚK€,€   I   ADnG@Nyr¶Ã…C¾(ÀE¬µÁjKŞBZ§Ç@g¨Qü®à?…g3?çî­À  ?´ÚğÀ  @(ì‚À  ?õQ,À  @1ÂtÀ  @aÀÀ  ?É¶‹À  ?‡øŠÀ  ?İ‡À  ?“z¿À  B‚fÀ  BÃG¢À  ÿÀ  À  BŒoUÀ  @‰­À  @ŒÍdÀ  @/àæÀ  @;y¨À  GØ¬MÀ  G
+\òÀ  I( À  I4õ5À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@°.Ú?#LÕK€,€   <   BD\²@Ny(L˜dÕC‹SÀE­Ì{tâBOà"@x¿º¯@ˆ¿?É¥À  ?œjVÀ  ?ÓÙ`À  ?¢Ä’À  ?Ú¯cÀ  ?«œ1À  ?Áñ¸À  ?’©#À  ?œt À  ?;êØÀ  ÿÀ  À  B–-À  ÿÀ  À  Bg`À  @;ıÏÀ  @FâÀ  ?È…^À  ?îá2À  G²ÉÀ  Fø’À  HÉàÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ôfb?-€K€,€   =   CD µ@NzgkQº³CĞT|ÀE¬RXë9BR	L@“{ÈêÈM?DÇ¯@9–WÀ  ?ênæÀ  @6³À  ?ä]ÑÀ  @y²ÉÀ  @‰ÊÀ  ?šZÀ  ?W=À  ?ˆ{ÕÀ  ?:ıúÀ  ÿÀ  À  BÊ?JÀ  ÿÀ  À  B„şØÀ  @ å|À  @-ZÀ  ?ÇJÀ  ?í´À  GMQÀ  FèjoÀ  HŸÉÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@”0+>õÏâK€,€   G   DD#@Ny+«f´C†\'ÀE­æx„óBXÒ@tì¾f?³,«?™R=À  ?~q§À  @	¢²À  ?ÑwÀ  @SÀ  ?ÓöÀ  ?”'À  ?w´À  ?¨4÷À  ?W»·À  ÿÀ  À  B”;À  ÿÀ  À  BkÎçÀ  @K»ƒÀ  @UÒæÀ  ?ñæÀ  @	œÀ  G‘,;À  Gt À  HáõûÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Óyº?-ã	K€,€   n   EDE@NzYé>dC‡¢…ÀE­ß’ìŞ7B[ˆ)@c3`>¯$?­Ğ?Õ¹¶À  ?›ókÀ  @'¼À  ?ïw8À  @ì2À  ?óZÀ  ?Ğ*XÀ  ?–\ùÀ  ?ÇwÈÀ  ?˜¨NÀ  B9DéÀ  B¼)šÀ  ÿÀ  À  B‹dåÀ  @uäÀ  @}À  @6àëÀ  @B´À  GÁ×QÀ  GW•À  IÛ@À  I,ùÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÈÂä? øK€,€   -   FD0³@Nz=ä‘¯C•zãÀE­“òAâ«BUh@‚VH0”Œ@f @ã¼À  ?±äÀ  @í\À  ?²bÖÀ  @2·©À  ?àŸÄÀ  ?—RìÀ  ?a’PÀ  ?ráÀ  ?$m,À  ÿÀ  À  B©˜ À  ÿÀ  À  Bh#À  @w¾À  @ÕÀ  ?£ÏaÀ  ?Ñ¥À  G)§MÀ  F­·ÁÀ  H„SÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¥‚…?¤0K€,€   {   GDAÃ@Ny¢7²œÛCÎ$ÀE¬^{ØEBW0@yJ@¦[?Ù}J?ÒŸ9À  ?¦	ÀÀ  @„“ÿÀ  @>ö^À  @‡CÀ  @@DñÀ  ?ÁôÀ  ?Ÿä2À  ?ÊtÀ  ?xçÀ  ÿÀ  À  Bë¨ùÀ  ÿÀ  À  B´Ñ`À  @?!ÃÀ  @IÚ«À  @©À  @¥6À  H_ÍÀ  G–[À  I\fÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ñù?QNVK€,€   e   HDÍ©@Ny]¬£øCP8ùÀE®‹®zçgB\C@_|ï[Ñ·>İÒ)@Æ²À  ?ìÊ;À  ?ÀÀ  ?¨HıÀ  @Ò÷À  ?ü<?À  ?¤õ†À  ?.À  ?É•!À  ?‡h”À  ÿÀ  À  B¥W+À  ÿÀ  À  B‹<À  @wäƒÀ  @€ À  @kğÀ  @,!sÀ  HÇ«À  G–jÀ  ISWJÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@òìS?ˆK€,€   §   ID®ø@Nz^ì‚‰UC}A²ÀE®Ã<6B_¸k@Mç0²RS?’ë´@ èvÀ  @Ä=À  @•oÀ  @^„6À  @’KäÀ  @oòÀ  ?õ´×À  ?ÚRˆÀ  ?¤aãÀ  ?]À  BÎfôÀ  C
+A‰À  B‘àÎÀ  Bë•À  @FŸ·À  @PöMÀ  ?ùñvÀ  @Ó#À  H0dÀ  G•U_À  IˆûbÀ  I|b!À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@«q–?	D®K€,€   z   JDû'@NzKj’Cn³LÀE®8äãBaA(@F1Ò¤‹@E#ê@$óÜÀ  @O5À  ?ıò"À  ?ÂoœÀ  @%¨À  @kİÀ  ?ü7À  ?Â"À  ?®æ}À  ?uŠ¿À  B”QËÀ  BÒ¡—À  ÿÀ  À  B¤¹NÀ  @T¥4À  @^UÀ  @ìğÀ  @àÀ  H  ‡À  GmÃÀ  IGmåÀ  IOŞêÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ä¥:?6±K€,€   Ü   KDì#@NzjXÒb×CqÇÀE®0µŞJhBe®@/™1í>D å@ˆÙkÀ  @UıƒÀ  @‰,À  ?Ü À  @‰s™À  @Y9À  @»ƒÀ  ?ÏÁÿÀ  ?°­‘À  ?•—3À  Bñ‡‹À  Cõ(À  Bc^mÀ  BÚÿ¶À  @WÄÀ  @`—À  @2¼„À  @>(®À  HZé¨À  GÔHÀ  Iª^OÀ  I­cÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ê²ì?"AK€,€     LDhß@NzLá©CjZ	ÀE®DdŞ†ºBn’İ@`—N—	@7E–@İ#”À  @ 4"À  @oWyÀ  @éÀ  @æC)À  @¥}
+À  @HKÀ  @•9À  ?ÒÛÀ  ? CCÀ  CLSÀ  C]xÊÀ  B÷xÜÀ  Cç«À  @ƒ,À  @…„rÀ  @A]À  @K¹ªÀ  HŠÀ  Gõ7À  IÖŞ¼À  JT-ÅÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@·EU?+pK€,€   $   MD|@Ny¼ßÿ£nCßØºÀE«ıÊ)BYÒ@kç.¸ =?®±Ê?ŠùOÀ  ?XÏpÀ  ?÷´ÚÀ  ?²üHÀ  ?ş.À  ?µÀ  ?€¬­À  ?P`À  ?UÆÀ  ?SÀ  ÿÀ  À  BƒáÀ  ÿÀ  À  BHsÀ  ?î»À  @ßÇÀ  ?“sÀ  ?Ä-ÑÀ  G+nÚÀ  FàF?À  H…jÛÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¹´Î?eNbK€,€   z   ND	Çã@Nz?c«ìaCb4ÀE®ZıÕ"B`bI@J‡qPÈ…?Mç?ád`À  ?¼0À  ?íMÀ  ?½åÀ  ?üö´À  ?ÍoêÀ  ?Ï=2À  ?ª¦JÀ  ?Ã†÷À  ?‘¼`À  B ÂÀ  B¦ößÀ  ÿÀ  À  Bˆ‰…À  @oíWÀ  @x¤À  @-ƒ‘À  @9B<À  GêÔ:À  G‰|À  I6ÁVÀ  Hÿ^8À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AÆÌ?S,¡K€,€   Ë   OD+¢@NyîfØ+ÉCSµ!ÀE®‚2¥·:Bj-@'?Èà?/‘ç@®NÀ  ?ãı¹À  @ıÀ  ?à|CÀ  @¥DÀ  ?êğÀ  @ÌŠÀ  ?Ù4yÀ  ?ûÔÀ  ?¼eaÀ  B’vÀ  BÍİÀ  BømÀ  B¤ºÀ  @œ¼ÇÀ  @ À  @f…äÀ  @o|öÀ  HV*…À  Hš.À  I¦¬¢À  Iß
+À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A) f?‘¿›K€,€   Ø   PD!}@Nz
+ÅGÍCP»İÀE®ŠRş¬KBp+ë@ú@ fô@-í@hÔÀ  @!bÀ  @6|UÀ  @ ÌVÀ  @{d{À  @(ıäÀ  @oéÀ  ?ìmÒÀ  ?¹©8À  ?“¬dÀ  BõJ–À  CİÀ  B‰.£À  BÎ#2À  @bè²À  @lìÀ  @0$)À  @;¸ÄÀ  Hta!À  Gæ—øÀ  I¾0À  IÃ¸ÂÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ùá`?T		K€,€   #   QDŒ@Nz¡ØÇàCi¾ÀE®F^®	 Baù¬@Boú®(|?ª?·Ø<À  ?s…vÀ  @8PÀ  ?¬¨`À  @LêÀ  ?¯vÀ  ?¸¢ğÀ  ?k] À  ?'ìÂÀ  ?
+å:À  ÿÀ  À  BŸõ5À  ÿÀ  À  BQ’ØÀ  ?©r§À  ?ÕwÀ  ?oTÀ  ?°.À  F¦u´À  F‚¦À  HŒÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@‰T¨>ßéK€,€  D   RD—w@Nzœ]:ÏCVù­ÀE®yNw BorÅ@ıîæM@ ÇÁ@H§1À  @.éÀ  @=uÀ  @À  @o®ŠÀ  @Gª4À  @@´À  ?ÜöLÀ  @ötÀ  ?úÒüÀ  BË~ÀÀ  CR.À  B†{“À  BØœÎÀ  @¿·±À  @ÂrÀ  @œœÀ  @ŸlZÀ  H•cºÀ  H0cÎÀ  Iè†6À  JgÓRÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AM?Oê¨K€,€  :   SDµ@Nz•=7˜îCKj=ÀE®˜ßhêœBx$©@Ñ·çuŞ@?7Œ@†hÀ  @Z[ÿÀ  @/‡èÀ  @¬ÀÀ  @‡hÈÀ  @[ÔÀ  @,|ŒÀ  @u÷À  @LÀ  ?ç0:À  C	˜äÀ  C›hÀ  BÑ’–À  CóRÀ  @©=!À  @¬R¬À  @PAÀ  @’ñ[À  I	ùÀ  H»–UÀ  JVÁ	À  JtL¹À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A\Šx?²Ë)K€,€   ¦   TDŸ$@NzPÈRĞrCJ¥3ÀE®šövºBBqÆ@òåë#B>XrÆ@¤jËÀ  @Š¢`À  @ˆNÀ  ?Û„\À  @ªC­À  @mqÀ  ?ó)òÀ  ?¼ŞÀ  ?Î×¤À  ?™8À  Bİ(KÀ  C`ÕÀ  ÿÀ  À  Bî\IÀ  @~Ì]À  @ƒwñÀ  @7¢×À  @BÅÀ  H&>cÀ  G™uÊÀ  I`ûÀ  IŞ‚ZÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¤#Ñ?RÍK€,€   á   UD @Nz²e÷&'C^ÎŠÀE®cì¼§B{š@À!D^?µMİ@+ªÎÀ  ?ñWÑÀ  @Œ¡;À  @M/ À  @óüÀ  @N×ŒÀ  @#U£À  ?ëÀ  @ÓÀ  ?¯LTÀ  CúÀ  C•DÀ  B|À  Bã©ÜÀ  @¡ÏÀ  @¥6À  @U,‹À  @^Ö•À  Hg½KÀ  GÚÍÁÀ  I´YËÀ  J\ì²À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÛŸÅ?/µŸK€,€   ß   VD İ@NzÊÔ$˜ C`é¼ÀE®^-Q)BƒN@Š~&/"¯@WÅ@:;ˆÀ  @À  @A…WÀ  @ÚÀ  @l +À  @(šÀ  @o5À  ?ØİvÀ  ?ÕşYÀ  ?ª<À  BÆËñÀ  C ™ÚÀ  BbšÀ  BÄåoÀ  @„¥À  @ˆˆÀ  @NßÎÀ  @XÑÆÀ  HOá¼À  GìiiÀ  I¡È™À  IÖş}À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ó÷ó?DnøK€,€   û   WCùm£@N{²—ßC_™4ÀE®aÆO(ÊB¤Ô@#ë·ç>À$=@…“cÀ  @•XvÀ  @aïªÀ  @#+YÀ  @”–«À  @­À  @33ÏÀ  ?õùsÀ  @ª.À  ?İüÀ  C/µÀ  C(HDÀ  BØT3À  CóÀ  @ª«:À  @­ºEÀ  @ˆ¼À  @ŒˆºÀ  Hªp`À  GÉ†~À  J¤ĞÀ  J†¯‚À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@™Å’>öã K€,€   \   XDèª@NyòOùğCA<ÀE®´£ á‡Bl‹â@¯|;ª>T<@<%À  @‡À  ?¯ø'À  ?†–„À  @=—^À  @!vÀ  ?­äíÀ  ?o-LÀ  @!À  ?¤]ÈÀ  ÿÀ  À  B»@kÀ  ÿÀ  À  BRfÀ  @®şTÀ  @±úYÀ  @Fš:À  @PñÀ  Gú£À  G7ƒ»À  ICÁÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¤?É÷K€,€   0   YDS]@Nz‘ŠëZÇCåÕ7ÀE«İ"ş…ìBqnE@óÙŸıl?#şŸ?§À  ?‚[ÙÀ  ?´‘SÀ  ?uİÊÀ  ?µmÀ  ?‹DÀ  ?¥õ~À  ?aëÀ  ?»ÃÿÀ  ?ÁÀ  ÿÀ  À  B}ßÀ  ÿÀ  À  B6Ï=À  @e°¼À  @n¯ĞÀ  @)ĞÒÀ  @5Ì±À  G=)À  F·gRÀ  H“7À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ŒA>ğñ}K€,€   O   ZDË¬@Nz!`Qç‰CññIÀE«šû_ŸÆBt#q@æé˜%z@=x@W"À  @$ÙÀ  ?µ¡À  ?Š¼AÀ  @Z¿À  @	á™À  ?£‡HÀ  ?ƒ°yÀ  ?¥¶À  ?FºêÀ  ÿÀ  À  BÃwÀ  ÿÀ  À  BŠö½À  @GŠÎÀ  @QÕÎÀ  ?Ø¶}À  ?üŸôÀ  HºÀ  GjœÔÀ  IMOÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¦" ?\¼¦K€,€  z   [D[@NzhÂ˜úØC;ÜƒÀE®ÃVDû†BÜÍ@ªw§í¨„=@Èî*À  @ü‡À  ?õ£À  ?Ãß•À  @É À  @‘|À  ?ôŠ/À  ?Âæ°À  @9PÀ  ?âtÀ  BóÚÀ  C!«¼À  ÿÀ  À  Bõ<#À  @¹šåÀ  @¼kèÀ  @Œ9ßÀ  @îèÀ  HÏ‹À  HN™QÀ  J!‡À  J‚/{À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A:\?\GK€,€   `   \D’e@Nzœ¤©C=…kÀE®¾Ğ4©áB„õà@wR—šÚ
+@Fï@aúÿÀ  @$ä@À  ?ŠŸÎÀ  ?vy¢À  @aÛ
+À  @$ørÀ  ?ŠøQÀ  ?u¢2À  ?ÅØgÀ  ?…üLÀ  ÿÀ  À  B¶´jÀ  ÿÀ  À  B’ËÀ  @rúÀ  @{€À  @w‚À  @*RaÀ  GÃËºÀ  GHáÈÀ  I`±À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@æÎİ??¯K€,€  »   ]Cı®Å@Nzã¸Ø¢CH{üÀE® ã$½`B‡r¶@^Dî6“?Ü‘%@7_CÀ  @f6À  @Tâ]À  @9rÀ  @Pa“À  @9Í@À  @?8À  @v{À  ?ü“‰À  ?Å3ìÀ  Bü™*À  CŠÀ  BÁƒFÀ  Bó
+œÀ  @8ÄÀ  @ ‰sÀ  @r"À  @z®íÀ  HÄÀ  HƒóÀ  J–§À  JA† À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ùô?JZŠK€,€     ^D ]@NzÒkÂZC@ÕäÀE®µÅf@ŸB‹É|@1æ1ËÍ@!†L@a¶ÖÀ  @?æ•À  @1NÀ  @Ğ‰À  @}ÿÀ  @[ÙSÀ  @	¾À  ?ìì0À  ?÷NmÀ  ?Û+À  BÖû¾À  CLñÀ  B¤ÎSÀ  Bë]À  @™ÌËÀ  @/öÀ  @‡xÀ  @‹M}À  I	!NÀ  HÉ’HÀ  JUqEÀ  J¿À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Aƒà?ÔÉK€,€   j   _CøŒ
+@N{
+LQ¶UCCpÀE®¯¼UÈB¢õ@ëÇ”\;?”=?ÙuÀ  ?³>÷À  ?ÑaîÀ  ?¦)ÁÀ  ?ìN@À  ?»‚’À  ?º&À  ?œÇÀ  @	jäÀ  ?­»õÀ  ÿÀ  À  B˜ñHÀ  ÿÀ  À  Bz<À  @«¤‘À  @®¯>À  @SLÀ  @\Ù¡À  Gå£À  GAºÀ  I2¶ßÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ñõ?)¥¸K€,€   9   `CúóË@Nzø:¥ÆÉCBñ-ÀE®°)‘ïBRö@Ây‰Ç!@@–©@<ÇàÀ  ?ì¯"À  ?¤¾ŒÀ  ?‡âÀ  @?<	À  ?î·À  ?›¶{À  ?…]MÀ  ?Å)¥À  ?S¡¹À  ÿÀ  À  B±õlÀ  ÿÀ  À  Bò²À  @rˆÀ  @z¡İÀ  ?ë UÀ  @ƒ<À  G…-¼À  FÑŸÀ  HÏJÄÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¼é#?9K€,€   ‹   aCÿ_z@Nz×r]Cmô¶ÀE®:$"hB~÷@³l+4_?˜X@)˜±À  @RÀ  @v–À  ?Ô!NÀ  @Fƒ½À  @àÀ  ?áNyÀ  ?¢S¨À  ?İ•ÜÀ  ?©YÀ  BŒBÉÀ  BÚÅÀ  ÿÀ  À  BŸÙñÀ  @‰^À  @ŒÖÓÀ  @MA¾À  @WFØÀ  GıpzÀ  GŠ˜À  IE=À  I£MàÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¶İN?>¶K€,€   6   bDAû@Nz°º ×CïÇÀE«¦ÔAƒBxÕx@Î4ß­ö?Ç°?„™èÀ  ??ÕúÀ  @m/À  ?ğHÀ  @MÖÀ  ?ğ nÀ  ?…JCÀ  ??ÆÎÀ  ?|ì[À  ?Kc-À  ÿÀ  À  B•TÀ  ÿÀ  À  B]N)À  @ŸÀ  @ ÁèÀ  ?ß–
+À  @EÇÀ  G‹_À  FêSñÀ  HY3JÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¢r?=ÊK€,€   …   cDìõ@NzL}ı*Cù:ÀE«sİ««.B{
+m@Âü.ÍÓ@³?üMûÀ  ?ÊÉ”À  ?ú
+şÀ  ?Ä5(À  @
+JôÀ  ?ÚÙâÀ  ?ŞæÀ  ?²òÀ  ?°b-À  ? tÀ  BMüÀ  BµÛÀ  ÿÀ  À  BùÀ  @V¦À  @`7ÇÀ  @'>tÀ  @3fRÀ  H7ö+À  Gö,À  I*òÀ  I^=À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A	%Š?´ä,K€,€   ×   dCúòª@NzøL–ê¶CwÀøÀE®Ğx!B‡¹í@[2XÚü?â¸@|»·À  @BKUÀ  @A„¨À  @§À  @”©À  @_4oÀ  ?ä©dÀ  ?¼1—À  @.&@À  @_üÀ  B¸ª0À  Cr À  ÿÀ  À  BÓ\ÕÀ  @ÚüZÀ  @İ`ÀÀ  @¥ZÀ  @¨F@À  HbÇĞÀ  GÃÖÜÀ  I°}ÓÀ  J‰<„À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@­<O?›K€,€   µ   eD³ç@Nz‹íPÑD–ÀE«BWÃ:B†Êï@d°xŠn[?óˆF@WşÀ  @ ÷'À  @Á•îÀ  @‡"FÀ  @Ç‚-À  @ıÀ  ?üÀ  ?¾&À  ?ı-À  ?ŸÁ§À  Bı&–À  C#‚¢À  ÿÀ  À  BïšßÀ  @Ü·À  @¡*À  @@mƒÀ  @KèÀ  H¢şÀ  Göõ¬À  Iı³8À  JCˆLÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@½ ÷?neK€,€   œ   fCûIu@NzõîqÎCû-ÍÀE«h’èŸiBˆß	@O?Üş?.s?â"À  ?¸æbÀ  @<nÀ  ?ûÜÁÀ  @!š-À  @,&À  ?ÀRïÀ  ? 
+İÀ  ?¯êãÀ  ?ãßÀ  ÿÀ  À  BµÎüÀ  ÿÀ  À  B—ÓÀ  @Uÿ5À  @_ $À  @,]™À  @8/À  HÉ’À  GÏİ˜À  Ii$»À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A)"?ˆ )K€,€   å   gCô¯~@N{'O=ÂáCGÜeÀE®¢™6d¿BŒÊ@vcæu?ÿ=ç@·À  ?Û®¸À  @ZnÍÀ  @À}À  @h>4À  @(õ¶À  ?éŠìÀ  ?ºÂ¸À  ?Â¥­À  ?¦ÿ×À  B¦W¢À  Bğ,ŞÀ  ÿÀ  À  B·1VÀ  @nÄœÀ  @woAÀ  @JğÀ  @TIñÀ  HVÇÀ  GùšÂÀ  I§&jÀ  I’ö‘À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A_?S,åK€,€      hCñÌ"@N{=~ ÀCNæïÀE®_¾éUB’íÔ@ŒéD¹Ñ0Ë@/ì@6]|À  ?ù¯ÀÀ  @<|À  ?¶ÂÉÀ  @D‡(À  @9•À  ?ñ—ÏÀ  ?£ç±À  @–©À  ?©İ~À  BÂÀ  Bà¶‡À  ÿÀ  À  B—>wÀ  @¢Ì¹À  @¦ æÀ  @MñÀ  @WîÀ  H
+,$À  G_~)À  IW™À  JŞAÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ÿü]>ÿ¡·K€,€   7   iC÷úİ@N{ÅÄµlD ŞÈÀE«D¾¥BÚ7@m`¼é?ËŒÍ?ÔcGÀ  ?†ĞÀ  ?é›ˆÀ  ?¯­­À  ?ê «À  ?¯±oÀ  ?Ów§À  ?†Ì3À  ?s¸ÀÀ  ?S9 À  BxlÀ  B¢BÀ  ÿÀ  À  B`q•À  @¦ıÀ  @è°À  ?ëzÀ  @@ÁÀ  G{À  Fá¶jÀ  Hv¶±À  H,CRÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@•p?!K€,€  h   jCèô¼@N{iâC.¡8ÀE®ç“á B›‡h@Œ‘Ï¨U®}@5·4@‡cpÀ  @Xi¾À  @J¶À  @1¦İÀ  @Š¡°À  @\.‚À  @AöÀ  @,õ{À  @R€À  ?æ(À  CUÀ  C)}À  Bó’|À  CN$À  @°±%À  @³¥ñÀ  @ûÀ  @’3çÀ  IU*À  H´QpÀ  J`§;À  J’¨À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Ae‘?¶İK€,€      kCëkÖ@N{mÊ;×DÀE«!Tƒ{B’?ú@Œğ,¼×€&?ù.?»—¾À  ?·úPÀ  @fÖ÷À  @ÔzÀ  @e"’À  @5fÀ  ?£Ï¥À  ?™_øÀ  ?ø6ğÀ  ?– ¼À  ÿÀ  À  BÇÌNÀ  ÿÀ  À  B ¥À  @šcÒÀ  @Ã¾À  @3v{À  @>×ƒÀ  H,|À  Gbâ(À  ISô5À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@#
+?B~K€,€     lCîJ@N{WIHªD-tÀE«
+Çí[B— @Œ¿İTÖš>âíø@_À  @6pyÀ  @	8ÌÀ  ?émÀ  @n«À  @Ez›À  ?ÚVÀ  ?²VÀ  ?¾ÍEÀ  ?ŸA’À  B‘‹(À  Bë”À  ÿÀ  À  BÁgèÀ  @i²ÙÀ  @r‹áÀ  @?Á¦À  @JrÀ  H‚»AÀ  H.Ä©À  IË{¦À  Iv^ŞÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A~?zäGK€,€   ]   mCí·g@N{[ÛuTDŠ…ÀEªğ÷­ÙBš,F@ŒŸ™ĞÌ ¸@;*@nÀ  ?»0À  @D×À  ?°mÀ  @!™ÈÀ  ?Î¶/À  ?ÒÚ5À  ?˜ìäÀ  ?³]çÀ  ?‘¸IÀ  BFriÀ  B¾],À  ÿÀ  À  B§À  @Z“)À  @d À  @-~À  @9=	À  GÇñÀ  GCm™À  Iš²À  IíÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¥?ŞK€,€   Ò   nCØL@N{ü°ÏŠ³D€·ÀEªºÈË˜B§+]@ŒnÉ´ç@¬Ë@<HÀ  @
+`[À  @]1DÀ  @–À  @†^ÔÀ  @<^UÀ  ?ãQÀ  ?³?ZÀ  ?É˜(À  ?¢2AÀ  B«ÜÀ  BşÁ.À  ÿÀ  À  B½yÀ  @wè}À  @€"À  @C²¿À  @N.æÀ  H<˜:À  GæÆÑÀ  I’ÅşÀ  I£¯ZÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%APp?ZWüK€,€  †   oCÖ~@N|Ğ‚D«òÀEª£whŸB¬ô’@‹à—rkL@@gÀ  @`¬À  @;±EÀ  @)ŞÀ  @S_êÀ  @<PƒÀ  ?ğ»dÀ  ?Î*ùÀ  ?ø
+ôÀ  ?×•PÀ  B¤èKÀ  Bè¡|À  BEÙ·À  BË3€À  @šGAÀ  @§ÊÀ  @…òÀ  @‰3À  HÂ±ŒÀ  H¾À  J…À  IóOÜÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AHZ&?¥z•K€,€   ®   pC×ŠL@N|dº·rDCêÀEª$v(…œB¨àª@Œ
+Ÿfl«@³ @L]À  @>iÀ  @€šªÀ  @/ÂïÀ  @™ö#À  @_&RÀ  ?Ûp˜À  ? ¯ À  @ Q“À  ?˜y"À  B«E9À  C	NÀ  ÿÀ  À  BÃGÁÀ  @ŸÛ?À  @£:À  @6¡HÀ  @AÒ½À  HrÖŠÀ  G»ÒÇÀ  I¼üıÀ  J¦åÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@»²_?2KDK€,€   D   qCØ|Ä@N{ûAy–ODÌ»ÀEªù±°òB¦ş¹@Œ4Æ2¦Ú@*—?íîaÀ  ?°"ÃÀ  ?Õ°HÀ  ?™šÀ  ?üJŞÀ  ?¸/sÀ  ?ÃÎuÀ  ?; À  ?ËaqÀ  ?u	À  ÿÀ  À  B¢À  ÿÀ  À  Blâ˜À  @zA4À  @D¬À  @š¦À  @ÆÀ  Gi³8À  FşÛ¬À  HµàkÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¨ıª?W¡K€,€   S   rC¶Ä¡@N|øp¶ñyCá…×ÀE«ô¹¦CÒB³…£@‹ÏÔL_v@),§@'àÀ  ?ÙpÀ  ?àæ„À  ?£û.À  @4İ]À  ?ìTWÀ  ?³éÀ  ?‡X_À  @rxÀ  ?¥fÀ  ÿÀ  À  B¹àáÀ  ÿÀ  À  B‚k#À  @²%HÀ  @µÀ  @G•À  @Qß”À  G£üíÀ  GK'À  Hÿ?&À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¤€?GK€,€  ‘   sC³C­@N}À[×/CägÀE«äÿqñnB¿7›@‹&àx¬†@!@ŠHÀ  @G zÀ  @‹†UÀ  @PZ÷À  @ÀƒtÀ  @‹ÁÀ  ? nmÀ  ?‹×³À  @WŒ)À  @,”À  ÿÀ  À  C '‘À  ÿÀ  À  BËã4À  A	vÀ  A	 bÀ  @ØòúÀ  @Û]À  HÍÚKÀ  H8èRÀ  J 4XÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ñãò?(i²K€,€     tC¬ËÌ@N}CRæ»¬CèİšÀE«ÌŸp‡!BÅ	ç@Šë¬Ïõó@0­Ë@f@ À  @AôİÀ  @»%À  ?ñ±À  @vÀ  @LûHÀ  ?êçùÀ  ?Ê
+ÿÀ  @ºştÀ  @¥pÀ  B®À  B÷ôDÀ  B/1UÀ  BÑßÀ  Am&¸À  Am´³À  AQ­?À  ARMÆÀ  I·À  Iau4À  J÷
+(À  K—­À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A<?:?–¸LK€,€     uCªÛ@N}S©/Â¦Cèç³ÀE«Ìh2’ÜBæ\<@‰˜Ï§º@<†.@HŸÀ  @nğ'À  @`†À  ?×¡<À  @’“ÖÀ  @rÎªÀ  ?ïŠÀ  ?Å•÷À  @¬'ËÀ  @™¯À  BÆæjÀ  C¤À  ÿÀ  À  BááëÀ  AZ=œÀ  AZ×ÜÀ  AB¯ÛÀ  AC\´À  I•zÀ  IQ“ÃÀ  JèÀ  K’Ï·À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A/?ŒdíK€,€   [   vCÂ«@N|Ÿ	ò*°CôÀE¯\ŞÌB¬Êø@‹â> ?Ñ·?¦µDÀ  ?Œ÷UÀ  @#À  ?ı=óÀ  @"C×À  ?ı¤ìÀ  ?¨½|À  ?Œ=âÀ  ?³kjÀ  ?m–ïÀ  ÿÀ  À  Bª¥QÀ  ÿÀ  À  B‰ˆ²À  @Z¥À  @dÍÀ  @YÀ  @êÀ  G­³ŸÀ  G3¾À  I.×À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ßÄ?.¶K€,€  j   wCÈ{%@N|sfïâCš×°ÀE­v»DÙÖB¼Û@‹>ãöõÌ@Cô@—N;À  @Q3À  ?û=kÀ  ?Î³À  @˜¿À  @QäjÀ  ?ğˆÀ  ?ËßDÀ  @È´½À  @§’–À  BÌáxÀ  CÆšÀ  BC‰AÀ  BÕT\À  A~³À  A"õÀ  ATfÀ  AU|À  IPÿÀ  Hã±À  J_GÀ  KÍØ4À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÚŒ:?-{£K€,€   ª   xCÊ‹ƒ@N|cå‹ê;Cš²#ÀE­wˆ3X B»'7@‹P4Êğâ#@D‚@1^FÀ  @	™™À  ?ı\À  ?ªuÜÀ  @3L•À  @	ÑÀ  ?õ˜À  ?©ÂmÀ  @2Q1À  ?êF8À  B˜7À  BØk#À  ÿÀ  À  B½mÀ  @àWÀ  @â­
+À  @‘RêÀ  @”çyÀ  H4x™À  G–“:À  IŒs†À  JmqÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@±ë‚?¾K€,€   }   yCÆÖ@N|¼¼Ç|CšæÀE­vlî9šBÑ{Ô@ŠmYÚ|û@1IŞ@`³XÀ  @©À  @!yÀ  ?Á¤ŠÀ  @k1À  @•ÅÀ  ?şRûÀ  ?³lØÀ  @E‘À  ?òIÀ  B¾zÀ  BüjÀ  ÿÀ  À  B A€À  @ù
+0À  @û%XÀ  @–‰xÀ  @™ÿÀ  H*oóÀ  GM6À  I„¤{À  J·À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@˜õt>óD§K€,€   ÷   zCØ8@N{ıG#:ÙD‰€ÀEªM.Ñæ+B±w^@‹²·Ç3È¾?æ8@ï‚À  ?ñ‡âÀ  @Šj”À  @Am}À  @‹À  @D³[À  @PäÀ  ?æ·À  ?±°!À  ?”Û¢À  Bó&À  CäÀ  B’O‘À  BÛ±5À  @XYÀ  @aàLÀ  @1¾ÃÀ  @=:?À  HƒHàÀ  HWIÀ  IÌXÀ  I°M1À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AIÙ?jc°K€,€  O   {CĞsä@N|7˜
+8DÌÀEª™v-OKBµL@‹‰¥%Š0“?şRV@çéÀ  ?á;À  @-ÑGÀ  @,ØÀ  @7ózÀ  @ò±À  ?èlùÀ  ?ÊÙğÀ  ?à†4À  ?ÀR‘À  B«SÀ  BÕ==À  BêJÀ  B¸˜PÀ  @Š÷›À  @µÀ  @k´MÀ  @tzÁÀ  H¨¶†À  HnùxÀ  JLñÀ  I©˜aÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AXÕ?°àlK€,€  B   |CÒ!*@N|+ÒäD˜ÀEªx@ãdøB·B@‹zZE»g@æB@{
+ÃÀ  @:iĞÀ  @ùÀ  @<W¯À  @–?À  @[À  @IHÂÀ  @À  ?Íº‡À  ?°PÀ  C"šïÀ  C3WoÀ  B×9jÀ  CÇeÀ  @}VIÀ  @‚Â¹À  @V…¦À  @` ÏÀ  H›lÀ  H0À  IñêÀ  J!ºaÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A ­?_ ÉK€,€   ­   }CÄÖ½@N|Í“_D!a«ÀE©á©šÅ B¸©L@‹iŒ(²²Û@+<ü@“ÜÀ  @QıÖÀ  @/ÎÚÀ  ?üşÀ  @£¥5À  @g‰‘À  ?×´|À  ?¡{À  ?äåÀ  ?©Ø‡À  B¨„À  C	¢À  ÿÀ  À  BÇ-À  @£À  @‘NìÀ  @Më À  @Wè?À  HD´^À  GŸ5À  I™¿À  IÑ‰µÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ªÜ4?<K€,€   ¨   ~C·ˆ­@N|ò°)YíC½ÙÀE¯;Ş½®BµüÄ@‹„½„ëÒˆ=3ù@u¢VÀ  @?I’À  @#¡À  @YÀ  @{—¨À  @?–ùÀ  @sOÀ  @“;À  ?¹XêÀ  ?›ÜØÀ  BòÒ6À  C6uÀ  B¬YkÀ  Bæ­oÀ  @b~‚À  @kœ×À  @;2PÀ  @F!ÄÀ  H*­¢À  Gšu.À  I„Ô|À  IÁ À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@µ.®?f´K€,€   |   CºfÈ@N|İ%…ºCjÀE¯"\&K B¸Ğ@‹oÍ°!L2@/Ğ	@	¯~À  @:9À  ?î8ËÀ  ?²@şÀ  @,%À  @*mÀ  ?Ñ;À  ?—;‰À  ?¾=lÀ  ?†ÖÌÀ  B28À  Bµ”´À  ÿÀ  À  B˜FMÀ  @hõÀ  @qÕÀ  @£ÇÀ  @+h"À  GàñEÀ  Gl7À  I/ À  IÃ·À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Íä6?"×K€,€   ½   €CµûÑ@N|şU—+‘C#`aÀE¯@ôæ¦B»õ_@‹HL(Ñ~@gg@	¸À  ?æ ¬À  @&^"À  @½3À  @-ùÀ  @‰0À  @}À  ?ÎØÀ  ?¸WÀ  ? ìÌÀ  B¡À  BÛü_À  B(ÌíÀ  B·oPÀ  @`ŞiÀ  @jôÀ  @Aş¬À  @L‘-À  Hå[À  G»”À  IwR%À  I}KRÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¼§?i§K€,€      CÊÑ@N|gî«E,D"£ÀEª}D–ò‚B»e@‹MºÕénV@+ÓŞ@•)À  @lÈÀ  @-mñÀ  @ğBÀ  @¢óëÀ  @‚]À  ?äåşÀ  ?²9À  ?_ªÀ  ?r§mÀ  BÂ½úÀ  CÕÎÀ  ÿÀ  À  BŞ;­À  @'”¢À  @3¶­À  @çÀ  @:÷À  HÈÀ  G’FsÀ  IK4ßÀ  I)‚À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@šqí>û9eK€,€   d   ‚C³{}@N} "¿¦CTìÀE¯8ŸèMB¾’ñ@‹-k	
+İ#?¾€¦?êQÀ  ?¤{À  @rsÀ  @¹vÀ  @r±™À  @>À  ?çCÀ  ?¢İfÀ  ?ÿ
+‚À  ? bÀ  B¨!¤À  Bôr9À  ÿÀ  À  BŸ›XÀ  @Ò.À  @¢À  @AD©À  @KàĞÀ  GØ¹™À  G0A¼À  I(ªrÀ  Jr?À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¯Ï?	‡sK€,€      ƒCÄH)@N|’úTú%Dw	ÀEªcÒ®:,B¿Y-@‹%‹€ip@Ÿ@2%ÎÀ  ?õÆGÀ  @y(óÀ  @3+vÀ  @…T¬À  @B«À  @Ö÷À  ?ÃIîÀ  @¨eÀ  ?·ƒÀ  B÷£²À  C7zÀ  ÿÀ  À  BÈÆ8À  @µ XÀ  @·ãhÀ  @`À  @iG£À  H,ÕrÀ  G#À  I†îÀ  J{uuÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@²±x?;‡K€,€      „C¶··@N|øÑ…ÁD}£ÀEªBÆLcBÆ™Ó@ŠÛÉËXÛƒ@1(å@Q@À  @æØÀ  ?êŞÀ  ?ä]À  @!ñÀ  @¶À  ?¹¥HÀ  ?İÁåÀ  ?ç6%À  ?‘ÔÀ  ÿÀ  À  B²Ï¿À  BCcÉÀ  B±”ÁÀ  @TÀ  @’õÀ  @,™MÀ  @8fäÀ  H4{ìÀ  G À  IŒvÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¤š-?üŒK€,€   h   …Cºk¨@N|İšå2DEŸÀEªyN8TBÉ3Â@ŠÁUˆ@1¹?Óñ?ÜÈÀ  ? jÀ  @]˜À  @À  @]&pÀ  @ÛêÀ  ?İ$eÀ  ?ŸšÀ  @U¢À  ?±:5À  BêjÀ  BäêÀ  ÿÀ  À  B¢\'À  @ÂÆYÀ  @ÅuãÀ  @W¼~À  @aJfÀ  Gè¦jÀ  G@ßĞÀ  I58À  J)8ÜÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÆK6? yÃK€,€   ¿   †Cº#Ÿ@N|ß!WfUD—ÿÀEª6º)¨-BÉŠ
+@Š½èÇ4ç?µæ@@&—À  ?ÜÎÀ  @"âáÀ  @|®À  @!ØcÀ  @æKÀ  @èÀ  ?Û¥ÒÀ  ?ÇE¯À  ?—£¡À  BœÜ
+À  BÖÍ°À  B8nMÀ  B®2zÀ  @tÛÀ  @}P\À  @5$À  @@ÃUÀ  H6úŞÀ  GİåÅÀ  Ig_À  I‘½çÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A#®;?„øÅK€,€   p   ‡C¼ns@N|Íë–=DÃ)ÀEª)ötäBÊ¸è@Š±à¦?? Ä?ûGÀ  ?ÊX‚À  ?è¸†À  ?¼ë¬À  @AÀ  ?ØT¶À  ?ÛÔ§À  ?¬ºsÀ  ?¥¸¨À  ?v²À  B<y¡À  B¯»À  ÿÀ  À  BŒöÀ  @HiíÀ  @RªÀ  @AtÀ  @]ÀÀ  GÎ8À  Gs.ıÀ  I cÂÀ  Hê¢ˆÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@íÅI?@ùˆK€,€   n   ˆC£€@N}‰/¶E_C?ûÀE®¹"–6ÀBËÔm@Š¦œÍQŞ—@@*6@`uÀ  @H†À  @Ä@À  ?ûò]À  @cò´À  @v|À  @şBÀ  ?û©À  ?™LòÀ  ?V+FÀ  Bä7|À  C	+À  BwqÀ  B¾_ˆÀ  @7¾ñÀ  @BßşÀ  ?ïMdÀ  @ À  GôûfÀ  GG_îÀ  I>¨#À  InÑFÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@µ!Ï?w=K€,€  ß   ‰C£FÚ@N}Šİ¸)ŒC6BÀE®Ò°çöºBË©†@Š¨QßDÌ@â@DÆ#À  @$´’À  @;÷À  @ĞšÀ  @e˜À  @?ÉæÀ  @kÀ  ?öü^À  ?üVzÀ  ?İîlÀ  BØ#äÀ  C†À  B ˜¿À  BàsmÀ  @#À  @ b¤À  @‰F7À  @À  HÜ4_À  H•zZÀ  J+_°À  J%D—À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AI¡;?áÆK€,€   O   ŠC«BÉ@N}Nã|şİC(†ÀE®ø2{õBÉt@Š¾Â•§Ì@0w±@A®ÏÀ  @N>À  ?Ì’;À  ?¨~\À  @I3šÀ  @NÀ  ?§d—À  ?‹RŞÀ  ?¥
+À  ?LÅÀ  ÿÀ  À  B½BzÀ  ÿÀ  À  B’:À  @G‘íÀ  @QÜ”À  ?á’À  @&¬À  G¡=³À  G31À  Húø”À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@İvW?,uK€,€   •   ‹C®
+@N}:Jí¤CJ™~ÀE®›%İºpBÉg@Š¿KÆ3å@A,H@pÓ·À  @1_ıÀ  @änÀ  ?ÜÚ˜À  @s,À  @28AÀ  @ıcÀ  ?ÚèÀ  ?	§À  ?LöÍÀ  BÇoÕÀ  CÍÀ  Bp'VÀ  BËSŞÀ  @)ØÙÀ  @5Ô1À  ?áæ•À  @FRÀ  H°nÀ  GŠ<ŞÀ  IYløÀ  I2RnÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÈTÀ?(K€,€   V   ŒC³;½@N}úé
+’DãSÀEªÌn4ÁùBÌğö@Š›O.¼B?á1?¿õäÀ  ? Ş†À  ?ÑiÌÀ  ?¨¾:À  ?Öù²À  ?©‹À  ?»{zÀ  ? …À  ?®íœÀ  ?|ÉØÀ  ÿÀ  À  B’e¼À  ÿÀ  À  BpE+À  @T®«À  @^^-À  @ù¥À  @ «øÀ  G’LèÀ  G5T¿À  Hã·MÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ğ(q?'ğØK€,€     C¶u
+@N|úÆ˜sC©É˜ÀE­%L2Bßˆ.@‰Ş@0€@'ì@4ÆÀ  ?ñknÀ  @_Y±À  @¨À  @„wøÀ  @+=À  ?éüÔÀ  ?¼='À  @£OÀ  @{›,À  B´ƒÀ  C b_À  ÿÀ  À  B¹'À  AO[\À  AOı®À  AAÀ  Aë—À  IÜPÀ  HkIÀ  J^\©À  KpmÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@´V#?âGK€,€   2   C´»D@N}¼–y C¬ ÀE­ò
+“Bğ`.@‰2ôßoØu@œÊ@"éõÀ  ?ÅÓlÀ  @;TËÀ  ?Ú±À  @aÀ  @°jÀ  ?ĞÆ†À  ?€˜ À  @V½}À  ?ÂÀ  Bn•À  BßÀ  ÿÀ  À  B†µôÀ  A…*À  A}À  @nQÀ  @vÄ0À  GåGÀ  F#À  HŞjÀ  J‡Ï4À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@–{->í¼!K€,€      C¤X.@N}‚Â«@D"bÀEª%å¿™WB×Tñ@Š1¤WÒ_y?ÄÁ?Í¬¶À  ?›À  @eØwÀ  @ò7À  @eÍçÀ  @qÀ  ?ÍÍËÀ  ?šÍ¶À  ?×¶À  ?˜oÀ  B^ƒªÀ  BàF?À  ÿÀ  À  B›
+»À  @…À  @ˆù¾À  @6$4À  @A\æÀ  H à_À  G‹ËÀ  IH˜À  ItCÿÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@µ–¥?kK€,€  F   CŸ–6@N}¦z[öDgNÀEª%M^B×h
+@Š0â p	@°@ˆ©°À  @dˆÚÀ  @~ºÀ  @UtØÀ  @¸TÀ  @’zªÀ  @	
+âÀ  ?ÚÊÀ  ?ãŸÀ  ?¢’’À  CÄ«À  C#è0À  B¥5À  C‹zÀ  @ŒüñÀ  @¬ûÀ  @D3ºÀ  @N©UÀ  H¦&À  H)òòÀ  J5şÀ  J$ÓúÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@÷']?HK¯K€,€   0   ‘C˜@N}ßf¤äÆC?[5ÀE®¹×Î'BØÍ¦@Š"­f&ßH@5­É@ª9À  ?µDGÀ  @{}À  ?¤^cÀ  @÷·À  ?· qÀ  @O5À  ?¢oSÀ  ?=jóÀ  ?&À  B”XÀ  BÑÀ  ÿÀ  À  B{sÛÀ  ?ÊÊÀ  ?ğÉxÀ  ?Š,¸À  ?½˜àÀ  G8ÌÀ  F®ôVÀ  HF¬À  H=êÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@‘C_>æÈK€,€   2   ’C}[@N~şË€´CCu8ÀE®®£lÇBØ>@Š*
+ë£¢Ñ?ß§?¼ğ€À  ?u+À  ?Ëõ©À  ?™¤àÀ  ?ÈÙÀ  ?™ş†À  ?¿üEÀ  ?À  ?˜kóÀ  ??çæÀ  ÿÀ  À  BZÀ  ÿÀ  À  BWº,À  @6À  @AÁúÀ  ?ÎˆñÀ  ?óó(À  G<wÀ  FÈdzÀ  H’Z À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@®´?K€,€   _   “Cã@N}³<ôl¬D ojÀE©ëşÍSsBÚ¿ú@Šáúó¤@Z?é 7À  ?Ó èÀ  @õÉÀ  ?ÌQ¼À  @Ÿ«À  ?ßÜYÀ  ?ã¶ŸÀ  ?¾H–À  ?+ÓÀ  ?]§ŠÀ  BYÀ  B·â¶À  ÿÀ  À  B–À  @>LÁÀ  @IÀ  ?úÀ  @âÀ  G¿h˜À  GAriÀ  IöÀ  HóšèÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@·C¥?d_K€,€   b   ”CtÜB@N~½~ºöbD±ÓÀE« ÙæÃBŞŒu@‰è?ñQR©?¦µ?ûºİÀ  ?¦7À  @y>kÀ  @'Y%À  @ƒ¸%À  @,¨¢À  ?½*ƒÀ  ?ØëÀ  ?¢ ÒÀ  ?o×‚À  ÿÀ  À  Bæ7AÀ  ÿÀ  À  B¡õkÀ  @Cp‰À  @MğÀ  @	î~À  @qbÀ  GÔõşÀ  G/!‚À  I%¼…À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@·ò²?©~K€,€   t   •Cn[ƒ@N~ÕéÑ~D…ÀE«ù}¨Bç_³@‰€i%¥?m-?ê/ğÀ  ?Áí0À  @|ĞÀ  ?ÑÃÀ  @ G[À  ?ãRÀ  ?ßåóÀ  ?¬nÔÀ  ?ìß»À  ?°ÊBÀ  Bl½ÂÀ  BÃ\UÀ  ÿÀ  À  BJÎÀ  @“7À  @–yÀ  @W'İÀ  @`¼À  HªãÀ  GBÒÀ  Ia,¨À  I˜MÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@D,>û_9K€,€   Ö   –Co\8@N~Ò#tpÔDïPÀEªì¨,²ÊBëy¦@‰dÊéqH}?#x@MR`À  @âhÀ  @4dÀ  ?üªÀÀ  @s¢À  @&Æ À  ?ûÄ‘À  ?Â4ÃÀ  ?â÷óÀ  ?æÀ  B¿ xÀ  Bÿ#À  ÿÀ  À  B¹˜—À  @ŒéÀ  @B¼À  @=oÀ  @H]àÀ  H>Š¯À  GÒ’ÕÀ  I”IêÀ  Iê²KÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¼ÿf?ş+K€,€   Š   —Ck;å@N~á¥ì¸D]œÀE«)|$çáBîŒ*@‰EŒfä%?ğÄ@´À  ?¾x%À  @w(ÌÀ  @2TAÀ  @~ö'À  @9+ËÀ  ?àÜ.À  ?¢CêÀ  ?©[ˆÀ  ?dG”À  B£/À  Böí"À  ÿÀ  À  B²ÂİÀ  @MD`À  @WIZÀ  @ÃrÀ  @À  H	jÇÀ  G€ZïÀ  IUã¡À  IU–À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ãbp?`RK€,€     ˜Cgã|@N~î1İdXDÕÚÀE«•¾­BğG@‰6\2w@Ï¯@—*¢À  @f#4À  @‰®‘À  @O«À  @¨O
+À  @‚ŸƒÀ  @jãyÀ  @&$À  @¹GÀ  ?òÎ~À  C>å®À  CMšÀ  C÷ÇÀ  Cì%À  @Ç$,À  @ÉÄÕÀ  @–à1À  @šSËÀ  HüÙÀ  HƒÍÀ  JDÇ=À  Jê¤WÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ç¬v?!6¦K€,€   °   ™C‡™@N~ZëEKDö¸ÀEªË–‰­Bä€@‰«¹F_ ?6‹@0'•À  @ğEÀ  @)À  @Š~À  @Dê®À  @i—À  @R±À  ?âå&À  ?{®'À  ?VŠòÀ  BÂıÎÀ  BõİÀ  BqmïÀ  BÃƒõÀ  @4qÀ  @÷¨À  ?ï×·À  @\æÀ  H'QÀ  GĞ,{À  If™¸À  I0'À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@îá¿?B0]K€,€   Ë   šC”ãî@N}öÇş‘DíúÀE©üoÇï˜BäXü@‰­FîNZT>@@MèïÀ  @#ÓYÀ  @R9À  @ÈÀ  @M®ËÀ  @%àtÀ  @U´
+À  @kÀ  ?Ÿ"À  ?{oÀ  C¿8À  CânÀ  B£+¿À  BÛ–À  @?—eÀ  @JJÀ  @À  @ÏÀ  HM³òÀ  GÈOÃÀ  I €À  I™MçÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@×5G?0K€,€   +   ›CHŸ@N~ åÕéD|øÀEªš,+€’Bä¡ø@‰ª`µLVi?7˜©?ôÎÀ  ?¢¾…À  ?ÑFÀ  ?›u—À  @‡¢À  ?·ùõÀ  ?®™À  ?£2À  ??(­À  ?ğÀ  ÿÀ  À  BÍzÀ  ÿÀ  À  Ba<À  ?ÍišÀ  ?ó À  ?–œÀ  ?ÆwÀ  G'dÀ  F³šSÀ  HPÏZÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ª@a?	ÒäK€,€   š   œCs@N~@â SCˆ}1ÀE­Úõ‡çBëQ	@‰fgïjÅ@ôö@4©pÀ  ?şe|À  @-³À  @ ÔËÀ  @RsLÀ  @XÀ  @ÓEÀ  ?·„eÀ  ?øœmÀ  ?–üÀ  BÁ&QÀ  B÷{ŞÀ  ÿÀ  À  B®‡ŒÀ  @š¥¼À  @@À  @4ìÀ  @?îbÀ  H¯tÀ  GŒ+À  IpÄeÀ  J,kÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@«´š?Â÷K€,€   ¡   C³O@N~†ãÎçDÎ3ÀEª·wü™BëéÈ@‰`VäÎ—@i@‚WÀ  @•çÀ  @oÆáÀ  @\u$À  @†ÿşÀ  @zùÃÀ  ?®DÀ  ?’¨CÀ  ?¯UæÀ  ?8•À  ÿÀ  À  Bß²£À  ÿÀ  À  BÅÚ:À  @U9CÀ  @^â¿À  @=ïÀ  @GÛĞÀ  Gìt³À  G£¶´À  I8tÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Æ•ç? 5ÑK€,€   m   C‡a.@N~\>oPaD78ÀEª$²‹ºBëŞò@‰`ÄÅhª?Ø™?ÉmÑÀ  ?—ˆTÀ  @‚À  ?Õ2^À  @sÀ  ?ÕıÀÀ  ?ÈI™À  ?–h/À  ?Û%çÀ  ?œôÀ  A÷™À  BµÆâÀ  ÿÀ  À  B‚Ó4À  @‡t°À  @‹J=À  @<©×À  @G„¸À  GÕ½À  GYÅÀ  I&WÕÀ  IÈÃÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ºŞ]?ãK€,€   3   ŸC‚0#@N~ƒ4_»eDß»ÀEª>‘y²BêT @‰psç†ß?ö]Ÿ?³ÓÀ  ?}3ÿÀ  @NĞËÀ  @ÄIÀ  @[¾|À  @	\âÀ  ?[ÊÀ  ?1ævÀ  ?rªÀ  ?:şVÀ  ÿÀ  À  B ,åÀ  ÿÀ  À  BcüäÀ  @ékÀ  @<¥À  ?ÇÕÀ  ?í´À  G9ûmÀ  F½6À  H½€À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¡eg?'½K€,€   /    C’@N~6_ D‚ÙÀE©ö²}BéÆy@‰vn¥L ?I$O?êt˜À  ?¢ÓöÀ  ?Ëå À  ?¢ÚÀ  ?ö>“À  ?´Å4À  ?¸‹À  ?¬ÃÀ  ?˜0¾À  ?4!1À  ÿÀ  À  B›=}À  ÿÀ  À  Bj8À  @6?œÀ  @Av·À  ?¼_À  ?äúàÀ  G3À  FÂËŞÀ  Ht®(À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@´w|?Ê½K€,€   Ö   ¡Cc(@N~ÿóMäD
+†ÀEªß×ƒe”Bñª@‰,WÈP!@(KL@:‘vÀ  @U‘À  @ ˆ%À  ?òµ&À  @JßLÀ  @¸QÀ  @:À  ?ãŒÿÀ  ?Ó*¨À  ?£UóÀ  BÅ&3À  BøiåÀ  B]q±À  B¹ØÑÀ  @‚;ËÀ  @†7À  @E9DÀ  @O¡³À  HA*/À  Gè‰ØÀ  I–T‚À  IÏGOÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@å÷#?<VK€,€   ã   ¢CY¥m@N#¨S3D	ºPÀEªãü ÓˆBôÆ@‰6 àš@&ìâ@%´BÀ  @ƒÀ  @+›À  @İ‹À  @1‹À  @×äÀ  @@QÀ  ?÷!À  @¯ÖÀ  ?Ç	¸À  BÃSåÀ  Bó^˜À  B… •À  BÆsÀ  @¢í[À  @¦ çÀ  @tŒ&À  @}!À  HP¡)À  H\3À  I¢]“À  J ´óÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A*¦?\?K€,€     £CbXû@NûÜªD˜—ÀEªÏ•$ÁŒBú0@ˆÏ,€ù¡=OÔj@ĞsÀ  @¾ºÀ  @A³À  ?Ú9~À  @r^À  @ÑHÀ  @01À  ?Ú	ÉÀ  ?ış°À  ?Ğí¦À  BšôÀ  BÓ2ÄÀ  BE6¦À  B´´MÀ  @$lÀ  @¡pEÀ  @€ÄSÀ  @„Ë[À  Hv?kÀ  H'M±À  I¿¤NÀ  IîéxÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A ø?QÁK€,€   ½   ¤COY@NJTÌÕhDøÀE«q¥4BûÖ@ˆÁ2·mÀH@F´@8Ö:À  @¼£À  ?Ñ;BÀ  ?µ_èÀ  @8ĞÀ  @Ñ#À  ?ÑâÍÀ  ?µ"«À  @âtÀ  ?Ä}À  BVûÎÀ  BË/À  ÿÀ  À  B¡ÀÉÀ  @±k/À  @´\ïÀ  @p¥À  @y? À  H9òÀ  GÃ¸ßÀ  IçÀ  IÑ¾7À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@àĞì?6şÄK€,€   ¸   ¥CT­@N6R}D¼‚ÀEªù»µ˜¶Bø~š@ˆàd9¦_"@8‚@dóÀ  @(àäÀ  @)?À  ?á’ÆÀ  @€`À  @,\ÓÀ  @ÒÀ  ?ÖÆ]À  ?©‘ôÀ  ?‘ä¢À  BÌXçÀ  CÄ~À  B_y0À  BÆk¶À  @MŒíÀ  @WˆÀ  @-º4À  @9uiÀ  H ñÚÀ  G½PÀ  Iz‚…À  I…ÍÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ò”ı?,£‡K€,€   v   ¦CWÌN@N*›™åïD…ÀE«ò±ZwBşM@ˆ¥W"@>Ayû@,«À  @ïÀ  ?Ö²úÀ  ?›·ìÀ  @-ôZÀ  @¾˜À  ?Ñã3À  ?•îjÀ  @F÷JÀ  ?¼L@À  BMÒçÀ  BÅÊÀ  ÿÀ  À  B’”À  @úÕ_À  @üì´À  @fd´À  @o]À  H$OYÀ  GE¦~À  I¿pÀ  JH¯úÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¯îD?±K€,€     §CX¹‹@N'Pé%D]ªÀEªÒo‰BşçB@ˆŸ7s?fÛ@HÆJ@@‘bÀ  @k\À  @åĞÀ  ?ìa½À  @@õÀ  @k~À  @ç‘À  ?ìa–À  ?êg¼À  ?°BÀ  BÉ.ÿÀ  Bùo»À  BvrÀ  BÁ*À  @‘h¾À  @”üÇÀ  @VrÿÀ  @`ôÀ  H„¼ùÀ  HåZÀ  IÎ›@À  J×şÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A*üÍ?ŒZ÷K€,€  `   ¨CJ7@N^&™DÜÀEªû¡Æ—C 2@ˆ’]‡Kµ?„4Ì@cñÀ  @CçıÀ  @°“=À  @ŒËÀ  @Â"†À  @ŸœrÀ  @"­eÀ  ?û"½À  ?ÇØ+À  ?˜±ñÀ  C ˆ5À  C7DàÀ  BßJâÀ  CÿKÀ  @u›¢À  @~
+‘À  @6íêÀ  @BôÀ  H±‘+À  H?dÀ  J
+0ôÀ  JwÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A4ô?mEQK€,€   z   ©CYi@N%ü_~£DT”ÀEª¦ÉèŒ%C Š’@ˆ‰œ°@áR@!ÌÀ  ?ùtÀ  @èöÀ  ?ŞzÀ  @G4À  @*&À  ?Ô¤À  ?¥§À  ?ëaÀ  ?›…–À  BltºÀ  BÓìÀ  ÿÀ  À  BŸÀ  @’À  @•›@À  @:¼åÀ  @E²ÙÀ  H,À  Gr’À  IRe
+À  IœPUÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Öº?/ùK€,€   a   ªCQ;Õ@NCBrr}D_8ÀE«)føñ C¨%@ˆr]µÈ¦8?B¿@û(À  ?ĞoÁÀ  @]™®À  @=îÁÀ  @ræOÀ  @Pi¡À  ?¯>uÀ  ?l¥À  ?Ú+À  ?“”¸À  ÿÀ  À  BÔÄíÀ  ÿÀ  À  B¡òÀ  @†Ğ½À  @ŠªÓÀ  @0À  @;š­À  GşÍÀ  G KÀ  IFLbÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¤I‚?öK€,€     «CVdÚ@N/Ú§¹OD“ŞÀEª¹î¦"øC[|@ˆd™¯l?tÆ@ŠiÀ  ?õ¥’À  @4OÀ  @ÈãÀ  @FOûÀ  @!À  @şMÀ  ?Í†éÀ  ?ã%À  ?µW’À  B´(pÀ  BìÚ[À  B'OèÀ  B¸$À  @Œ­XÀ  @_jÀ  @]1dÀ  @f…mÀ  H{½õÀ  H”öÀ  IÃêñÀ  IİĞÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A"ç[?„‹×K€,€  I   ¬C>!H@NŠøb D® ÀE«AqÄ$C9²@ˆRv€&}c@@*Z@Bw[À  @&À  ?êJ|À  ?Ë5ÁÀ  @BÁÁÀ  @'#ßÀ  ?éŒ7À  ?ÇÉÀ  @¹€À  ?İ\ªÀ  B”¡¤À  BÛñ"À  A÷>À  B¼snÀ  @¯ëbÀ  @²ãsÀ  @ˆçÀ  @Œ²yÀ  H£ÚgÀ  H]Ú3À  Iÿ	iÀ  J‘dÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A8qp?–.K€,€  ˆ   ­C3ê†@N±Wƒ*D úÀE«M}]0C˜@ˆ-rŒ˜¡@?ÇÃ3@0{mÀ  @r¸À  @cEÀ  @võáÀ  @CÖÀ  @v÷êÀ  @0îÔÀ  @oÀ  ?û?+À  ?ºÏ7À  C_pÀ  C$Ã:À  Bân5À  C
+3À  @œ[×À  @Ÿ±À  @dmQÀ  @mx¦À  H°Œ¯À  HAo–À  J	f;À  J\P>À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@×°‰?.–ŸK€,€     ®C59A@N¬hì5ÒDÀE«è°Å×C€Á@ˆ$#¥O}Å?ò»ø@AÀ  ?àï&À  @0¡òÀ  @†zÀ  @4!{À  @!IÀ  @QòÀ  ?Ó´#À  ?äjÀ  ?¹ªÀ  B£1À  BŞ˜`À  BGC¡À  B½HºÀ  @VÀ  @‘.À  @béÎÀ  @lıÀ  H„õÒÀ  H- À  IÎó¼À  IÊ¥À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A,ğB?Œ™1K€,€   ¢   ¯C*­C@NÔˆ¢aDEœÀE«@P“èWC±@ˆ®“CmÊ@k:@$À  ?ü‰NÀ  @%|™À  @º›À  @?À  @ƒEÀ  @xäÀ  ?Ì%óÀ  ?£¾rÀ  ?biÀ  B°e­À  Bèç]À  Bì&À  B´+àÀ  @EÅÀ  @P&ˆÀ  @À  @$yÀ  H±À  G³/(À  Ix5À  IU×ÚÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A%â?[á&K€,€  V   °C7èÄ@N¢VÈ$:DòÀE«.Ë	øC¯Ù@ˆ4¼ ‘õ@GÊî@°œÀ  @—µÀ  @`  À  @G<§À  @¯ÚbÀ  @—¹jÀ  @`úNÀ  @G/`À  @È7À  @`ÁÀ  C>h¦À  CM  À  C"^lÀ  C3GvÀ  @Ç7iÀ  @É×ÒÀ  @¯x©À  @²r£À  ItüÀ  HŸ¯EÀ  JTeÀ  Jê7âÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ûtt?M{K€,€  ™   ±C(MÙ@NÜñW¬xCşºÀE«X‰nUkC	›Ú@‡Ğ¡2ö
+@Ê@MÔâÀ  @>wÀ  @bBkÀ  @HàĞÀ  @‡`uÀ  @uüÀ  @¼À  @ ×À  ?Ä}¿À  ?²ˆ‹À  Bè%À  CˆÀ  BÆBTÀ  CİÀ  @q2EÀ  @yÇYÀ  @Yx,À  @bógÀ  I.ì7À  I
+(À  Jˆ"À  IÑJŞÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Aë%?ÒÕeK€,€   Š   ²C"5i@NóÑ²mDÌ5ÀE«:ÉñİC	Mj@‡ÖÜ‹0£?êŒš@"­À  ?èJÑÀ  @ˆ@À  ?ë`«À  @<.À  ?ëHÀ  @öEÀ  ?ètÀ  @áéÀ  ?²VãÀ  B±ãÀ  BåÀ  B5LâÀ  Bª‚ŞÀ  @ºttÀ  @½B:À  @Y6LÀ  @b´HÀ  H>À  G….sÀ  Il÷À  J?­àÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ü¼`?MòªK€,€  (   ³C+À@N€>äÂD öÀE«H·öCËv@‡¤+6N8Ï?Òv€@`a6À  @?•À  @”{À  @ƒ­À  @“ÔİÀ  @ƒØµÀ  @c2<À  @?°À  ?óÙıÀ  ?ØQğÀ  C.ºÀ  C<ÿ‘À  CÂñÀ  C#´fÀ  @—À  @šıĞÀ  @…›UÀ  @‰~À  IBrÀ  IC_À  J—ÔÀ  JwÒÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A5¡å?“lK€,€   L   ´C *Ó@Nû€9Cú7fÀE«mÉ".tC«!@‡¦¼Ñ’^q@4Ûİ@‰&HÀ  @->4À  ?ãÀ  ?¡¡ŞÀ  @‘|`À  @5'yÀ  ?‘DªÀ  ?t6œÀ  ?YkÀ  ?2ÜçÀ  ÿÀ  À  BÔÀ  ÿÀ  À  B™a0À  @'ŒÀ  @3®¼À  ?º©À  ?ã^¤À  GªÇOÀ  GfÖÀ  IèwÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÆIŒ? ÂÄK€,€  İ   µC'Í@NŞÏÇœDìÀE«"CDCV$@‡­}hÎ£>Hom@	°À  @coÀ  @/-ûÀ  @XÀ  @‘æ¡À  @fQÀ  @(ÒFÀ  @®hÀ  @
+¨PÀ  ?äºÀ  CG»À  C!ÙøÀ  BÈø°À  C nßÀ  @­?(À  @°B¿À  @µxÀ  @‘`ÔÀ  Hà$çÀ  HíÀ  J.p“À  JƒnÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A92?k\K€,€   Z   ¶Cm¬@N€:U¬’wCÿ¾ÀE«PìÍ®C$@‡u£´‡@1Cg@	T‡À  ?Õ8-À  ?ãì&À  ?¢sëÀ  @tyÀ  ?İ…À  ?Ö¯šÀ  ?—ôÀ  ?«–À  ?iÂÀ  B>%@À  B´YlÀ  ÿÀ  À  B…|¯À  @P3êÀ  @Z`À  @ ŞÀ  @mÀ  Gª,ÕÀ  G1WŠÀ  Ip?À  HÿxºÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Á¸?+™K€,€   T   ·Cc O@N HŞÇoCv!(ÀE®$?°Bğ©¨@‰0	¢šÙN?ó¿?ÓqÎÀ  ?•¢ŠÀ  @z¿À  ?ÓğúÀ  @!%À  ?ÚËÀ  ?Ì€ŞÀ  ?‹kšÀ  ?¡ä¸À  ?eCÏÀ  B&TÀ  B»6gÀ  ÿÀ  À  B~¹xÀ  @CJåÀ  @MÌVÀ  @v›À  @¸aÀ  G¤ÕùÀ  G>È@À  I H}À  HÄÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@£Áç?nÙK€,€   Ä   ¸Cm@@N~Ø¯õ°D2ûÀEªÓìpÂ¢Bó/@‰f2a¢%@2) @Š‘fÀ  @_€2À  @'‹ãÀ  @ŒÀ  @n¾À  @júãÀ  @ó§À  ?İÜ°À  ?çaåÀ  ?«¹ÃÀ  C w«À  C?gÀ  B–œ‹À  BëwªÀ  @p À  @“íÀ  @PlÀ  @ZKıÀ  HT„®À  G·wêÀ  I¥dVÀ  J#Ù¢À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ç˜ä?"WrK€,€  9   ¹Csu@N~Â¾„D™ÀEª¹¹¥‚wBóš„@‰!bå÷?ğ;ü@ÂóÀ  ?ù?À  @v·NÀ  @KÀ  @~>À  @QÿyÀ  @¡nÀ  ?á3²À  ?®ÒÊÀ  ?¶#À  BÌ)„À  CbgÀ  B‘] À  BàD À  @T‹À  @^<À  @,xÀ  @7ôáÀ  H˜ÕÀ  HI´À  IíâÀ  IîÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%AZ¶Ô?±NXK€,€   ‚   ºCróq@N~Ä£sr%Dœ·ÀEª˜Í+§ÄBùL+@ˆØ9µŒ0õ@Ï@aÀ  @_ÁÀ  @>òJÀ  @+i6À  @JòèÀ  @GKÖÀ  @ZµÀ  ?Õ^ÉÀ  ?ŸA_À  ?› hÀ  BÊÍ)À  Bü5ôÀ  Bqß_À  BÔ©‡À  @?ÁbÀ  @JqÖÀ  @:àıÀ  @EÔñÀ  HUÀ  Gve¾À  IM‰ŞÀ  Ig ^À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÅÆp? ¬K€,€   €   »CCÀ@NxÈ-1éCŸYdÀE­^Bı +@ˆ²øYàX@çc@bšøÀ  @,e•À  @{¶>À  @58ZÀ  @£qÀ  @p'À  ?µÑwÀ  ?‹Ô‹À  ?¬ÎZÀ  ?…½iÀ  ÿÀ  À  Bû*TÀ  ÿÀ  À  B¼û#À  @QÜ8À  @[«–À  @!À  @*pÀ  HÍÀ  G[À  IY™À  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@™§>ùùK€,€   0   ¼Ceá¸@N~õ²†ğrD3 ÀEª‡uÓ2JC -õ@ˆiº‚Òx@*7ğ?Ğ¸{À  ?•/wÀ  ?°V÷À  ?ŠDûÀ  ?ÌÒlÀ  ?™nÀ  ?³1À  ?…í“À  ?|e“À  ?;]À  ÿÀ  À  B‹¤À  ÿÀ  À  BPÖÀ  @³÷À  @ l=À  ?Ç®†À  ?î,÷À  G>±IÀ  FÀ|•À  H”gõÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@½ê%?FK€,€   (   ½Chhe@N~ìdãJwC¢MÀE­OC[RC ä"@ˆğg¼¤ƒ?¯`]?¢…!À  ?`e)À  @§tÀ  ?ÅZËÀ  @PÀÀ  ?È7hÀ  ?”‹æÀ  ?VæÀ  ?}‹QÀ  ?4åÀ  ÿÀ  À  B¦À  ÿÀ  À  BUyzÀ  @€	À  @!&ñÀ  ?¼€–À  ?äâXÀ  G¼„À  F™Û.À  HgóÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@†à>ù¢=K€,€   6   ¾C|÷p@N~Ÿ/Š²=C£a½ÀE­Hï³ãC]'@ˆxRıï+@7Dk?ı²5À  ?·w)À  ?òe4À  ?iNÀ  @©‚À  ?¹™‹À  ?æ×9À  ?šãÀ  ?ìµÀ  ?0ó¾À  BQR×À  B³ÉµÀ  ÿÀ  À  BwGrÀ  @ŞIÀ  @%(ÛÀ  ?·±©À  ?àğÒÀ  G!óçÀ  FÊ/À  H|-À  H•¢ÌÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@©q?Â‰K€,€   t   ¿C71&@N¥24ÁC®ÚÀE­	dÈC'C@ˆhDCñü*?Âï©?ÜdQÀ  ?¤?±À  @>¶ØÀ  @©À  @>ÎjÀ  @©…À  ?ÜÓÀ  ?£îÀ  ?ªø¼À  ?t§ÕÀ  B*À  BÓYØÀ  ÿÀ  À  B™9@À  @OkÀ  @YVÀ  @NHÀ  @€¦À  GÖšZÀ  Gb8lÀ  I'ªÀ  I,;åÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@°ı}?
+1K€,€   t   ÀC-@¬@NÊŠ¨‚C¤£áÀE­A'æè9CE#@ˆ=7ó{Ì>6d
+@ßÀ  ?Áæ°À  ?óâÀ  ?°ıÀ  @WÀ  ?Âx+À  ?ïøqÀ  ?¯v<À  ?ÅÔºÀ  ?©f7À  B^—İÀ  B¶çÀ  ÿÀ  À  B†³ÛÀ  @rõ«À  @{{WÀ  @MRÀ  @WVîÀ  GÌx—À  Gx…uÀ  I!À  IK NÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ª_N?¡GK€,€   Ì   ÁCI¥×@N_ÀÃ
+FCÿÀE«SC5C\(@ˆ'òyà?!¸¼@ À  @+¨ƒÀ  @B®`À  @+ÖÀ  @ zèÀ  @?­ÂÀ  @&Y=À  ?üçÀ  ?şÜŒÀ  ?­úÉÀ  CR
+À  C(jÀ  B¤şÀ  Bâ¬xÀ  @´]À  @¡ıHÀ  @SkÚÀ  @])À  Hn]¦À  Gªc`À  I¹ûÀ  Jf·À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@˜>P>ó$K€,€   ô   ÂC(_Æ@NÜÑÇ@C»ƒÀE¬ÇføC’¿@ˆ"µ®ï3ı?}úß@4ØÍÀ  @
+­³À  @oõGÀ  @; À  @ÆaÀ  @Y yÀ  ?ÎµïÀ  ?«_FÀ  ?ªsXÀ  ?ØÀ  B„À  Bù¬À  ÿÀ  À  BÆßyÀ  @N¹PÀ  @X­À  @*ñ²À  @6Ú£À  HfïÁÀ  H|·À  I³¹ÕÀ  I+ŒÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A,çµ?Šù K€,€   —   ÃC8à@N°Ò$®DÔQÀEªíÆü\¡C–W@ˆÂe¾»>‰Ní@< À  @J•À  @ šÀ  ?Ãb4À  @@¿XÀ  @®?À  ?ö×®À  ?¸®ğÀ  ?¢ ÊÀ  ?z´À  B¡óÀ  Bàò(À  ÿÀ  À  B¬šÓÀ  @Cp~À  @MğÀ  @†}À  @X»À  H ¹‰À  G¡ÌÀ  IH\À  I>MÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@×Ùö?/¾ßK€,€   Ç   ÄCAW.@N~çä2D	ÆÜÀEªão5miCú™@ˆuoßr@?\X@;"¤À  @Ç§À  @À  ?Ì!ÏÀ  @=E„À  @·ÈÀ  @³HÀ  ?É^¨À  ?Ì|ÛÀ  ??´À  B©-À  Bä‚"À  BZ7À  B³VÀ  @{µVÀ  @øĞÀ  @=À  @GäİÀ  HC¯`À  GâîÀ  I˜J¡À  I¦{¯À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@âÂŒ?8óØK€,€  ½   ÅC*£@NÔ;DØœCæ–ŸÀE«Øı"yjCØÂ@‡à!>.Ã²?ş@[ÅÛÀ  @8]àÀ  @şXÛÀ  @Â&QÀ  AÃÀÀ  @Ìá À  @>ÑÀ  @ÚpÀ  @•"À  @ì×À  C"g@À  CEŸ„À  CJ¬À  C(5»À  @Ã.À  @ÅÆœÀ  @¡ğ“À  @¥)À  HÒ)óÀ  HU<?À  J#CÀ  J¿–ƒÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ö¶?BçK€,€   N   ÆC®@Nı|øƒ¹C°eYÀE­ ñ–€$CZQ@ˆÚ›ÍLÇ?Å¡?Û¢hÀ  ?¤„MÀ  @ØÀ  ?¶é$À  @ ÎÀ  ?¹9iÀ  ?ãšyÀ  ?¡è5À  ?°™tÀ  ?t±¼À  BKƒïÀ  B²ğÀ  ÿÀ  À  B|EÀ  @VçÀ  @`~À  @U5À  @†ñÀ  G¥2İÀ  G¢ÂÀ  I ÈÀ  I¨iÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@£ ï?6IK€,€   ?   ÇC8‘ @NŸÿÑ±œCÁÈWÀE¬¢ß£®C*O@ˆT?yôH?qFŞ@×ÑÀ  ?ÍPßÀ  @*ÒüÀ  ?æ•ÓÀ  @JÚÀ  ?ÿåÉÀ  ?İıŒÀ  ?¬¾’À  ?ïö‘À  ?©ÊƒÀ  B‰¶À  BÚjVÀ  ÿÀ  À  B™Q{À  @•ĞÀ  @˜… À  @MØRÀ  @WÖnÀ  Gv¹3À  Fàd»À  HÀÀ  I¼Ç{À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¦ªÄ?ëK€,€   i   ÈC"EÌ@Nó­^bCÓƒ.ÀE¬A)¡OC°@‡ã\[z¹Æ?U4¸@h”À  ?»:ƒÀ  @—ëÀ  ?À“‡À  @$}À  ?ØOUÀ  @ ı!À  ?Ÿ7hÀ  ?Åó¿À  ?¦œÀ  B‡½{À  BÆİ½À  ÿÀ  À  B‡T<À  @s{À  @{¢ÆÀ  @I™½À  @SË$À  GÊ!OÀ  G7X§À  IN¯À  Ix¬wÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¯ñ?
+ËgK€,€  È   ÉC$“Ê@Në¶»CÛMÀE¬1œj–C	ì+@‡Ê?¦‘]?­Ã6@,Æ=À  @í_À  @Ò¶öÀ  @¦å¨À  @ØwïÀ  @ªNÅÀ  @Œ‰À  ?æöÿÀ  ?Ñ4¾À  ?JÀ  C“·À  C4…	À  BËèÀ  C yÀ  @€òìÀ  @„ø‹À  @>ĞüÀ  @I0À  Hİ¦À  HxLşÀ  J,åÀ  J4¥À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A X?u§¡K€,€   œ   ÊCå\@N€•åµC×eÀE¬.ÆµÎC@‡³#ûé§'@4i~@+YÀ  @–À  @LBÀ  @	rŸÀ  @3'şÀ  @èõÀ  @=IàÀ  @[3À  ?¡î„À  ?b²™À  Bâ]À  CI¶À  B˜òÀ  BÓ/ğÀ  @CXÀ  @MØÊÀ  @ £aÀ  @¨À  H	e§À  G›[îÀ  IUÛ§À  I…ÜÙÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Íœt?#ªK€,€  å   ËCpÆ@N€/¼_˜Cã¯hÀE«èÓAaíCK@‡šx1Ü’>¾B@Hô0À  @"D·À  @4]ğÀ  @KÀ  @OÔÀ  @$ÎaÀ  @-ë­À  @r¡À  @w´À  ?ÿ˜ÆÀ  Bë&À  C
+]×À  B«±#À  BánÀ  @ÆÏ¶À  @ÉqzÀ  @Ÿ.xÀ  @¢tëÀ  HçkšÀ  H“£À  J48À  J
+&À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A,#~?ˆ˜WK€,€  ·   ÌCW¹@N€UŸ+CÛúgÀE¬èNÓ/C.è@‡œD—
+w±?ˆéZ@ BøÀ  @
+À  @ZW¬À  @;ÿRÀ  @nôÀ  @M¼À  ?ş›À  ?ÛÂ&À  @KİÀ  ?ö¢ÎÀ  B¿îşÀ  BşMÀ  B‡8ãÀ  BÛGÓÀ  @´ˆÖÀ  @·mÈÀ  @™]NÀ  @œÂáÀ  HÑ- À  Hû	À  J"ÊÀ  JAãÇÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A^w$?¯ÓvK€,€  `   ÍC
+ò@N€Nœøˆ9CàzÀE«úT_™pCõˆ@‡Œ|ÉÆf>¯}Ò@†U+À  @ZyîÀ  @'h«À  @ <À  @‹ıÀ  @d‡¬À  @úPÀ  ?ß¯À  @!‘ŠÀ  @Ø0À  BıñÀÀ  Cn0À  B•ÿÀ  BèÖ‚À  @ÊÍîÀ  @Íb™À  @¨PÀ  @«içÀ  HŸ¾RÀ  H4tˆÀ  Iø£ÚÀ  J¡ÜÚÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@øŠl?D—»K€,€     ÎCŞ†@N€r‡CébuÀE«É³Ñ]+Cß¶@‡8‡Êâ@/Ìw@cHÛÀ  @=|À  @"éÇÀ  @¢À  @i~À  @G©ùÀ  @İôÀ  ?äÆQÀ  ?Ï‘ÜÀ  ?—L»À  BêíÅÀ  Cá³À  B‘^oÀ  BÜh}À  @ÀÀ  @ƒîMÀ  @5ÏÀ  @@TŞÀ  HcÈ	À  H)lÀ  I±E:À  Iî#eÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@»rU?]ØK€,€  N   ÏC!7D@N÷–	¥†CïƒÔÀE«¨;î C@‡‹UnuÃ?¦¡m@R#©À  @)Á¥À  @¨¡À  @“À  @¯AÆÀ  @–ıÀ  @9ôÀ  @*õÀ  @MLÀ  ?ğ,™À  C'99À  C9¾ À  C¡ÜÀ  CÙÏÀ  @¯_‚À  @²YçÀ  @•)õÀ  @˜§xÀ  ILÙ%À  I3ÃÀ  JŸl8À  JŸh À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A…L.?Ó­¦K€,€   v   ĞCÒš@N€b#İD‰2ÀE«2z]q!C
+Lö@‡Âñ5—ô@7@¹ûÀ  ?ÒÿÀ  ?ïe2À  ?¼ÛPÀ  @
+’)À  ?ÓÙzÀ  ?ëFÀ  ?ºĞmÀ  ?‘¸À  ?nFÿÀ  BdğµÀ  Bº5À  ÿÀ  À  B‘éÀ  @-~aÀ  @9=`À  @ÔñÀ  @rÒÀ  GŞëAÀ  G6ÈÀ  I-|{À  HÕ–À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%Aÿˆ?etK€,€   Ù   ÑC‹®@N€j¶ğ¢Cúˆ¦ÀE«l7C‡µ@‡€ß®*Îq?5î@eõOÀ  @/6ÌÀ  @e¢ÀÀ  @!+jÀ  @”ÖÚÀ  @R=CÀ  @µ”À  ?ßa÷À  ?»UÀ  ?€tÂÀ  BéÛÀ  CÂÀ  BÒ°À  Bß}À  @?vÀ  @IÇrÀ  @ÖÀ  @#JôÀ  H/¾À  GæşšÀ  IˆC6À  I„—À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ã´F?6£¹K€,€  ‡   ÒBñt±@N€”*­÷Cù)¹ÀE«s`…CL‰@‡q<WP @>Àg@fœEÀ  @/Ñ—À  @hÖÀ  @"ÜBÀ  @cWjÀ  @0(/À  @müRÀ  @"~À  @ÒmÀ  ?ÈDóÀ  CwHÀ  C)^À  BÇÕîÀ  BöÀ(À  @¦ı*À  @ª'À  @v*§À  @~”ÚÀ  HºÎÀ  HFLaÀ  JagÀ  J„£ŒÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%A}?RÉ	K€,€      ÓBïn@N€“d¯tCôœ·ÀE«Œ[¢4³Câ@‡`†t±§??Æ@=ÿÀ  @ä6À  @D}^À  @ÓÆÀ  @X–ÃÀ  @1ä(À  @(ú	À  ?úª—À  ?æèàÀ  ?«`€À  BìàÀ  CTÀ  B›p®À  BÙÅCÀ  @!ÁÀ  @’ÄÀ  @Oõ7À  @YÚ…À  HxÀáÀ  HµOÀ  IÁ—…À  JhæÀ  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@Ü•?.?K€,€   <   ÔCQ%@N€`RƒšCõåºÀE«…Yë‘ØCº@‡vğá~A°?’ŒÛ?¾²HÀ  ?Š¬ À  ?Ü„ÀÀ  ?˜é<À  ?ã9CÀ  ?œc{À  ?¶8À  ?†¼æÀ  ?SÀ  ?zpÀ  ÿÀ  À  B”MšÀ  ÿÀ  À  BSµÀ  @>18À  @HööÀ  @c8À  @8†À  GXNGÀ  Fñ‚À  H¨VìÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@ÂĞŞ?ç¸K€,€   <   ÕBÈy(@N€Ü™CçøpÀE«Ña;PÀCùE@‡wÙî‹Åt>2E?ù
+¥À  ?¼IÀ  ?³2À  ?‰°¦À  ?ıZ	À  ?½­À  ?¬ÂİÀ  ?‡ÃÌÀ  ?ª¦À  ?WX&À  ÿÀ  À  B˜¥À  ÿÀ  À  Bj
+ZÀ  @NüïÀ  @Xí‘À  ?ñ ,À  @ßSÀ  Gw–¥À  FëêÀ  HÀ¯kÀ  ÿÀ  À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¼{j?ı·K€,€   L   ÖB»m@N€õ«yÍJCü`ÇÀE«aë£´EC`@‡`¤Á©Vo?Ñ4X?ókiÀ  ?¥qEÀ  @JS¯À  ?õ¬(À  @J—¢À  ?õòÀ  ?ò‡eÀ  ?¥	7À  ?xŠuÀ  ?J[À  B¢AèÀ  Bä˜^À  ÿÀ  À  B’ê^À  @ÕÀ  @øÔÀ  ?Ş}À  @ êÀ  G—‚)À  G
+t¦À  HëÒ‚À  HĞ×À  À  À  À  /data/beegfs/astro-storage/groups/schinnerer/hughes/phangs/cprops/ALMA-LP/DRv3p3_cubes/ngc1512_12m+7m+tp_co21_pbcorr_round_k.fitsB±ô
+B±ô
+B±ô
+?Ó‚ ?ôzáApe%@¡ä?¤×K€,€                                                                                                                                                                                                                                                                                                                                                                                    
