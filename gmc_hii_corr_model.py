@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[16]:
 
 
 import numpy as np
@@ -16,7 +16,7 @@ from scipy.optimize import curve_fit
 
 # ## Name of galaxy
 
-# In[3]:
+# In[17]:
 
 
 #galaxy='IC5332'
@@ -33,7 +33,7 @@ galaxy='NGC3627'
 
 # ## Function that calculates the 2-point cross-correlation function
 
-# In[4]:
+# In[18]:
 
 
 def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
@@ -69,7 +69,7 @@ def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
 
 # ## Functions that draws N model GMCs and returns properties
 
-# In[5]:
+# In[19]:
 
 
 # This version just uses the observed GMC coordinates and assumes constant parameters for all clouds
@@ -96,7 +96,7 @@ def drawgmc_xy(x,y,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10):
     
 
 
-# In[6]:
+# In[20]:
 
 
 # This version samples GMC coordinates with a typical separation scale "l" within a dbox**2 kpc**2 box, and assumes constant parameters for all clouds
@@ -130,7 +130,7 @@ def drawgmc_l(dbox=2000,l=200,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10, frand=10):
 
 # ## Function that draws N*Ng HII regions given an ensemble of GMCs
 
-# In[7]:
+# In[21]:
 
 
 def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
@@ -184,7 +184,7 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
 
 # ## Read GMC and Random catalogs coordinates
 
-# In[8]:
+# In[22]:
 
 
 xygmc=ascii.read('./output/'+galaxy+'_xy_gmc.txt')
@@ -198,7 +198,7 @@ yr=xyrand['col1'].data
 
 # ## Read Observed Correlation Function
 
-# In[9]:
+# In[23]:
 
 
 obscorr=ascii.read('./output/'+galaxy+'_corr.txt')
@@ -207,7 +207,7 @@ w0obs=obscorr['col1'].data
 ew0obs=obscorr['col2'].data
 
 
-# In[10]:
+# In[24]:
 
 
 # NEXT I WILL RUN AN MCMC TEST IN MY LAPTOP TURNING THE NEXT CELL INTO A FUNCTION
@@ -215,7 +215,7 @@ ew0obs=obscorr['col2'].data
 
 # ## Test Model
 
-# In[11]:
+# In[29]:
 
 
 t0=time.time()
@@ -251,11 +251,11 @@ print("Total Run Time [s] =", time.time()-t0)
 
   
 fig, ax = plt.subplots(figsize=(12, 8))
-#for i in range(Nsamples):
-#    ax.plot(r0, w0arr[:,i], 'o', color='red', alpha=0.5)
+for i in range(Nsamples):
+    ax.plot(r0, w0arr[:,i], 'o', color='red', alpha=0.5)
 #for i in range(Ntest):
 #    ax.plot(r0, w0test[:,i], 'o', color='green', alpha=0.5)
-ax.plot(r0, w0, 'o', color='red', alpha=1.0)    
+ax.plot(r0, w0, 'o', color='green', alpha=1.0)    
 ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
 ax.plot(r0obs, w0obs, '-o', color='black', alpha=0.5)
 ax.set_xlim(0, 1000)
@@ -271,7 +271,7 @@ plt.savefig('./plots/'+galaxy+'_corr_model.png')
 
 
 
-# In[12]:
+# In[26]:
 
 
 
@@ -292,7 +292,7 @@ plt.savefig('./plots/'+galaxy+'_xy_model.png')
 
 
 
-# In[13]:
+# In[27]:
 
 
 
@@ -336,11 +336,11 @@ plt.savefig('./plots/'+galaxy+'_corr_log_model.png')
 #plt.show()
 
 
-# In[15]:
+# In[28]:
 
 
 # Convert Notebook to Python Script
-get_ipython().system('jupyter nbconvert --to script gmc_hii_corr_model.ipynb')
+#get_ipython().system('jupyter nbconvert --to script gmc_hii_corr_model.ipynb')
 
 
 # In[ ]:
