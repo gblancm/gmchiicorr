@@ -406,7 +406,7 @@ def log_prob(p):
 
 # # Set up MCMC
 
-# In[ ]:
+# In[39]:
 
 
 ndim=7
@@ -421,27 +421,26 @@ p0[:,4]=np.random.uniform(1, 10, nwalkers)
 p0[:,5]=np.random.uniform(1, 10, nwalkers)
 p0[:,6]=np.random.uniform(0, 30, nwalkers)
 
-sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob)
+#sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob)
 
 
 # # Run MCMC Chain
 
-# In[29]:
+# In[40]:
 
 
-sampler.reset()
+#sampler.reset()
 Nmc=500
-state = sampler.run_mcmc(p0,Nmc)
+#state = sampler.run_mcmc(p0,Nmc)
 
 
 # ## Test Paralell MCMC
 
-# In[33]:
+# In[37]:
 
 
 with Pool() as pool:
     sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool)
-    sampler.reset()
     state = sampler.run_mcmc(p0,Nmc)
 
 
@@ -453,7 +452,8 @@ with Pool() as pool:
 with open('mcmc.pkl', 'wb') as f:
     pickle.dump(sampler, f, pickle.HIGHEST_PROTOCOL)
     
-with open('mcmc.pkl', 'rb') as f:
+with open('mcmc.pkl', 'rb') as f:r0, w0, ew0 = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)
+
     sampler = pickle.load(f)
     
 
@@ -565,21 +565,5 @@ plt.savefig('./plots/'+galaxy+'_xy_model.png')
 
 
 
-# In[ ]:
-
-
-# Convert Notebook to Python Script
-#get_ipython().system('jupyter nbconvert --to script gmc_hii_corr_model.ipynb')
-
-
-# In[36]:
-
-
-#print(cpu_count())
-
-
-# In[ ]:
-
-
-
+# In[38]:
 
