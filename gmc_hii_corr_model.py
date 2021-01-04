@@ -1,39 +1,50 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[16]:
+# In[35]:
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.spatial.distance import cdist
+from scipy.optimize import curve_fit
 import astropy.io.ascii as ascii
 import time
 from scipy.optimize import curve_fit
+import emcee
+import pickle
+import os
+from multiprocessing import Pool
+from multiprocessing import cpu_count
+
+
+
+os.environ["OMP_NUM_THREADS"] = "1"
+
 
 #np.random.seed(666)
 
 
 # ## Name of galaxy
 
-# In[17]:
+# In[ ]:
 
 
 #galaxy='IC5332'
 #galaxy='NGC0628'
 #galaxy='NGC1087'
 #galaxy='NGC1365' 
-#galaxy='NGC1512'
+galaxy='NGC1512'
 #galaxy='NGC1672'
 #galaxy='NGC2835'
 #galaxy='NGC3351'
-galaxy='NGC3627'
+#galaxy='NGC3627'
 #galaxy='NGC5068'
 
 
 # ## Function that calculates the 2-point cross-correlation function
 
-# In[18]:
+# In[ ]:
 
 
 def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
@@ -69,7 +80,7 @@ def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
 
 # ## Functions that draws N model GMCs and returns properties
 
-# In[19]:
+# In[ ]:
 
 
 # This version just uses the observed GMC coordinates and assumes constant parameters for all clouds
@@ -96,7 +107,7 @@ def drawgmc_xy(x,y,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10):
     
 
 
-# In[20]:
+# In[ ]:
 
 
 # This version samples GMC coordinates with a typical separation scale "l" within a dbox**2 kpc**2 box, and assumes constant parameters for all clouds
@@ -118,7 +129,6 @@ def drawgmc_l(dbox=2000,l=200,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10, frand=10):
     tfb=np.repeat(tfb,ngmc) # stellar SF tracer emergence time [Myr]
     Ng=np.repeat(Ng,ngmc).astype(int) # number of massive SF episodes during gmc lifetime
     voff=np.repeat(voff,ngmc) # stellar SF tracer centorid to GMC centroid offset speed [km/s]
-
     tobs=np.random.uniform(0, tc-tfb+ts, ngmc) # random observation time for this cloud (between zero and tc+ts)
     fgmc=np.repeat(True, ngmc) # GMC visibility flag
     fgmc[tobs > tc]=False # visibility flag is False if GMC has faded
@@ -130,7 +140,7 @@ def drawgmc_l(dbox=2000,l=200,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10, frand=10):
 
 # ## Function that draws N*Ng HII regions given an ensemble of GMCs
 
-# In[21]:
+# In[ ]:
 
 
 def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
@@ -182,9 +192,28 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
     
 
 
+# ## Linear Model
+
+# In[ ]:
+
+
+def lin(x, a, b):
+    return a+b*x
+
+
+# ## Power-law model 
+
+# In[ ]:
+
+
+def pl(x, a, beta):
+    return a*x**beta
+    
+
+
 # ## Read GMC and Random catalogs coordinates
 
-# In[22]:
+# In[ ]:
 
 
 xygmc=ascii.read('./output/'+galaxy+'_xy_gmc.txt')
@@ -198,7 +227,7 @@ yr=xyrand['col1'].data
 
 # ## Read Observed Correlation Function
 
-# In[23]:
+# In[ ]:
 
 
 obscorr=ascii.read('./output/'+galaxy+'_corr.txt')
@@ -207,57 +236,301 @@ w0obs=obscorr['col1'].data
 ew0obs=obscorr['col2'].data
 
 
-# In[24]:
+# ## Fit and remove large scale (few kpc) correlation using linear model
+
+# In[ ]:
 
 
-# NEXT I WILL RUN AN MCMC TEST IN MY LAPTOP TURNING THE NEXT CELL INTO A FUNCTION
+rmin=500
+rmax=3000
+sel=(r0obs>=rmin)*(r0obs<=rmax)
+popt, pcov = curve_fit(lin, r0obs[sel], w0obs[sel], sigma=ew0obs[sel])
+print(popt)
+w0small=w0obs-lin(r0obs, *popt)
 
 
-# ## Test Model
+
+
+#plot large scale fit
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='grey', capsize=5, alpha=0.5)
+ax.plot(r0obs, w0obs, 'o', color='black', alpha=1.0)
+ax.plot(r0obs[sel], w0obs[sel], 'o', color='red', alpha=0.5)
+ax.plot(r0obs, lin(r0obs, *popt), color='red')
+#ax.set_ylim(1e-3, 2e0)
+ax.axhline(y=0, linestyle='--')
+plt.xlabel('r [pc]', fontsize=20)
+plt.ylabel(r'$\omega(r)$ [pc]', fontsize=20)
+plt.title(galaxy, fontsize=30)
+ax.tick_params(labelsize=20)
+#ax.set_yscale('log')
+#ax.set_xscale('log')
+plt.savefig('./plots/'+galaxy+'_corr_linfit.png')
+plt.show()
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.errorbar(r0obs, w0small, ew0obs, fmt="o", color='grey', capsize=5, alpha=0.5)
+ax.plot(r0obs, w0small, 'o', color='black', alpha=1.0)
+ax.plot(r0obs[sel], w0small[sel], 'o', color='red', alpha=0.5)
+ax.set_xlim(0, 1e3)
+#ax.set_ylim(1e-3, 2e0)
+ax.axhline(y=0, linestyle='--')
+plt.xlabel('r [pc]', fontsize=20)
+plt.ylabel(r'$\omega(r)-\omega_{lin}$ [pc]', fontsize=20)
+plt.title(galaxy, fontsize=30)
+ax.tick_params(labelsize=20)
+#ax.set_yscale('log')
+#ax.set_xscale('log')
+plt.savefig('./plots/'+galaxy+'_corr_linfit.png')
+plt.show()
+
+
+# ## Function that Evaluates Cross Correlation Function for Model Parameters
+
+# In[ ]:
+
+
+def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
+    
+    t0=time.time()
+    
+    print("Evaluating Model:")
+    print("l=", l0)
+    print("rc=", rc0)
+    print("tc=", tc0)
+    print("ts=", ts0)
+    print("tfb=", tfb0)
+    print("Ng=", Ng0)
+    print("voff=", voff0)
+
+    Nsamples=500
+
+    # Run w() one time to get bins
+    xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
+    xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
+    r0, w0, ew0 = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)   
+    w0arr=np.zeros((len(w0),Nsamples))
+    ew0arr=np.zeros((len(ew0),Nsamples))
+    
+   
+    # Run w() Nsample times and average
+    for i in range(Nsamples):
+    
+        xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
+        xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
+        r0, w0arr[:,i], ew0arr[:,i] = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)
+        
+    w0arr[~np.isfinite(w0arr)]=np.nan
+    ew0arr[~np.isfinite(ew0arr)]=np.nan    
+    w0=np.nanmean(w0arr, axis=1)
+    ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+    
+    
+    print("Model Evaluation Run Time [s] =", time.time()-t0)
+
+    
+  
+    fig, ax = plt.subplots(figsize=(12, 8))
+    #for i in range(Nsamples):
+    #    ax.plot(r0, w0arr[:,i], 'o', color='red', alpha=0.5)
+    #for i in range(Ntest):
+    #    ax.plot(r0, w0test[:,i], 'o', color='green', alpha=0.5)
+    ax.plot(r0, w0, 'o', color='green', alpha=1.0)    
+    ax.errorbar(r0obs, w0small, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
+    ax.plot(r0obs, w0small, '-o', color='black', alpha=0.5)
+    ax.set_xlim(0, 1000)
+    ax.axhline(y=0, linestyle='--')
+    ax.set_xlabel('r [pc]', fontsize=20)
+    ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
+    ax.set_title(galaxy, fontsize=30)
+    ax.tick_params(labelsize=20)
+    #ax.set_yscale('log')
+    #ax.set_ylim(-0.2, 4)
+    plt.savefig('./plots/'+galaxy+'_corr_model.png')
+    plt.show()
+    
+    fig, ax = plt.subplots(figsize=(12, 12))
+    #ax.plot(xgmc, ygmc, '.', color='blue', alpha=0.4)
+    ax.plot(xgmc[fgmc], ygmc[fgmc], 'o', color='blue', label='GMC')
+    #ax.plot(xhii, yhii, '.', color='red', alpha=0.4)
+    ax.plot(xhii[fhii], yhii[fhii], 'o', color='red', label='HII')
+    #ax.set_xlim(-1000, 1000)
+    #ax.set_ylim(-1000, 1000)
+    ax.set_xlabel('X [pc]', fontsize=20)
+    ax.set_ylabel('Y [pc]', fontsize=20)
+    ax.set_title(galaxy, fontsize=30)
+    ax.tick_params(labelsize=20)
+    ax.legend(fontsize=20)
+    plt.savefig('./plots/'+galaxy+'_xy_model.png')
+    plt.show()
+
+
+    
+    return (w0, ew0)
+
+
+# # Define Priors and Likelihood Functions
+
+# In[ ]:
+
+
+# Trim observed corr function to <=1kpc
+selr=(r0obs<=1000)
+
+
+def log_prior(p):
+    l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
+    if 10<l1<300 and 5<rc1<100 and 1<tc1<500 and 1<ts1<20 and 1<tfb1<20 and 1<Ng1<10 and 0<voff1<30:
+        return 0.0
+    else:
+        return -np.inf
+
+def log_prob(p):
+    lprior=log_prior(p)
+    if np.isfinite(lprior):
+        w0, ew0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6])
+        res=w0-w0small[selr]
+        sig=ew0obs[selr]
+        prob=1/(2*np.pi*sig**2)*np.exp(-0.5*(res/sig)**2)
+        logp=lprior+np.sum(np.log(prob))
+        if not np.isfinite(logp):
+#        print("fail2")
+            return -np.inf
+        return logp
+    else:
+        return -np.inf
+
+        
+
+
+# # Set up MCMC
+
+# In[ ]:
+
+
+ndim=7
+nwalkers=16
+
+p0 = np.zeros((nwalkers, ndim))
+p0[:,0]=np.random.uniform(50, 200, nwalkers)
+p0[:,1]=np.random.uniform(20, 100, nwalkers)
+p0[:,2]=np.random.uniform(1, 500, nwalkers)
+p0[:,3]=np.random.uniform(5, 15, nwalkers)
+p0[:,4]=np.random.uniform(1, 10, nwalkers)
+p0[:,5]=np.random.uniform(1, 10, nwalkers)
+p0[:,6]=np.random.uniform(0, 30, nwalkers)
+
+sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob)
+
+
+# # Run MCMC Chain
 
 # In[29]:
 
 
-t0=time.time()
+sampler.reset()
+Nmc=500
+state = sampler.run_mcmc(p0,Nmc)
 
-Nsamples=200
 
-# Run one time with small box to get bins
-xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=300, rc=50,tc=20,ts=15,tfb=4,Ng=10,voff=10,frand=10)
-xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
-r0, w0, ew0 = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)
+# ## Test Paralell MCMC
 
-w0arr=np.zeros((len(w0),Nsamples))
-ew0arr=np.zeros((len(ew0),Nsamples))
+# In[33]:
 
-for i in range(Nsamples):
+
+with Pool() as pool:
+    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool)
+    sampler.reset()
+    state = sampler.run_mcmc(p0,Nmc)
+
+
+# # Pickle and Unpickle MCMC Chain
+
+# In[ ]:
+
+
+with open('mcmc.pkl', 'wb') as f:
+    pickle.dump(sampler, f, pickle.HIGHEST_PROTOCOL)
     
-    xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=3000, l=300, rc=20,tc=30,ts=10,tfb=4,Ng=3,voff=10,frand=10)
-    xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
-    r0, w0arr[:,i], ew0arr[:,i] = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)
-        
-IC=0.2
-w0arr=w0arr+IC
-w0arr[~np.isfinite(w0arr)]=np.nan
-ew0arr[~np.isfinite(ew0arr)]=np.nan
-        
-w0=np.nanmean(w0arr, axis=1)
-ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+with open('mcmc.pkl', 'rb') as f:
+    sampler = pickle.load(f)
     
 
+
+# In[ ]:
+
+
+logp=sampler.lnprobability
+print(np.shape(logp))
+maxlogp=np.max(logp)
+selbest=np.where(logp == maxlogp)
+bestwalk=selbest[0][0]
+bestsamp=selbest[1][0]
+pbest=samples[bestwalk, bestsamp, :]
+print(pbest)
+
+
+
+# In[ ]:
+
+
+samples = sampler.chain
+print(np.shape(samples))
+print(np.median(samples[:,-1,:],axis=0))
+
+
+
+fig, axes = plt.subplots(8, figsize=(20, 50), sharex=True)
+labels = ["l", "rc", "tc", "ts", "tfb", "Ng", "voff"]
+for i in range(ndim):
+    ax = axes[i]
+    for j in range(nwalkers):
+        ax.plot(samples[j, :, i], "-", alpha=0.7)
+#    ax.set_xlim(0, Nmc)
+#    ax.set_ylim(-20,100)
+    ax.set_ylabel(labels[i], fontsize=20)
+    ax.yaxis.set_label_coords(-0.1, 0.5)
+    ax.set_xlabel("step number");
     
-print("Total Run Time [s] =", time.time()-t0)
+ax=axes[7]
+for j in range(nwalkers):
+    ax.plot(logp[j,:])
+    ax.set_ylabel("logP")
+    ax.set_ylim(100,150)
 
 
-  
+# In[ ]:
+
+
+import corner
+
+goodsamples=samples[:,200:-1,:]
+flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamples)[1],np.shape(goodsamples)[2]))
+fig = corner.corner(flat_goodsamples, labels=labels, range=[(100,300), (5,100), (1,500), (1,10), (1,30), (1, 10), (0,30)]);
+
+
+# # Evaluate Best-Fit Model 
+
+# In[ ]:
+
+
+pbest=[128.25868127,  76.18761797, 334.78822039,   9.90501884,   1.66665144,  7.16193951,   9.986711]
+w0, ew0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6])
+
+
+
+# In[ ]:
+
+
 fig, ax = plt.subplots(figsize=(12, 8))
-for i in range(Nsamples):
-    ax.plot(r0, w0arr[:,i], 'o', color='red', alpha=0.5)
+#for i in range(Nsamples):
+#    ax.plot(r0, w0arr[:,i], 'o', color='red', alpha=0.5)
 #for i in range(Ntest):
 #    ax.plot(r0, w0test[:,i], 'o', color='green', alpha=0.5)
 ax.plot(r0, w0, 'o', color='green', alpha=1.0)    
-ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
-ax.plot(r0obs, w0obs, '-o', color='black', alpha=0.5)
+ax.errorbar(r0obs, w0small, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
+ax.plot(r0obs, w0small, '-o', color='black', alpha=0.5)
 ax.set_xlim(0, 1000)
 ax.axhline(y=0, linestyle='--')
 ax.set_xlabel('r [pc]', fontsize=20)
@@ -267,11 +540,11 @@ ax.tick_params(labelsize=20)
 #ax.set_yscale('log')
 #ax.set_ylim(-0.2, 4)
 plt.savefig('./plots/'+galaxy+'_corr_model.png')
-#plt.show()
+plt.show()
+    
 
 
-
-# In[26]:
+# In[ ]:
 
 
 
@@ -292,55 +565,17 @@ plt.savefig('./plots/'+galaxy+'_xy_model.png')
 
 
 
-# In[27]:
-
-
-
-
-fig, ax = plt.subplots(figsize=(12, 8))
-ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
-ax.plot(r0obs, w0obs, 'o', color='black', alpha=0.5)
-ax.errorbar(r0, w0, ew0, fmt="o", color='red', capsize=5, alpha=0.5)
-ax.plot(r0, w0, 'o', color='red', alpha=0.5)
-#ax.plot(r1, w1, '-o')
-#ax.plot(r2, w2, '-o')
-#ax.plot(r3, w3, '-o')
-#ax.set_xlim(0, 250)
-ax.axhline(y=0, linestyle='--')
-plt.xlabel('r [pc]', fontsize=20)
-plt.ylabel(r'$\omega(r)$ [pc]', fontsize=20)
-plt.title(galaxy, fontsize=30)
-ax.tick_params(labelsize=20)
-#ax.set_yscale('log')
-plt.savefig('./plots/'+galaxy+'_corr_full_model.png')
-#plt.show()
-
-
-fig, ax = plt.subplots(figsize=(12, 8))
-ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
-ax.plot(r0obs, w0obs, 'o', color='black', alpha=0.5)
-ax.errorbar(r0, w0, ew0, fmt="o", color='red', capsize=5, alpha=0.5)
-ax.plot(r0, w0, 'o', color='red', alpha=0.5)
-#ax.plot(r1, w1, '-o')
-#ax.plot(r2, w2, '-o')
-#ax.plot(r3, w3, '-o')
-#ax.set_xlim(0, 250)
-#ax.set_ylim(1e-3, 1e1)
-ax.axhline(y=0, linestyle='--')
-plt.xlabel('r [pc]', fontsize=20)
-plt.ylabel(r'log($\omega(r)$) [pc]', fontsize=20)
-plt.title(galaxy, fontsize=30)
-ax.tick_params(labelsize=20)
-ax.set_yscale('log')
-plt.savefig('./plots/'+galaxy+'_corr_log_model.png')
-#plt.show()
-
-
-# In[28]:
+# In[ ]:
 
 
 # Convert Notebook to Python Script
-#get_ipython().system('jupyter nbconvert --to script gmc_hii_corr_model.ipynb')
+get_ipython().system('jupyter nbconvert --to script gmc_hii_corr_model.ipynb')
+
+
+# In[36]:
+
+
+print(cpu_count())
 
 
 # In[ ]:
