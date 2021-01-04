@@ -569,13 +569,13 @@ plt.savefig('./plots/'+galaxy+'_xy_model.png')
 
 
 # Convert Notebook to Python Script
-get_ipython().system('jupyter nbconvert --to script gmc_hii_corr_model.ipynb')
+#get_ipython().system('jupyter nbconvert --to script gmc_hii_corr_model.ipynb')
 
 
 # In[36]:
 
 
-print(cpu_count())
+#print(cpu_count())
 
 
 # In[ ]:
