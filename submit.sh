@@ -6,8 +6,8 @@
 #SBATCH --time=24:00:00     
 #SBATCH -p OBS,SHARED
 #SBATCH --mem-per-cpu=2000
-#SBATCH --output=slurm-${SLURM_JOBID}.out 
-#SBATCH --error=slurm-${SLURM_JOBID}.out 
+#SBATCH --output=output.out 
+#SBATCH --error=error.out 
 #SBATCH --mail-user=gblancm@carnegiescience.edu 
 #SBATCH --mail-type=END,FAIL 
 
