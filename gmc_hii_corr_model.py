@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[180]:
+# In[229]:
 
 
 import numpy as np
@@ -25,7 +25,7 @@ import corner
 
 # ## Name of galaxy
 
-# In[181]:
+# In[230]:
 
 
 #galaxy='IC5332'
@@ -42,7 +42,7 @@ galaxy='NGC1512'
 
 # ## Function that calculates the 2-point cross-correlation function
 
-# In[182]:
+# In[231]:
 
 
 def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
@@ -78,7 +78,7 @@ def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
 
 # ## Functions that draws N model GMCs and returns properties
 
-# In[183]:
+# In[232]:
 
 
 # This version just uses the observed GMC coordinates and assumes constant parameters for all clouds
@@ -105,7 +105,7 @@ def drawgmc_xy(x,y,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10):
     
 
 
-# In[184]:
+# In[233]:
 
 
 # This version samples GMC coordinates with a typical separation scale "l" within a dbox**2 kpc**2 box, and assumes constant parameters for all clouds
@@ -138,7 +138,7 @@ def drawgmc_l(dbox=2000,l=200,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10, frand=10):
 
 # ## Function that draws N*Ng HII regions given an ensemble of GMCs
 
-# In[185]:
+# In[234]:
 
 
 def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
@@ -192,7 +192,7 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
 
 # ## Linear Model
 
-# In[186]:
+# In[235]:
 
 
 def lin(x, a, b):
@@ -201,7 +201,7 @@ def lin(x, a, b):
 
 # ## Read GMC and Random catalogs coordinates
 
-# In[187]:
+# In[236]:
 
 
 xygmc=ascii.read('./output/'+galaxy+'_xy_gmc.txt')
@@ -215,7 +215,7 @@ yr=xyrand['col1'].data
 
 # ## Read Observed Correlation Function
 
-# In[188]:
+# In[ ]:
 
 
 obscorr=ascii.read('./output/'+galaxy+'_corr.txt')
@@ -226,7 +226,7 @@ ew0obs=obscorr['col2'].data
 
 # ## Fit and remove large scale (few kpc) correlation using linear model
 
-# In[189]:
+# In[ ]:
 
 
 rmin=500
@@ -276,21 +276,21 @@ plt.savefig('./plots/'+galaxy+'_corr_small.png')
 
 # ## Function that Evaluates Cross Correlation Function for Model Parameters
 
-# In[190]:
+# In[ ]:
 
 
-def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, plot=False):
+def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
     
     t0=time.time()
     
-    print("Evaluating Model:")
-    print("l=", l0)
-    print("rc=", rc0)
-    print("tc=", tc0)
-    print("ts=", ts0)
-    print("tfb=", tfb0)
-    print("Ng=", Ng0)
-    print("voff=", voff0)
+#    print("Evaluating Model:")
+#    print("l=", l0)
+#    print("rc=", rc0)
+#    print("tc=", tc0)
+#    print("ts=", ts0)
+#    print("tfb=", tfb0)
+#    print("Ng=", Ng0)
+#    print("voff=", voff0)
 
     Nsamples=500
 #    Nsamples=10
@@ -320,40 +320,6 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, plot=False):
     print("Model Evaluation Run Time [s] =", time.time()-t0)
 
     
-    if plot:
-        fig, ax = plt.subplots(figsize=(12, 8))
-        #for i in range(Nsamples):
-        #    ax.plot(r0, w0arr[:,i], 'o', color='red', alpha=0.5)
-        #for i in range(Ntest):
-        #    ax.plot(r0, w0test[:,i], 'o', color='green', alpha=0.5)
-        ax.plot(r0, w0, 'o', color='green', alpha=1.0)    
-        ax.errorbar(r0obs, w0small, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
-        ax.plot(r0obs, w0small, '-o', color='black', alpha=0.5)
-        ax.set_xlim(0, 1000)
-        ax.axhline(y=0, linestyle='--')
-        ax.set_xlabel('r [pc]', fontsize=20)
-        ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
-        ax.set_title(galaxy, fontsize=30)
-        ax.tick_params(labelsize=20)
-        #ax.set_yscale('log')
-        #ax.set_ylim(-0.2, 4)
-        plt.savefig('./plots/'+galaxy+'_corr_model.png')
-    #    plt.show()
-        
-        fig, ax = plt.subplots(figsize=(12, 12))
-        #ax.plot(xgmc, ygmc, '.', color='blue', alpha=0.4)
-        ax.plot(xgmc[fgmc], ygmc[fgmc], 'o', color='blue', label='GMC')
-        #ax.plot(xhii, yhii, '.', color='red', alpha=0.4)
-        ax.plot(xhii[fhii], yhii[fhii], 'o', color='red', label='HII')
-        #ax.set_xlim(-1000, 1000)
-        #ax.set_ylim(-1000, 1000)
-        ax.set_xlabel('X [pc]', fontsize=20)
-        ax.set_ylabel('Y [pc]', fontsize=20)
-        ax.set_title(galaxy, fontsize=30)
-        ax.tick_params(labelsize=20)
-        ax.legend(fontsize=20)
-        plt.savefig('./plots/'+galaxy+'_xy_model.png')
-    #    plt.show()
 
 
     
@@ -362,7 +328,7 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, plot=False):
 
 # # Define Priors and Likelihood Functions
 
-# In[191]:
+# In[ ]:
 
 
 # Trim observed corr function to <=1kpc
@@ -396,7 +362,7 @@ def log_prob(p):
 
 # # Set up MCMC
 
-# In[192]:
+# In[ ]:
 
 
 ndim=7
@@ -414,11 +380,11 @@ p0[:,6]=np.random.uniform(0, 30, nwalkers)
 
 # # Run MCMC Chain
 
-# In[193]:
+# In[ ]:
 
 
-Nmc=1000
-#Nmc=2
+#Nmc=1000
+Nmc=2
 
 print("Starting MCMC")
 t0full=time.time()
@@ -433,7 +399,7 @@ print("MCMC Total Run Time [s] =", time.time()-t0full)
 
 # # Pickle MCMC Chain
 
-# In[194]:
+# In[ ]:
 
 
 del(sampler.pool)
@@ -444,7 +410,7 @@ with open('mcmc.pkl', 'wb') as f:
 
 # # Unpickle MCMC Chain
 
-# In[195]:
+# In[ ]:
 
 
 with open('mcmc.pkl', 'rb') as f:
@@ -453,7 +419,7 @@ with open('mcmc.pkl', 'rb') as f:
 
 # # Find best-fit model (max logP) and evaluate
 
-# In[196]:
+# In[ ]:
 
 
 samples = sampler.chain
@@ -468,12 +434,40 @@ bestsamp=selbest[1][0]
 pbest=samples[bestwalk, bestsamp, :]
 print("Best-fit Parameters:", pbest)
 
-w0, ew0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6], plot=True)
+w0, ew0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6])
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.plot(r0, w0, 'o', color='green', alpha=1.0)    
+ax.errorbar(r0obs, w0small, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
+ax.plot(r0obs, w0small, '-o', color='black', alpha=0.5)
+ax.set_xlim(0, 1000)
+ax.axhline(y=0, linestyle='--')
+ax.set_xlabel('r [pc]', fontsize=20)
+ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
+ax.set_title(galaxy, fontsize=30)
+ax.tick_params(labelsize=20)
+plt.savefig('./plots/'+galaxy+'_corr_model.png')
+#plt.show()
+        
+fig, ax = plt.subplots(figsize=(12, 12))
+#ax.plot(xgmc, ygmc, '.', color='blue', alpha=0.4)
+ax.plot(xgmc[fgmc], ygmc[fgmc], 'o', color='blue', label='GMC')
+#ax.plot(xhii, yhii, '.', color='red', alpha=0.4)
+ax.plot(xhii[fhii], yhii[fhii], 'o', color='red', label='HII')
+#ax.set_xlim(-1000, 1000)
+#ax.set_ylim(-1000, 1000)
+ax.set_xlabel('X [pc]', fontsize=20)
+ax.set_ylabel('Y [pc]', fontsize=20)
+ax.set_title(galaxy, fontsize=30)
+ax.tick_params(labelsize=20)
+ax.legend(fontsize=20)
+plt.savefig('./plots/'+galaxy+'_xy_model.png')
+#plt.show()
 
 
 # # Make MCMC Plots
 
-# In[197]:
+# In[ ]:
 
 
 fig, axes = plt.subplots(8, figsize=(20, 50), sharex=True)
@@ -497,7 +491,7 @@ for j in range(nwalkers):
 plt.savefig('./plots/'+galaxy+'_mcmc_samples.png')
 
 
-# In[198]:
+# In[ ]:
 
 
 Nburn=0
@@ -506,8 +500,3 @@ flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamp
 fig = corner.corner(flat_goodsamples, labels=labels, range=[(100,300), (5,100), (1,500), (1,10), (1,30), (1, 10), (0,30)]);
 
 plt.savefig('./plots/'+galaxy+'_mcmc_corner.png')
-
-
-
-
-
