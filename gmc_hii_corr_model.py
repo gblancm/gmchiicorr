@@ -336,9 +336,12 @@ print("Starting MCMC")
 t0full=time.time()
 
 
-with Pool() as pool:
-    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool)
-    state = sampler.run_mcmc(p0,Nmc)
+#with Pool() as pool:
+#    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool)
+#    state = sampler.run_mcmc(p0,Nmc)
+
+sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob)
+state = sampler.run_mcmc(p0,Nmc)
     
 print("MCMC Total Run Time [s] =", time.time()-t0full)
 
