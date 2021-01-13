@@ -1,9 +1,6 @@
 #!/usr/bin/env python
-# coding: utf-8
 
-# In[229]:
-
-
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.spatial.distance import cdist
@@ -19,31 +16,25 @@ from multiprocessing import cpu_count
 os.environ["OMP_NUM_THREADS"] = "1"
 import corner
 
-
 #np.random.seed(666)
 
-
 # ## Name of galaxy
-
-# In[230]:
-
 
 #galaxy='IC5332'
 #galaxy='NGC0628'
 #galaxy='NGC1087'
 #galaxy='NGC1365' 
-galaxy='NGC1512'
+#galaxy='NGC1512'
 #galaxy='NGC1672'
 #galaxy='NGC2835'
 #galaxy='NGC3351'
 #galaxy='NGC3627'
 #galaxy='NGC5068'
+galaxy=sys.argv[1]
+print(galaxy)
 
 
 # ## Function that calculates the 2-point cross-correlation function
-
-# In[231]:
-
 
 def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
 
@@ -78,9 +69,6 @@ def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
 
 # ## Functions that draws N model GMCs and returns properties
 
-# In[232]:
-
-
 # This version just uses the observed GMC coordinates and assumes constant parameters for all clouds
 
 def drawgmc_xy(x,y,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10):
@@ -103,10 +91,6 @@ def drawgmc_xy(x,y,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10):
 
     return (xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
     
-
-
-# In[233]:
-
 
 # This version samples GMC coordinates with a typical separation scale "l" within a dbox**2 kpc**2 box, and assumes constant parameters for all clouds
 # Also returns random catalog coordinates over the same area and Frand*Ngmc points
@@ -137,9 +121,6 @@ def drawgmc_l(dbox=2000,l=200,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10, frand=10):
 
 
 # ## Function that draws N*Ng HII regions given an ensemble of GMCs
-
-# In[234]:
-
 
 def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
     
@@ -187,22 +168,14 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
     return (xhii,yhii,fhii)
     
     
-    
 
-
-# ## Linear Model
-
-# In[235]:
-
+# ## Linear Model for fitting large scale correlation function
 
 def lin(x, a, b):
     return a+b*x
 
 
 # ## Read GMC and Random catalogs coordinates
-
-# In[236]:
-
 
 xygmc=ascii.read('./output/'+galaxy+'_xy_gmc.txt')
 x1=xygmc['col0'].data
@@ -215,9 +188,6 @@ yr=xyrand['col1'].data
 
 # ## Read Observed Correlation Function
 
-# In[ ]:
-
-
 obscorr=ascii.read('./output/'+galaxy+'_corr.txt')
 r0obs=obscorr['col0'].data
 w0obs=obscorr['col1'].data
@@ -226,17 +196,12 @@ ew0obs=obscorr['col2'].data
 
 # ## Fit and remove large scale (few kpc) correlation using linear model
 
-# In[ ]:
-
-
 rmin=500
 rmax=3000
 sel=(r0obs>=rmin)*(r0obs<=rmax)
 popt, pcov = curve_fit(lin, r0obs[sel], w0obs[sel], sigma=ew0obs[sel])
 #print(popt)
 w0small=w0obs-lin(r0obs, *popt)
-
-
 
 
 #plot large scale fit
@@ -276,9 +241,6 @@ plt.savefig('./plots/'+galaxy+'_corr_small.png')
 
 # ## Function that Evaluates Cross Correlation Function for Model Parameters
 
-# In[ ]:
-
-
 def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
     
     t0=time.time()
@@ -292,9 +254,8 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
 #    print("Ng=", Ng0)
 #    print("voff=", voff0)
 
-    Nsamples=500
+    Nsamples=100
 #    Nsamples=10
-
     
     # Run w() one time to get bins
     xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
@@ -315,21 +276,13 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
     ew0arr[~np.isfinite(ew0arr)]=np.nan    
     w0=np.nanmean(w0arr, axis=1)
     ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-    
-    
+      
     print("Model Evaluation Run Time [s] =", time.time()-t0)
-
-    
-
-
-    
+  
     return (w0, ew0)
 
 
 # # Define Priors and Likelihood Functions
-
-# In[ ]:
-
 
 # Trim observed corr function to <=1kpc
 selr=(r0obs<=1000)
@@ -362,9 +315,6 @@ def log_prob(p):
 
 # # Set up MCMC
 
-# In[ ]:
-
-
 ndim=7
 nwalkers=16
 
@@ -377,11 +327,7 @@ p0[:,4]=np.random.uniform(1, 10, nwalkers)
 p0[:,5]=np.random.uniform(1, 10, nwalkers)
 p0[:,6]=np.random.uniform(0, 30, nwalkers)
 
-
 # # Run MCMC Chain
-
-# In[ ]:
-
 
 #Nmc=1000
 Nmc=2
@@ -399,28 +345,21 @@ print("MCMC Total Run Time [s] =", time.time()-t0full)
 
 # # Pickle MCMC Chain
 
-# In[ ]:
-
 
 del(sampler.pool)
 
-with open('mcmc.pkl', 'wb') as f:
+with open('./output/'+galaxy+'_mcmc.pkl', 'wb') as f:
     pickle.dump(sampler, f, pickle.HIGHEST_PROTOCOL)
 
 
 # # Unpickle MCMC Chain
 
-# In[ ]:
 
-
-with open('mcmc.pkl', 'rb') as f:
+with open('./output/'+galaxy+'_mcmc.pkl', 'rb') as f:
     sampler = pickle.load(f)
 
 
 # # Find best-fit model (max logP) and evaluate
-
-# In[ ]:
-
 
 samples = sampler.chain
 print(np.shape(samples))
@@ -467,8 +406,6 @@ plt.savefig('./plots/'+galaxy+'_xy_model.png')
 
 # # Make MCMC Plots
 
-# In[ ]:
-
 
 fig, axes = plt.subplots(8, figsize=(20, 50), sharex=True)
 labels = ["l", "rc", "tc", "ts", "tfb", "Ng", "voff"]
@@ -489,9 +426,6 @@ for j in range(nwalkers):
 #    ax.set_ylim(100,150)
 
 plt.savefig('./plots/'+galaxy+'_mcmc_samples.png')
-
-
-# In[ ]:
 
 
 Nburn=0
