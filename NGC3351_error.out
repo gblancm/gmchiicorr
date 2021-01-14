@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "gmc_hii_corr_model.py", line 193, in <module>
+    xygmc=ascii.read('./output/'+galaxy+'_xy_gmc.txt')
+  File "/home/gblancm/anaconda3/lib/python3.8/site-packages/astropy/io/ascii/ui.py", line 287, in read
+    dat = _guess(table, new_kwargs, format, fast_reader)
+  File "/home/gblancm/anaconda3/lib/python3.8/site-packages/astropy/io/ascii/ui.py", line 447, in _guess
+    dat = reader.read(table)
+  File "/home/gblancm/anaconda3/lib/python3.8/site-packages/astropy/io/ascii/core.py", line 1186, in read
+    self.lines = self.inputter.get_lines(table, newline=newline)
+  File "/home/gblancm/anaconda3/lib/python3.8/site-packages/astropy/io/ascii/core.py", line 305, in get_lines
+    with get_readable_fileobj(table,
+  File "/home/gblancm/anaconda3/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/home/gblancm/anaconda3/lib/python3.8/site-packages/astropy/utils/data.py", line 238, in get_readable_fileobj
+    fileobj = io.FileIO(name_or_obj, 'r')
+FileNotFoundError: [Errno 2] No such file or directory: './output/NGC3351_xy_gmc.txt'
+srun: error: memex-c078: task 0: Exited with exit code 1
