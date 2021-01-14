@@ -348,8 +348,8 @@ p0[:,6]=np.random.uniform(0, 30, nwalkers)
 
 # # Run MCMC Chain
 
-#Nmc=1000
-Nmc=2
+Nmc=2000
+#Nmc=2
 
 print("Starting MCMC")
 t0full=time.time()
