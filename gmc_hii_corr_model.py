@@ -15,6 +15,9 @@ from multiprocessing import Pool
 from multiprocessing import cpu_count
 os.environ["OMP_NUM_THREADS"] = "1"
 import corner
+from fastdist import fastdist
+from fast_histogram import histogram1d
+
 
 #np.random.seed(666)
 
@@ -38,8 +41,15 @@ print(galaxy)
 
 def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
 
-    ddarr=cdist(np.transpose(np.array([x1,y1])), np.transpose(np.array([x2,y2]))).ravel()  
-    drarr=cdist(np.transpose(np.array([x1,y1])), np.transpose(np.array([xr,yr]))).ravel()
+    c1=np.transpose(np.array([x1,y1]))
+    c2=np.transpose(np.array([x2,y2]))
+    cr=np.transpose(np.array([xr,yr]))
+
+    ddarr=cdist(c1, c2).ravel()  
+    drarr=cdist(c1, cr).ravel()
+
+#    ddarr=fastdist.matrix_to_matrix_distance(c1, c2, fastdist.euclidean, "euclidean")
+#    drarr=fastdist.matrix_to_matrix_distance(c1, cr, fastdist.euclidean, "euclidean")
 
     # Count pairs in distance bins       
     N1=len(x1)
@@ -47,8 +57,11 @@ def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
     Nr=len(xr)
     bins=np.arange(rmin+dr/2, rmax, dr) # centers of bins for output
 
-    dd0, dd0bins = np.histogram(ddarr, bins=np.arange(rmin, rmax+dr, dr)) #here bins are bin edges
-    dr0, dr0bins = np.histogram(drarr, bins=np.arange(rmin, rmax+dr, dr))
+#    dd0, dd0bins = np.histogram(ddarr, bins=np.arange(rmin, rmax+dr, dr)) #here bins are bin edges
+#    dr0, dr0bins = np.histogram(drarr, bins=np.arange(rmin, rmax+dr, dr))
+
+    dd0 = histogram1d(ddarr, bins=len(bins), range=(bins[0],bins[-1])) #here bins are bin edges
+    dr0 = histogram1d(drarr, bins=len(bins), range=(bins[0],bins[-1]))
     
     # Normalize pair counts and compute cross-correlation function
     if (N1!=0)*(N2!=0)*(Nr!=0):
@@ -139,11 +152,11 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
         for j in range(Ng[i]):
 
             # initial position
-            r0=rc[i]*np.sqrt(np.random.uniform(0,1)) # uniform across circular area
-#            r0=rc[i]*np.random.uniform(0,1) # uniform in radius (i.e. as r**-2)
+            rad0=rc[i]*np.sqrt(np.random.uniform(0,1)) # uniform across circular area
+#            rad0=rc[i]*np.random.uniform(0,1) # uniform in radius (i.e. as r**-2)
             theta0=np.random.uniform(0, 2*np.pi)
-            x0=xgmc[i]+r0*np.cos(theta0)
-            y0=ygmc[i]+r0*np.sin(theta0)
+            x0=xgmc[i]+rad0*np.cos(theta0)
+            y0=ygmc[i]+rad0*np.sin(theta0)
 
             #formation time (assuming stars form no later than tc-tfb)
             t0[k]=np.random.uniform(0, tc[i]-tfb[i])    
@@ -245,14 +258,14 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
     
     t0=time.time()
     
-#    print("Evaluating Model:")
-#    print("l=", l0)
-#    print("rc=", rc0)
-#    print("tc=", tc0)
-#    print("ts=", ts0)
-#    print("tfb=", tfb0)
-#    print("Ng=", Ng0)
-#    print("voff=", voff0)
+    print("Evaluating Model:")
+    print("l=", l0)
+    print("rc=", rc0)
+    print("tc=", tc0)
+    print("ts=", ts0)
+    print("tfb=", tfb0)
+    print("Ng=", Ng0)
+    print("voff=", voff0)
 
     Nsamples=100
 #    Nsamples=10
@@ -260,6 +273,7 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
     # Run w() one time to get bins
     xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
     xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
+    print("Number of GMCs and HII Regions", len(xgmc[fgmc]), len(xhii[fhii]))
     r0, w0, ew0 = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)   
     w0arr=np.zeros((len(w0),Nsamples))
     ew0arr=np.zeros((len(ew0),Nsamples))
@@ -270,16 +284,21 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
     
         xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
         xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
-        r0, w0arr[:,i], ew0arr[:,i] = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)
-        
+        if (len(xgmc[fgmc])!=0)*(len(xhii[fhii])!=0):
+            r0, w0arr[:,i], ew0arr[:,i] = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)
+        else:
+            w0arr[:,i]=np.repeat(np.nan,len(r0))
+            ew0arr[:,i]=np.repeat(np.nan,len(r0))
+            
     w0arr[~np.isfinite(w0arr)]=np.nan
     ew0arr[~np.isfinite(ew0arr)]=np.nan    
     w0=np.nanmean(w0arr, axis=1)
     ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-      
+
+    print(w0)  
     print("Model Evaluation Run Time [s] =", time.time()-t0)
   
-    return (w0, ew0)
+    return (r0, w0, ew0)
 
 
 # # Define Priors and Likelihood Functions
@@ -290,7 +309,7 @@ selr=(r0obs<=1000)
 
 def log_prior(p):
     l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
-    if 10<l1<300 and 5<rc1<100 and 1<tc1<500 and 1<ts1<20 and 1<tfb1<20 and 1<Ng1<10 and 0<voff1<30:
+    if 30<l1<300 and 5<rc1<100 and 1<tc1<500 and 1<ts1<20 and 1<tfb1<20 and 1<Ng1<10 and 0<voff1<30:
         return 0.0
     else:
         return -np.inf
@@ -298,7 +317,7 @@ def log_prior(p):
 def log_prob(p):
     lprior=log_prior(p)
     if np.isfinite(lprior):
-        w0, ew0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6])
+        r0, w0, ew0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6])
         res=w0-w0small[selr]
         sig=ew0obs[selr]
         prob=1/(2*np.pi*sig**2)*np.exp(-0.5*(res/sig)**2)
@@ -348,8 +367,7 @@ print("MCMC Total Run Time [s] =", time.time()-t0full)
 
 # # Pickle MCMC Chain
 
-
-del(sampler.pool)
+#del(sampler.pool)
 
 with open('./output/'+galaxy+'_mcmc.pkl', 'wb') as f:
     pickle.dump(sampler, f, pickle.HIGHEST_PROTOCOL)
@@ -376,7 +394,7 @@ bestsamp=selbest[1][0]
 pbest=samples[bestwalk, bestsamp, :]
 print("Best-fit Parameters:", pbest)
 
-w0, ew0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6])
+r0, w0, ew0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6])
 
 fig, ax = plt.subplots(figsize=(12, 8))
 ax.plot(r0, w0, 'o', color='green', alpha=1.0)    
@@ -391,20 +409,20 @@ ax.tick_params(labelsize=20)
 plt.savefig('./plots/'+galaxy+'_corr_model.png')
 #plt.show()
         
-fig, ax = plt.subplots(figsize=(12, 12))
-#ax.plot(xgmc, ygmc, '.', color='blue', alpha=0.4)
-ax.plot(xgmc[fgmc], ygmc[fgmc], 'o', color='blue', label='GMC')
-#ax.plot(xhii, yhii, '.', color='red', alpha=0.4)
-ax.plot(xhii[fhii], yhii[fhii], 'o', color='red', label='HII')
-#ax.set_xlim(-1000, 1000)
-#ax.set_ylim(-1000, 1000)
-ax.set_xlabel('X [pc]', fontsize=20)
-ax.set_ylabel('Y [pc]', fontsize=20)
-ax.set_title(galaxy, fontsize=30)
-ax.tick_params(labelsize=20)
-ax.legend(fontsize=20)
-plt.savefig('./plots/'+galaxy+'_xy_model.png')
-#plt.show()
+#fig, ax = plt.subplots(figsize=(12, 12))
+##ax.plot(xgmc, ygmc, '.', color='blue', alpha=0.4)
+#ax.plot(xgmc[fgmc], ygmc[fgmc], 'o', color='blue', label='GMC')
+##ax.plot(xhii, yhii, '.', color='red', alpha=0.4)
+#ax.plot(xhii[fhii], yhii[fhii], 'o', color='red', label='HII')
+##ax.set_xlim(-1000, 1000)
+##ax.set_ylim(-1000, 1000)
+#ax.set_xlabel('X [pc]', fontsize=20)
+#ax.set_ylabel('Y [pc]', fontsize=20)
+#ax.set_title(galaxy, fontsize=30)
+#ax.tick_params(labelsize=20)
+#ax.legend(fontsize=20)
+#plt.savefig('./plots/'+galaxy+'_xy_model.png')
+##plt.show()
 
 
 # # Make MCMC Plots
