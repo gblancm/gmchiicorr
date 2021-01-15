@@ -314,6 +314,21 @@ def log_prior(p):
 
 
 
+def log_prob(p):
+    lprior=log_prior(p)
+    if np.isfinite(lprior):
+        r0, w0, ew0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6])
+        res=w0-w0small[selr]
+        sig=ew0obs[selr]
+        prob=1/(2*np.pi*sig**2)*np.exp(-0.5*(res/sig)**2)
+        logp=lprior+np.sum(np.log(prob))
+        if not np.isfinite(logp):
+#        print("fail2")
+            return -np.inf
+        return logp
+    else:
+        return -np.inf
+
         
 
 
