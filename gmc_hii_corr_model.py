@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
@@ -267,7 +265,7 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
     print("Ng=", Ng0)
     print("voff=", voff0)
 
-    Nsamples=100
+    Nsamples=500
 #    Nsamples=10
     
     # Run w() one time to get bins
@@ -314,20 +312,7 @@ def log_prior(p):
     else:
         return -np.inf
 
-def log_prob(p):
-    lprior=log_prior(p)
-    if np.isfinite(lprior):
-        r0, w0, ew0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6])
-        res=w0-w0small[selr]
-        sig=ew0obs[selr]
-        prob=1/(2*np.pi*sig**2)*np.exp(-0.5*(res/sig)**2)
-        logp=lprior+np.sum(np.log(prob))
-        if not np.isfinite(logp):
-#        print("fail2")
-            return -np.inf
-        return logp
-    else:
-        return -np.inf
+
 
         
 
@@ -452,6 +437,6 @@ plt.savefig('./plots/'+galaxy+'_mcmc_samples.png')
 Nburn=0
 goodsamples=samples[:,Nburn:-1,:]
 flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamples)[1],np.shape(goodsamples)[2]))
-fig = corner.corner(flat_goodsamples, labels=labels, range=[(100,300), (5,100), (1,500), (1,10), (1,30), (1, 10), (0,30)]);
+fig = corner.corner(flat_goodsamples, labels=labels, range=[(100,300), (5,100), (1,500), (1,10), (1,30), (1, 10), (0,30)])
 
 plt.savefig('./plots/'+galaxy+'_mcmc_corner.png')
