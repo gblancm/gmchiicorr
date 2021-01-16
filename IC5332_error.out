@@ -1,0 +1,83 @@
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+slurmstepd: error: *** STEP 7185677.0 ON memex-c061 CANCELLED AT 2021-01-15T08:56:11 ***
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+slurmstepd: error: *** JOB 7185677 ON memex-c061 CANCELLED AT 2021-01-15T08:56:11 ***
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:295: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:296: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
