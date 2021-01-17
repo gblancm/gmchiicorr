@@ -4,7 +4,7 @@
 #SBATCH --nodes=1 
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=24 
-#SBATCH --time=24:00:00     
+#SBATCH --time=48:00:00     
 #SBATCH -p OBS,SHARED
 #SBATCH --mem-per-cpu=4000
 #SBATCH --output=NGC0628_output.out 
