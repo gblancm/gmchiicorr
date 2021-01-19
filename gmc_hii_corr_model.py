@@ -347,13 +347,13 @@ ndim=7
 nwalkers=16
 
 p0 = np.zeros((nwalkers, ndim))
-p0[:,0]=np.random.uniform(50, 200, nwalkers)
-p0[:,1]=np.random.uniform(20, 100, nwalkers)
-p0[:,2]=np.random.uniform(1, 500, nwalkers)
-p0[:,3]=np.random.uniform(5, 15, nwalkers)
-p0[:,4]=np.random.uniform(1, 10, nwalkers)
-p0[:,5]=np.random.uniform(1, 10, nwalkers)
-p0[:,6]=np.random.uniform(0, 30, nwalkers)
+p0[:,0]=np.random.uniform(lrange[0], lrange[1], nwalkers)
+p0[:,1]=np.random.uniform(rcrange[0], rcrange[1], nwalkers)
+p0[:,2]=np.random.uniform(tcrange[0], tcrange[1], nwalkers)
+p0[:,3]=np.random.uniform(tsrange[0], tsrange[1], nwalkers)
+p0[:,4]=np.random.uniform(tfbrange[0], tfbrange[1], nwalkers)
+p0[:,5]=np.random.uniform(Ngrange[0], Ngrange[1], nwalkers)
+p0[:,6]=np.random.uniform(voffrange[0], voffrange[1], nwalkers)
 
 # # Run MCMC Chain
 
