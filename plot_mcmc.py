@@ -79,6 +79,6 @@ Nburn=250
 goodsamples=samples[:,Nburn:-1,:]
 flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamples)[1],np.shape(goodsamples)[2]))
 #fig = corner.corner(flat_goodsamples, labels=labels, range=[(100,300), (5,100), (1,500), (1,10), (1,30), (1, 10), (0,30)])
-fig = corner.corner(flat_goodsamples, labels=labels)
+fig = corner.corner(flat_goodsamples, labels=labels, bins=10, hist_bin_factor=2, quantiles=[0.16, 0.5, 0.84], show_titles=True, title_kwargs={"fontsize": 12})
 
 plt.savefig('./plots/'+galaxy+'_mcmc_corner_plot.png')

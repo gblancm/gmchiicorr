@@ -304,10 +304,19 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
 # Trim observed corr function to <=1kpc
 selr=(r0obs<=1000)
 
+lrange=np.array([50,500])
+rcrange=np.array([5,100])
+tcrange=np.array([1,500])
+#tsrange=np.array([1,20])
+tsrange=np.array([3,5])  # from Chevance et al.
+#tfbrange=np.array([1,20])
+tfbrange=np.array([0.1,5]) # for Chevance et al. ts prior
+Ngrange=np.array([1,10])
+voffrange=np.array([0,30])
 
 def log_prior(p):
     l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
-    if 30<l1<300 and 5<rc1<100 and 1<tc1<500 and 1<ts1<20 and 1<tfb1<20 and 1<Ng1<10 and 0<voff1<30:
+    if lrange[0]<l1<lrange[1] and rcrange[0]<rc1<rcrange[1] and tcrange[0]<tc1<tcrange[1] and tsrange[0]<ts1<tsrange[1] and tfbrange[0]<tfb1<tfbrange[1] and Ngrange[0]<Ng1<Ngrange[1] and voffrange[0]<voff1<voffrange[1]:
         return 0.0
     else:
         return -np.inf
