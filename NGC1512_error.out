@@ -2,10 +2,74 @@ gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
   w0=np.nanmean(w0arr, axis=1)
 gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
   ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
 gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
   w0=np.nanmean(w0arr, axis=1)
 gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
   ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
 gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
   w0=np.nanmean(w0arr, axis=1)
 gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
@@ -15,6 +79,52 @@ gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_div
 gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
   eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
 gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
+  w0=np.nanmean(w0arr, axis=1)
+gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
+  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
   eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
 gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
   w0=np.nanmean(w0arr, axis=1)
@@ -36,18 +146,14 @@ gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
   w0=np.nanmean(w0arr, axis=1)
 gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
   ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
+gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
+  omega=dd/dr-1
+gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
+  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
 gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
   w0=np.nanmean(w0arr, axis=1)
 gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
@@ -58,14 +164,8 @@ gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_div
   eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
 gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
   eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
+  omega=dd/dr-1
 gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
   w0=np.nanmean(w0arr, axis=1)
 gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
@@ -94,32 +194,6 @@ gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
   w0=np.nanmean(w0arr, axis=1)
 gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
   ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
-  omega=dd/dr-1
-gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
-  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
-gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
-  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
 gmc_hii_corr_model.py:68: RuntimeWarning: invalid value encountered in true_divide
   omega=dd/dr-1
 gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
@@ -128,25 +202,5 @@ gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_div
   omega=dd/dr-1
 gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
   eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
-gmc_hii_corr_model.py:68: RuntimeWarning: divide by zero encountered in true_divide
-  omega=dd/dr-1
-gmc_hii_corr_model.py:73: RuntimeWarning: divide by zero encountered in true_divide
-  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
-gmc_hii_corr_model.py:73: RuntimeWarning: invalid value encountered in true_divide
-  eomega=np.sqrt((edd/dr)**2+(dd*edr/dr**2)**2)
-gmc_hii_corr_model.py:293: RuntimeWarning: Mean of empty slice
-  w0=np.nanmean(w0arr, axis=1)
-gmc_hii_corr_model.py:294: RuntimeWarning: Mean of empty slice
-  ew0=np.nanmean(ew0arr, axis=1)/np.sqrt(Nsamples)
+/home/gblancm/anaconda3/lib/python3.8/site-packages/emcee/moves/red_blue.py:99: RuntimeWarning: invalid value encountered in double_scalars
+  lnpdiff = f + nlp - state.log_prob[j]
