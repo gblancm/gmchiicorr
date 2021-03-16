@@ -1,13 +1,6 @@
-import sys
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.spatial.distance import cdist
-from scipy.optimize import curve_fit
-import astropy.io.ascii as ascii
 import time
-from scipy.optimize import curve_fit
-import emcee
-import pickle
 import os
 from multiprocessing import Pool
 from multiprocessing import cpu_count
