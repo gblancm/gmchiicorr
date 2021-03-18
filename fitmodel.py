@@ -77,7 +77,13 @@ def log_prob(p):
         res=w0-w0obs[selr]
         sig=ew0obs[selr]
         prob=1/(2*np.pi*sig**2)*np.exp(-0.5*(res/sig)**2)
-        logp=lprior+np.sum(np.log(prob))
+
+        resfhg=fhg0-fhgobs
+        sigfhg=efhgobs
+        probfhg=1/(2*np.pi*sigfhg**2)*np.exp(-0.5*(resfhg/sigfhg)**2)
+
+        logp=lprior+np.sum(np.log(prob))+np.log(probfhg)
+
         if not np.isfinite(logp):
             return -np.inf
         return logp
