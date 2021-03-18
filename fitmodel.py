@@ -143,15 +143,16 @@ r0, w0, ew0, fhg0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3]
 ## Make best fit plot
 
 fig, ax = plt.subplots(figsize=(12, 8))
-ax.plot(r0, w0, '-o', color='green', alpha=1.0)    
+ax.plot(r0, w0, '-o', color='green', alpha=1.0, label="fhg="+"{:.2f}".format(fhg0))    
 ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
 ax.plot(r0obs, w0obs, 'o', color='black', alpha=0.5)
 #ax.set_xlim(0, 00)
 ax.axhline(y=0, linestyle='--')
 ax.set_xlabel('r [pc]', fontsize=20)
 ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
-ax.set_title(galaxy, fontsize=30)
+ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhg)+" ("+"{:.2f}".format(efhg)+")", fontsize=30)
 ax.tick_params(labelsize=20)
+ax.legend(fontsize=20)
 plt.savefig('./plots/'+galaxy+'_corr_model.png')
 #plt.show()
         
