@@ -13,4 +13,4 @@
 #SBATCH --mail-type=END,FAIL 
 
 #srun module load python
-srun python gmc_hii_corr_model.py NGC0628
+srun python fitmodel.py NGC0628

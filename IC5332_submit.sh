@@ -13,4 +13,4 @@
 #SBATCH --mail-type=END,FAIL 
 
 #srun module load python
-srun python gmc_hii_corr_model.py IC5332
+srun python fitmodel.py IC5332
