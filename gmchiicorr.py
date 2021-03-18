@@ -2,11 +2,95 @@ import time
 import numpy as np
 from scipy.spatial.distance import cdist
 from fast_histogram import histogram1d
+import astropy.io.fits as fits
+from scipy.interpolate import NearestNDInterpolator
 
+
+
+# ## Routine to get basic positional parameters of a galaxy
+
+def getparams(name):
+    sample=fits.open('./catalogs/phangs_sample_table_v1p4.fits')
+    names=sample[1].data['NAME']
+    sel=sample[1].data['NAME']==name
+    data=sample[1].data[sel]
+    
+    ra0=data['ORIENT_RA'][0]
+    dec0=data['ORIENT_DEC'][0]
+    D=data['DIST'][0]
+    PA=data['ORIENT_POSANG'][0]
+    inc=data['ORIENT_INCL'][0]
+    
+    return (ra0, dec0, D, PA, inc)
+
+
+# Fucntion that converts RA,DEC into x,y in pc
+# ra, dec is input
+# ra0, dec0 is center of the galaxy
+# D is distance in Mpc
+# PA is position angle
+# i is inclination
+# return x, y, r, theta (i.e. positions on disk in cartesian and polar coordinates)
+def radec2xy(ra, dec, ra0, dec0, D, PA, inc):
+    dra=(ra0-ra)*3600*np.cos(np.pi/180*dec) # relative ra from center [arcsec], *-1 so E-->right
+    ddec=(dec-dec0)*3600.                  # relative dec from center [arcsec]
+    dx1=dra*np.sin(np.pi/180*PA)+ddec*np.cos(np.pi/180*PA)
+    dy1=-1.*dra*np.cos(np.pi/180*PA)+ddec*np.sin(np.pi/180*PA)
+    rsec=np.sqrt((dy1/np.cos(np.pi/180*inc))**2+dx1**2)
+    theta=np.arctan(dy1/dx1)*180/np.pi
+    theta[dx1<=0]=theta[dx1<=0]+180.
+    theta[(dx1>=0)*(dy1<0)]=theta[(dx1>=0)*(dy1<0)]+360.
+    pc2sec=D*1e6*np.pi/180/3600.  # pc/arcsec at distance D
+
+    return (dx1*pc2sec,dy1/np.cos(np.pi/180*inc)*pc2sec,rsec*pc2sec,theta, dra, ddec)
+
+# ## Function that makes random catalog of N objects inside mask area
+
+def rancat(xmask, ymask, mask, Nr=10000, f=None):
+    xr=np.random.uniform(np.min(xmask), np.max(xmask), 1000)
+    yr=np.random.uniform(np.min(ymask), np.max(ymask), 1000)
+    if f == None:
+        aux=np.stack((xmask.flatten(), ymask.flatten()), axis=-1)
+        f=NearestNDInterpolator(aux, mask.flatten())
+    selr=f(xr, yr)
+    frac=len(selr[selr])/len(selr)
+    xr=np.random.uniform(np.min(xmask), np.max(xmask), int(Nr/frac))
+    yr=np.random.uniform(np.min(ymask), np.max(ymask), int(Nr/frac))
+    selr=f(xr, yr)
+    return(xr[selr], yr[selr])
+
+
+# Function to calculate binomial errors for ratios (needs ratio<1)
+import scipy.stats.distributions as dist
+# k = success count
+# n = sample size
+# c = confidence level (c=0.683 == 1 sigma for Normal distribution)
+def ebratio(k, n, c=0.683):
+    p_lower=dist.beta.ppf((1-c)/2.,k+1,n-k+1)
+    p_upper=dist.beta.ppf(1-(1-c)/2.,k+1,n-k+1)
+    return(k/n, k/n-p_lower, p_upper-k/n)
+
+# Function to calculate 1-sigma gaussian errror for ratios (needs k and n >> 1) # PREFERRED
+# using "Uncorrelated noncentral normal ratio" formula
+def egratio(k, n):
+    sigk=np.sqrt(k)
+    sign=np.sqrt(n)
+    ratio=k/n
+    sigratio=(k/n)*np.sqrt((sigk/k)**2+(sign/n)**2)
+    return(ratio, sigratio)
+
+# Function to calculate 1-sigma gaussian errror for ratios (needs k and n >> 1)
+# using "Cameron 2011 from Elmegreen 1990" formula
+def enratio(k, n):
+    p=k/n
+    q=1-p
+    sigp=p*np.sqrt(p*q/n)
+    return(p, sigp)
 
 # ## Function that calculates the 2-point cross-correlation function
+# "bins" must be centers of bins and regularly spaced if provided by user
 
-def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
+def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25, bins=None):
 
     c1=np.transpose(np.array([x1,y1]))
     c2=np.transpose(np.array([x2,y2]))
@@ -19,16 +103,22 @@ def w(x1, y1, x2, y2, xr, yr, rmin=0, rmax=5000, dr=25):
 #    drarr=fastdist.matrix_to_matrix_distance(c1, cr, fastdist.euclidean, "euclidean")
 
     # Count pairs in distance bins       
-    N1=len(x1)
     N2=len(x2)
+    N1=len(x1)
     Nr=len(xr)
-    bins=np.arange(rmin+dr/2, rmax, dr) # centers of bins for output
 
+    # if no "bins" array is provided use rmin, rmax, and dr to compute it, if "bins" is provided compute dr
+    if bins is not None:
+        dr=bins[1]-bins[0]
+    else:
+        bins=np.arange(rmin+dr/2, rmax, dr) # centers of bins for output
+
+        
 #    dd0, dd0bins = np.histogram(ddarr, bins=np.arange(rmin, rmax+dr, dr)) #here bins are bin edges
 #    dr0, dr0bins = np.histogram(drarr, bins=np.arange(rmin, rmax+dr, dr))
 
-    dd0 = histogram1d(ddarr, bins=len(bins), range=(bins[0],bins[-1])) #here bins are bin edges
-    dr0 = histogram1d(drarr, bins=len(bins), range=(bins[0],bins[-1]))
+    dd0 = histogram1d(ddarr, bins=len(bins), range=(bins[0]-dr/2,bins[-1]+dr/2))  #here range are bin edges
+    dr0 = histogram1d(drarr, bins=len(bins), range=(bins[0]-dr/2,bins[-1]+dr/2))
     
     # Normalize pair counts and compute cross-correlation function
     if (N1!=0)*(N2!=0)*(Nr!=0):
@@ -157,7 +247,7 @@ def lin(x, a, b):
 
 # ## Function that Evaluates Cross Correlation Function for Model Parameters
 
-def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
+def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, rmin=0, rmax=500, dr=25, bins=False):
     
     t0=time.time()
     
@@ -177,7 +267,7 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
     xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
     xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
     print("Number of GMCs and HII Regions", len(xgmc[fgmc]), len(xhii[fhii]))
-    r0, w0, ew0 = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)   
+    r0, w0, ew0 = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmin=rmin, rmax=rmax, dr=dr, bins=bins)   
     w0arr=np.zeros((len(w0),Nsamples))
     ew0arr=np.zeros((len(ew0),Nsamples))
     fhgarr=np.zeros(Nsamples)  # ratio of number of observed hii regions to gmcs
@@ -189,7 +279,7 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0):
         xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
         xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
         if (len(xgmc[fgmc])!=0)*(len(xhii[fhii])!=0):
-            r0, w0arr[:,i], ew0arr[:,i] = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmax=1000)
+            r0, w0arr[:,i], ew0arr[:,i] = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmin=rmin, rmax=rmax, dr=dr, bins=bins)
             fhgarr[i]=len(xhii[fhii])/len(xgmc[fgmc])
         else:
             w0arr[:,i]=np.repeat(np.nan,len(r0))
