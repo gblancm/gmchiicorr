@@ -41,6 +41,12 @@ r0obs=obscorr['col1'].data
 w0obs=obscorr['col2'].data
 ew0obs=obscorr['col3'].data
 
+## Read fraction of HII regions to GMCs
+
+fhgtab=ascii.read('./output/'+galaxy+'_fhg.txt')
+fhgobs=fhgtab['col2'].data[0]   
+efhgobs=fhgtab['col2'].data[1]
+
 # # Define Priors and Likelihood Functions
 
 # Select which range in r to fit
@@ -150,7 +156,7 @@ ax.plot(r0obs, w0obs, 'o', color='black', alpha=0.5)
 ax.axhline(y=0, linestyle='--')
 ax.set_xlabel('r [pc]', fontsize=20)
 ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
-ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhg)+" ("+"{:.2f}".format(efhg)+")", fontsize=30)
+ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhgobs)+" ("+"{:.2f}".format(efhgobs)+")", fontsize=30)
 ax.tick_params(labelsize=20)
 ax.legend(fontsize=20)
 plt.savefig('./plots/'+galaxy+'_corr_model.png')
