@@ -6,7 +6,7 @@ for infile in infiles:
     galaxy=infile.replace('./output/','')
     galaxy=galaxy.replace('_corr_small.txt','')
     
-    with open('junk_'+galaxy+'_submit.sh', 'w') as file:
+    with open(galaxy+'_submit.sh', 'w') as file:
         file.write('#!/bin/bash\n')
         file.write('#\n')
         file.write('#SBATCH --job-name=gmchiicorr_'+galaxy+'\n')
@@ -22,6 +22,7 @@ for infile in infiles:
         file.write('#SBATCH --mail-type=END,FAIL\n')
         file.write('\n')
         file.write('srun python fitmodel.py '+galaxy+'\n')
+
 
 
 
