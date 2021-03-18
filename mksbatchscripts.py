@@ -23,6 +23,12 @@ for infile in infiles:
         file.write('\n')
         file.write('srun python fitmodel.py '+galaxy+'\n')
 
+with open('submitall.sh','w') as file:
+    file.write('#!/bin/bash\n')
+    for infile in infiles:
+        galaxy=infile.replace('./output/','')
+        galaxy=galaxy.replace('_corr_small.txt','')
+        file.write('sbatch '+galaxy+'_submit.sh\n')    
 
 
 
