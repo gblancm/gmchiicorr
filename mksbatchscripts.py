@@ -9,7 +9,7 @@ for infile in infiles:
     with open(galaxy+'_submit.sh', 'w') as file:
         file.write('#!/bin/bash\n')
         file.write('#\n')
-        file.write('#SBATCH --job-name=gmchiicorr_'+galaxy+'\n')
+        file.write('#SBATCH --job-name='+galaxy+'_gmchiicorr\n')
         file.write('#SBATCH --nodes=1\n')
         file.write('#SBATCH --ntasks=1\n')
         file.write('#SBATCH --ntasks-per-node=24\n')

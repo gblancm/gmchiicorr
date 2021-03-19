@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#SBATCH --job-name=gmchiicorr_NGC1365
+#SBATCH --job-name=NGC1365_gmchiicorr
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=24
