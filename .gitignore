@@ -1,5 +1,6 @@
 .DS_store
 __pycache__/
+.vscode/
 plots/*png
 output/*mcmc.pkl
 
