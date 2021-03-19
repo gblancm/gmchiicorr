@@ -3,4 +3,5 @@ __pycache__/
 .vscode/
 plots/*png
 output/*mcmc.pkl
-
+*error.out
+*output.out
