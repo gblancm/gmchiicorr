@@ -54,12 +54,12 @@ selr=(r0obs<=500)
 
 # Define prior parameter space
 lrange=np.array([50,500])
-rcrange=np.array([5,100])
-tcrange=np.array([1,100])
-tsrange=np.array([3,5])  # from Chevance et al.
-tfbrange=np.array([0.1,5]) # for Chevance et al. 
+rcrange=np.array([5,150])
+tcrange=np.array([1,50])
+tsrange=np.array([1,10])
+tfbrange=np.array([1,10])
 Ngrange=np.array([1,10])
-voffrange=np.array([0,30])
+voffrange=np.array([0,50])
 
 # Define uniform prior distribution
 def log_prior(p):
@@ -197,7 +197,7 @@ for j in range(nwalkers):
 plt.savefig('./plots/'+galaxy+'_mcmc_samples.png')
 
 ## Make MCMC Corner Plot
-Nburn=0
+Nburn=250
 goodsamples=samples[:,Nburn:-1,:]
 flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamples)[1],np.shape(goodsamples)[2]))
 fig = corner.corner(flat_goodsamples, labels=labels, bins=10, hist_bin_factor=1, quantiles=[0.16, 0.5, 0.84], show_titles=True, title_kwargs={"fontsize": 12})

@@ -260,8 +260,8 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, rmin=0, rmax=500, dr=25, bins=Fa
     print("Ng=", Ng0)
     print("voff=", voff0)
 
-    Nsamples=500
-#    Nsamples=10
+#    Nsamples=500
+    Nsamples=250
     
     # Run w() one time to get bins
     xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
