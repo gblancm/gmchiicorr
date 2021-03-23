@@ -53,12 +53,12 @@ efhgobs=fhgtab['col2'].data[1]
 selr=(r0obs<=500)
 
 # Define prior parameter space
-lrange=np.array([50,500])
+lrange=np.array([20,500])
 rcrange=np.array([5,150])
 tcrange=np.array([1,50])
-tsrange=np.array([1,15])
-tfbrange=np.array([1,15])
-Ngrange=np.array([1,10])
+tsrange=np.array([1,50])
+tfbrange=np.array([1,50])
+Ngrange=np.array([1,30])
 voffrange=np.array([0,50])
 
 # Define uniform prior distribution
