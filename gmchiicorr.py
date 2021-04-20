@@ -219,7 +219,7 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
             t0[k]=np.random.uniform(0, tc[i]-tfb[i])    
             
             #offset direction and final position at tobs
-            phi=np.random.uniform(0, 2*np.pi)
+            phi=np.random.uniform(0, 2*np.pi) # random velocity angle on plane of the galaxy
             xhii[k]=x0+voffaux[i]*(tobs[i]-t0[k])*np.cos(phi)
             yhii[k]=y0+voffaux[i]*(tobs[i]-t0[k])*np.sin(phi)
 
@@ -247,7 +247,7 @@ def lin(x, a, b):
 
 # ## Function that Evaluates Cross Correlation Function for Model Parameters
 
-def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, rmin=0, rmax=500, dr=25, bins=False, Nsamples=250):
+def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, rmin=0, rmax=500, dr=25, bins=False, Nsamples=150):
     
     t0=time.time()
     
