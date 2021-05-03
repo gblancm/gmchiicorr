@@ -94,7 +94,7 @@ def log_prob(p):
 # # Set up MCMC
 
 ndim=7
-nwalkers=16
+nwalkers=128
 
 p0 = np.zeros((nwalkers, ndim))
 p0[:,0]=np.random.uniform(lrange[0], lrange[1], nwalkers)
@@ -107,7 +107,7 @@ p0[:,6]=np.random.uniform(voffrange[0], voffrange[1], nwalkers)
 
 # # Run MCMC Chain
 
-Nmc=5000
+Nmc=1000
 #Nmc=2
 
 print("Starting MCMC")
