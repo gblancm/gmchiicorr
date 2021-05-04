@@ -96,8 +96,8 @@ def log_prob(p):
 ndim=7
 nwalkers=128
 #nwalkers=14
-#Nmc=1000
-Nmc=2
+Nmc=1000
+#Nmc=2
 
 
 p0 = np.zeros((nwalkers, ndim))
@@ -114,26 +114,26 @@ p0[:,6]=np.random.uniform(voffrange[0], voffrange[1], nwalkers)
 print("Starting MCMC")
 t0full=time.time()
 
-## run MCMC with multiple cpus
-#with Pool() as pool:
-#    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool)
-#    state = sampler.run_mcmc(p0,Nmc)
+# run MCMC with multiple cpus
+with Pool() as pool:
+    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool)
+    state = sampler.run_mcmc(p0,Nmc)
 
-## run MCMC with on cpu
-sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob)
-state = sampler.run_mcmc(p0,Nmc)
+### run MCMC with on cpu
+#sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob)
+#state = sampler.run_mcmc(p0,Nmc)
     
 print("MCMC Total Run Time [s] =", time.time()-t0full)
 
 
-## # Pickle MCMC Chain
-#del(sampler.pool)
-#with open('./output/'+galaxy+'_mcmc.pkl', 'wb') as f:
-#    pickle.dump(sampler, f, pickle.HIGHEST_PROTOCOL)
-#
-## # Unpickle MCMC Chain
-#with open('./output/'+galaxy+'_mcmc.pkl', 'rb') as f:
-#    sampler = pickle.load(f)
+# # Pickle MCMC Chain
+del(sampler.pool)
+with open('./output/'+galaxy+'_mcmc.pkl', 'wb') as f:
+    pickle.dump(sampler, f, pickle.HIGHEST_PROTOCOL)
+
+# # Unpickle MCMC Chain
+with open('./output/'+galaxy+'_mcmc.pkl', 'rb') as f:
+    sampler = pickle.load(f)
 
 
 # # Find best-fit model (max logP) and evaluate
