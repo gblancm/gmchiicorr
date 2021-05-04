@@ -4,6 +4,7 @@ from scipy.spatial.distance import cdist
 from fast_histogram import histogram1d
 import astropy.io.fits as fits
 from scipy.interpolate import NearestNDInterpolator
+import random
 
 
 
@@ -191,6 +192,109 @@ def drawgmc_l(dbox=2000,l=200,rc=25,tc=30,ts=10,tfb=5,Ng=1,voff=10, frand=10):
 
 
 # ## Function that draws N*Ng HII regions given an ensemble of GMCs
+#
+#def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
+#   
+#   ngmc=len(xgmc) # number of GMCs
+#   nhii=np.sum(Ng.astype(int)) # number of HII regions
+#   voffaux=voff*3.2e-14*(1e6*365*24*3600) # velocity in pc/Myr
+#
+#   xhii=np.zeros(nhii) # HII region initial coordinates
+#   yhii=np.zeros(nhii)
+#   t0=np.zeros(nhii) # HII region formation time
+#   fhii=np.repeat(False,nhii) # HII region visibility flag
+#   indgmc=np.zeros(nhii) # gmc list index
+#
+#   k=0 # counter
+#   for i in range(ngmc):  # drawing HII regions for each GMC independently
+#       for j in range(Ng[i]):
+#
+#           # initial position
+#           rad0=rc[i]*np.sqrt(random.uniform(0,1)) # uniform across circular area
+#           #rad0=rc[i]*np.random.uniform(0,1) # uniform in radius (i.e. as r**-2)
+#           theta0=random.uniform(0, 2*np.pi)
+#           x0=xgmc[i]+rad0*np.cos(theta0)
+#           y0=ygmc[i]+rad0*np.sin(theta0)
+#
+#           #formation time (assuming stars form no later than tc-tfb)
+#           t0[k]=random.uniform(0, tc[i]-tfb[i])    
+#           
+#           #offset direction and final position at tobs
+#           phi=random.uniform(0, 2*np.pi) # random velocity angle on plane of the galaxy
+#           xhii[k]=x0+voffaux[i]*(tobs[i]-t0[k])*np.cos(phi)
+#           yhii[k]=y0+voffaux[i]*(tobs[i]-t0[k])*np.sin(phi)
+#
+#           #visibility flag is True if cloud has already formed and emerged, and has not yet faded
+#           if (t0[k]+tfb[i]<tobs[i])*(tobs[i]<t0[k]+ts[i]):
+#               fhii[k]=True
+#
+#               #print(t0[k], tfb[i], ts[i], tobs[i], t0[k]+tfb[i], t0[k]+ts[i], fhii[k])
+#           
+#           #GMC list index
+#           indgmc[i]=i
+#           
+#           k=k+1
+#       
+#   
+#   return (xhii,yhii,fhii)
+    
+# # ## Function that draws N*Ng HII regions given an ensemble of GMCs # Faster version!
+#
+#def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
+#    
+#    ngmc=len(xgmc) # number of GMCs
+#    nhii=np.sum(Ng.astype(int)) # number of HII regions
+#    voffaux=voff*3.2e-14*(1e6*365*24*3600) # velocity in pc/Myr
+#
+#    rc0=np.zeros(nhii) # 
+#    xgmc0=np.zeros(nhii)
+#    ygmc0=np.zeros(nhii)
+#    voffaux0=np.zeros(nhii) 
+#    tobs0=np.zeros(nhii) 
+#    ts0=np.zeros(nhii) 
+#    tfb0=np.zeros(nhii) 
+#
+#    xhii=np.zeros(nhii) # HII region initial coordinates
+#    yhii=np.zeros(nhii)
+#    t0=np.zeros(nhii) # HII region formation time
+#    fhii=np.repeat(False,nhii) # HII region visibility flag
+#    indgmc=np.zeros(nhii) # gmc list index
+#
+#    k=0 # counter
+#    for i in range(ngmc):  # drawing HII regions for each GMC independently
+#        for j in range(Ng[i]):
+#            rc0[k]=rc[i]        # GMC radius for this HII region
+#            xgmc0[k]=xgmc[i]    # GMC x for this HII region
+#            ygmc0[k]=ygmc[i]     # GMC y for this HII region
+#            voffaux0[k]=voffaux[i]
+#            tobs0[k]=tobs[i]
+#            ts0[k]=ts[i]
+#            tfb0[k]=tfb[i]
+#            #formation time (assuming stars form no later than tc-tfb)
+#            t0[k]=random.uniform(0, tc[i]-tfb[i])
+#            indgmc[i]=i         #GMC list index
+#            k=k+1
+#
+#    # initial position
+#    rad0=rc0*np.sqrt(np.random.uniform(0,1,nhii)) # uniform across circular area
+##   rad0=rc0*np.random.uniform(0,1, nhii) # uniform in radius (i.e. as r**-2)
+#    theta0=np.random.uniform(0, 2*np.pi,nhii)
+#    x0=xgmc0+rad0*np.cos(theta0)
+#    y0=ygmc0+rad0*np.sin(theta0)
+#     
+#    #offset direction and final position at tobs
+#    phi=np.random.uniform(0, 2*np.pi,nhii) # random velocity angle on plane of the galaxy
+#    xhii=x0+voffaux0*(tobs0-t0)*np.cos(phi)
+#    yhii=y0+voffaux0*(tobs0-t0)*np.sin(phi)
+#
+#     #visibility flag is True if cloud has already formed and emerged, and has not yet faded
+#    fhii[(t0+tfb0<tobs0)*(tobs0<t0+ts0)]=True
+#
+#
+#    
+#    return (xhii,yhii,fhii)
+    
+# ## Function that draws N*Ng HII regions given an ensemble of GMCs # FAstest!! but not working well
 
 def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
     
@@ -198,46 +302,42 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
     nhii=np.sum(Ng.astype(int)) # number of HII regions
     voffaux=voff*3.2e-14*(1e6*365*24*3600) # velocity in pc/Myr
 
-    xhii=np.zeros(nhii) # HII region initial coordinates
-    yhii=np.zeros(nhii)
-    t0=np.zeros(nhii) # HII region formation time
-    fhii=np.repeat(False,nhii) # HII region visibility flag
-    indgmc=np.zeros(nhii) # gmc list index
+    xgmc0=np.zeros(nhii)
+    ygmc0=np.zeros(nhii)
+    tobs0=np.zeros(nhii) 
 
     k=0 # counter
     for i in range(ngmc):  # drawing HII regions for each GMC independently
-        for j in range(Ng[i]):
+        xgmc0[k:k+Ng[i]-1]=xgmc[i]    # GMC x for this HII region
+        ygmc0[k:k+Ng[i]-1]=ygmc[i]     # GMC y for this HII region
+        tobs0[k:k+Ng[i]-1]=tobs[i]     # GMC y for this HII region
+        k=k+Ng[i]
 
-            # initial position
-            rad0=rc[i]*np.sqrt(np.random.uniform(0,1)) # uniform across circular area
-#            rad0=rc[i]*np.random.uniform(0,1) # uniform in radius (i.e. as r**-2)
-            theta0=np.random.uniform(0, 2*np.pi)
-            x0=xgmc[i]+rad0*np.cos(theta0)
-            y0=ygmc[i]+rad0*np.sin(theta0)
+    
+    #formation time (assuming stars form no later than tc-tfb)
+    t0=np.random.uniform(0, tc[0]-tfb[0], nhii)
 
-            #formation time (assuming stars form no later than tc-tfb)
-            t0[k]=np.random.uniform(0, tc[i]-tfb[i])    
-            
-            #offset direction and final position at tobs
-            phi=np.random.uniform(0, 2*np.pi) # random velocity angle on plane of the galaxy
-            xhii[k]=x0+voffaux[i]*(tobs[i]-t0[k])*np.cos(phi)
-            yhii[k]=y0+voffaux[i]*(tobs[i]-t0[k])*np.sin(phi)
+    # initial position
+    rad0=rc[0]*np.sqrt(np.random.uniform(0,1,nhii)) # uniform across circular area
+#   rad0=rc0*np.random.uniform(0,1, nhii) # uniform in radius (i.e. as r**-2)
+    theta0=np.random.uniform(0, 2*np.pi,nhii)
+    x0=xgmc0+rad0*np.cos(theta0)
+    y0=ygmc0+rad0*np.sin(theta0)
+     
+    #offset direction and final position at tobs
+    phi=np.random.uniform(0, 2*np.pi,nhii) # random velocity angle on plane of the galaxy
+    xhii=x0+voffaux[0]*(tobs0-t0)*np.cos(phi)
+    yhii=y0+voffaux[0]*(tobs0-t0)*np.sin(phi)
 
-            #visibility flag is True if cloud has already formed and emerged, and has not yet faded
-            if (t0[k]+tfb[i]<tobs[i])*(tobs[i]<t0[k]+ts[i]):
-                fhii[k]=True
+    
+     #visibility flag is True if cloud has already formed and emerged, and has not yet faded
+    fhii=np.repeat(False,nhii) # HII region visibility flag
+    fhii[(t0+tfb[0]<tobs0)*(tobs0<t0+ts[0])]=True
 
-                #print(t0[k], tfb[i], ts[i], tobs[i], t0[k]+tfb[i], t0[k]+ts[i], fhii[k])
-            
-            #GMC list index
-            indgmc[i]=i
-            
-            k=k+1
-        
+
     
     return (xhii,yhii,fhii)
-    
-    
+         
 
 # ## Linear Model for fitting large scale correlation function
 
@@ -247,7 +347,7 @@ def lin(x, a, b):
 
 # ## Function that Evaluates Cross Correlation Function for Model Parameters
 
-def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, rmin=0, rmax=500, dr=25, bins=False, Nsamples=150):
+def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, rmin=0, rmax=500, dr=25, bins=False, Nsamples=500):
     
     t0=time.time()
     
@@ -295,4 +395,3 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, rmin=0, rmax=500, dr=25, bins=Fa
     print("Model Evaluation Run Time [s] =", time.time()-t0)
   
     return (r0, w0, ew0, fhg0)
-
