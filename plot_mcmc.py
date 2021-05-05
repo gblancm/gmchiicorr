@@ -75,7 +75,7 @@ for j in range(nwalkers):
 plt.savefig('./plots/'+galaxy+'_mcmc_samples_plot.png')
 
 
-Nburn=250
+Nburn=0
 goodsamples=samples[:,Nburn:-1,:]
 flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamples)[1],np.shape(goodsamples)[2]))
 #fig = corner.corner(flat_goodsamples, labels=labels, range=[(100,300), (5,100), (1,500), (1,10), (1,30), (1, 10), (0,30)])

@@ -52,6 +52,47 @@ efhgobs=fhgtab['col2'].data[1]
 # Select which range in r to fit
 selr=(r0obs<=500)
 
+
+# Find initial guess via simple minimization
+print("====================================")
+print("Finding Starting Point via curve_fit")
+print("====================================")
+
+def func1(r, p0, p1, p2, p3, p4, p5, p6):
+    bins=r[0:-1]
+    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=p3, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+    return np.concatenate([w0,np.array([fhg0])])    
+p0=np.array([200, 50, 20, 10, 2, 5, 5])
+auxr=np.concatenate([r0obs,np.array([-1])])
+auxw=np.concatenate([w0obs,np.array([fhgobs])])
+auxew=np.concatenate([ew0obs,np.array([efhgobs])])
+pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
+
+## Plot pstart fit
+pbest=pstart
+print("Best-fit Parameters:", pbest)
+r0, w0, ew0, fhg0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6], bins=r0obs)
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.plot(r0, w0, '-o', color='green', alpha=1.0, label="fhg="+"{:.2f}".format(fhg0))    
+ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
+ax.plot(r0obs, w0obs, 'o', color='black', alpha=0.5)
+#ax.set_xlim(0, 00)
+ax.axhline(y=0, linestyle='--')
+ax.set_xlabel('r [pc]', fontsize=20)
+ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
+ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhgobs)+" ("+"{:.2f}".format(efhgobs)+")", fontsize=30)
+ax.tick_params(labelsize=20)
+ax.plot([0], [0], color='white', label="l="+"{:.2f}".format(pbest[0]))
+ax.plot([0], [0], color='white', label="rc="+"{:.2f}".format(pbest[1]))
+ax.plot([0], [0], color='white', label="tc="+"{:.2f}".format(pbest[2]))
+ax.plot([0], [0], color='white', label="ts="+"{:.2f}".format(pbest[3]))
+ax.plot([0], [0], color='white', label="tfb="+"{:.2f}".format(pbest[4]))
+ax.plot([0], [0], color='white', label="Ng="+"{:.2f}".format(pbest[5]))
+ax.plot([0], [0], color='white', label="voff="+"{:.2f}".format(pbest[6]))
+ax.legend(fontsize=20)
+plt.savefig('./plots/'+galaxy+'_pstart.png')
+
+
 # Define prior parameter space
 lrange=np.array([50,500])
 rcrange=np.array([5,150])
@@ -92,26 +133,37 @@ def log_prob(p):
 
 
 # # Set up MCMC
-
 ndim=7
 nwalkers=128
-#nwalkers=14
 Nmc=1000
-#Nmc=2
-
 
 p0 = np.zeros((nwalkers, ndim))
-p0[:,0]=np.random.uniform(lrange[0], lrange[1], nwalkers)
-p0[:,1]=np.random.uniform(rcrange[0], rcrange[1], nwalkers)
-p0[:,2]=np.random.uniform(tcrange[0], tcrange[1], nwalkers)
-p0[:,3]=np.random.uniform(tsrange[0], tsrange[1], nwalkers)
-p0[:,4]=np.random.uniform(tfbrange[0], tfbrange[1], nwalkers)
-p0[:,5]=np.random.uniform(Ngrange[0], Ngrange[1], nwalkers)
-p0[:,6]=np.random.uniform(voffrange[0], voffrange[1], nwalkers)
+## Initialize walkers uniformly across prior paramter space
+#p0[:,0]=np.random.uniform(lrange[0], lrange[1], nwalkers)
+#p0[:,1]=np.random.uniform(rcrange[0], rcrange[1], nwalkers)
+#p0[:,2]=np.random.uniform(tcrange[0], tcrange[1], nwalkers)
+#p0[:,3]=np.random.uniform(tsrange[0], tsrange[1], nwalkers)
+#p0[:,4]=np.random.uniform(tfbrange[0], tfbrange[1], nwalkers)
+#p0[:,5]=np.random.uniform(Ngrange[0], Ngrange[1], nwalkers)
+#p0[:,6]=np.random.uniform(voffrange[0], voffrange[1], nwalkers)
+
+## Initialize walkers in a cloud around pstart (from curve_fit)
+factor=0.5
+p0[:,0]=pstart[0]+np.random.normal(0, factor*pstart[0], nwalkers)
+p0[:,1]=pstart[1]+np.random.normal(0, factor*pstart[1], nwalkers)
+p0[:,2]=pstart[2]+np.random.normal(0, factor*pstart[2], nwalkers)
+p0[:,3]=pstart[3]+np.random.normal(0, factor*pstart[3], nwalkers)
+p0[:,4]=pstart[4]+np.random.normal(0, factor*pstart[4], nwalkers)
+p0[:,5]=pstart[5]+np.random.normal(0, factor*pstart[5], nwalkers)
+p0[:,6]=pstart[6]+np.random.normal(0, factor*pstart[6], nwalkers)
+
+
 
 # # Run MCMC Chain
-
+print("====================================")
 print("Starting MCMC")
+print("====================================")
+
 t0full=time.time()
 
 # run MCMC with multiple cpus
@@ -198,7 +250,7 @@ for j in range(nwalkers):
 plt.savefig('./plots/'+galaxy+'_mcmc_samples.png')
 
 ## Make MCMC Corner Plot
-Nburn=250
+Nburn=0
 goodsamples=samples[:,Nburn:-1,:]
 flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamples)[1],np.shape(goodsamples)[2]))
 fig = corner.corner(flat_goodsamples, labels=labels, bins=10, hist_bin_factor=1, quantiles=[0.16, 0.5, 0.84], show_titles=True, title_kwargs={"fontsize": 12})

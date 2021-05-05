@@ -2,6 +2,8 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import glob
+import astropy.io.ascii as ascii
 
 from gmchiicorr import eval_w
 
@@ -11,8 +13,8 @@ from gmchiicorr import eval_w
 bins=None
 
 # Define fiducial model
-rmax=500
-pbest=[200, 50, 20, 10, 2, 5, 10]
+rmax=300
+pbest=[200, 50, 20, 10, 2, 5, 5]
 #pbest=[247, 75, 10, 3.8, 0.6, 10, 16.2]
 r00, w00, ew00, fhg00 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6], rmax=rmax, bins=bins)
 
@@ -20,6 +22,12 @@ r00, w00, ew00, fhg00 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbes
 # Plots for "voff"
 parr=np.array([0, 5, 10, 15, 20])
 fig, ax = plt.subplots(figsize=(12, 8))
+infiles=glob.glob('./output/*corr_small.txt')
+for i in range(len(infiles)):
+    tab=ascii.read(infiles[i])
+    auxr=tab['col1'].data
+    auxerr=tab['col2'].data
+    ax.plot(auxr, auxerr, ':', color='grey', alpha=0.3)
 ax.plot(r00, w00, '-o', alpha=1.0, color='black', label='Fiducial ; fhg='+"{:.2f}".format(fhg00))    
 for i in range(len(parr)):
     r0, w0, ew0, fhg0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=parr[i], rmax=rmax, bins=bins)
@@ -37,6 +45,11 @@ plt.savefig('./plots/model_plots_voff.png')
 # Plots for "Ng"
 parr=np.array([1, 3, 5, 10, 20])
 fig, ax = plt.subplots(figsize=(12, 8))
+for i in range(len(infiles)):
+    tab=ascii.read(infiles[i])
+    auxr=tab['col1'].data
+    auxerr=tab['col2'].data
+    ax.plot(auxr, auxerr, ':', color='grey', alpha=0.3)
 ax.plot(r00, w00, '-o', alpha=1.0, color='black', label='Fiducial ; fhg='+"{:.2f}".format(fhg00))    
 for i in range(len(parr)):
     r0, w0, ew0, fhg0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=parr[i], voff0=pbest[6], rmax=rmax, bins=bins)
@@ -55,6 +68,11 @@ plt.savefig('./plots/model_plots_Ng.png')
 # Plots for "tfb"
 parr=np.array([1, 2, 5, 7, 10])
 fig, ax = plt.subplots(figsize=(12, 8))
+for i in range(len(infiles)):
+    tab=ascii.read(infiles[i])
+    auxr=tab['col1'].data
+    auxerr=tab['col2'].data
+    ax.plot(auxr, auxerr, ':', color='grey', alpha=0.3)
 ax.plot(r00, w00, '-o', alpha=1.0, color='black', label='Fiducial ; fhg='+"{:.2f}".format(fhg00))    
 for i in range(len(parr)):
     r0, w0, ew0, fhg0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=parr[i], Ng0=pbest[5], voff0=pbest[6], rmax=rmax, bins=bins)
@@ -73,6 +91,11 @@ plt.savefig('./plots/model_plots_tfb.png')
 # Plots for "ts"
 parr=np.array([1, 5, 10, 15, 20])
 fig, ax = plt.subplots(figsize=(12, 8))
+for i in range(len(infiles)):
+    tab=ascii.read(infiles[i])
+    auxr=tab['col1'].data
+    auxerr=tab['col2'].data
+    ax.plot(auxr, auxerr, ':', color='grey', alpha=0.3)
 ax.plot(r00, w00, '-o', alpha=1.0, color='black', label='Fiducial ; fhg='+"{:.2f}".format(fhg00))    
 for i in range(len(parr)):
     r0, w0, ew0, fhg0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=parr[i], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6], rmax=rmax, bins=bins)
@@ -91,6 +114,11 @@ plt.savefig('./plots/model_plots_ts.png')
 # Plots for "tc"
 parr=np.array([10, 20, 50, 70, 100])
 fig, ax = plt.subplots(figsize=(12, 8))
+for i in range(len(infiles)):
+    tab=ascii.read(infiles[i])
+    auxr=tab['col1'].data
+    auxerr=tab['col2'].data
+    ax.plot(auxr, auxerr, ':', color='grey', alpha=0.3)
 ax.plot(r00, w00, '-o', alpha=1.0, color='black', label='Fiducial ; fhg='+"{:.2f}".format(fhg00))    
 for i in range(len(parr)):
     r0, w0, ew0, fhg0 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=parr[i], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6], rmax=rmax, bins=bins)
@@ -109,6 +137,11 @@ plt.savefig('./plots/model_plots_tc.png')
 # Plots for "rc"
 parr=np.array([10, 25, 50, 75, 100])
 fig, ax = plt.subplots(figsize=(12, 8))
+for i in range(len(infiles)):
+    tab=ascii.read(infiles[i])
+    auxr=tab['col1'].data
+    auxerr=tab['col2'].data
+    ax.plot(auxr, auxerr, ':', color='grey', alpha=0.3)
 ax.plot(r00, w00, '-o', alpha=1.0, color='black', label='Fiducial ; fhg='+"{:.2f}".format(fhg00))    
 for i in range(len(parr)):
     r0, w0, ew0, fhg0 = eval_w(l0=pbest[0], rc0=parr[i], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6], rmax=rmax, bins=bins)
@@ -125,8 +158,13 @@ plt.savefig('./plots/model_plots_rc.png')
 
 
 # Plots for "l"
-parr=np.array([100, 200, 300, 400, 500])
+parr=np.array([50, 100, 150, 200, 250])
 fig, ax = plt.subplots(figsize=(12, 8))
+for i in range(len(infiles)):
+    tab=ascii.read(infiles[i])
+    auxr=tab['col1'].data
+    auxerr=tab['col2'].data
+    ax.plot(auxr, auxerr, ':', color='grey', alpha=0.3)
 ax.plot(r00, w00, '-o', alpha=1.0, color='black', label='Fiducial ; fhg='+"{:.2f}".format(fhg00))    
 for i in range(len(parr)):
     r0, w0, ew0, fhg0 = eval_w(l0=parr[i], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6], rmax=rmax, bins=bins)
