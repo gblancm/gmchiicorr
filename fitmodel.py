@@ -132,7 +132,7 @@ def log_prob(p):
         return -np.inf     
 
 
-# # Set up MCMC
+## Set up MCMC
 ndim=7
 nwalkers=128
 Nmc=1000
@@ -148,7 +148,7 @@ p0 = np.zeros((nwalkers, ndim))
 #p0[:,6]=np.random.uniform(voffrange[0], voffrange[1], nwalkers)
 
 ## Initialize walkers in a cloud around pstart (from curve_fit)
-factor=0.5
+factor=0.25
 p0[:,0]=pstart[0]+np.random.normal(0, factor*pstart[0], nwalkers)
 p0[:,1]=pstart[1]+np.random.normal(0, factor*pstart[1], nwalkers)
 p0[:,2]=pstart[2]+np.random.normal(0, factor*pstart[2], nwalkers)
