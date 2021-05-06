@@ -365,7 +365,7 @@ def eval_w(l0, rc0, tc0, ts0, tfb0, Ng0, voff0, rmin=0, rmax=500, dr=25, bins=Fa
     xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc, xr, yr = drawgmc_l(dbox=2000, l=l0, rc=rc0, tc=tc0, ts=ts0, tfb=tfb0, Ng=Ng0, voff=voff0, frand=10)
     xhii, yhii, fhii = drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc)
     print("Number of GMCs and HII Regions", len(xgmc[fgmc]), len(xhii[fhii]))
-    print("fhg=", len(xhii[fhii])/len(xgmc[fgmc]))
+    print("fhg=", len(xhii[fhii])/np.float64(len(xgmc[fgmc])))
     r0, w0, ew0 = w(xgmc[fgmc], ygmc[fgmc], xhii[fhii], yhii[fhii], xr, yr, rmin=rmin, rmax=rmax, dr=dr, bins=bins)   
     w0arr=np.zeros((len(w0),Nsamples))
     ew0arr=np.zeros((len(ew0),Nsamples))
