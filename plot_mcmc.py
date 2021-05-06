@@ -6,31 +6,23 @@ import corner
 import emcee
 
 
-
 galaxy=sys.argv[1]
 print(galaxy)
 
-
 def log_prob(p):
-    lprior=log_prior(p)
-    if np.isfinite(lprior):
-        r0, w0, ew0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6])
-        res=w0-w0small[selr]
-        sig=ew0obs[selr]
-        prob=1/(2*np.pi*sig**2)*np.exp(-0.5*(res/sig)**2)
-        logp=lprior+np.sum(np.log(prob))
-        if not np.isfinite(logp):
-#        print("fail2")
-            return -np.inf
-        return logp
-    else:
-        return -np.inf
+        return 0
 
 # # Unpickle MCMC Chain
-
-
 with open('./output/'+galaxy+'_mcmc.pkl', 'rb') as f:
     sampler = pickle.load(f)
+
+
+## Plot histogram of acceptance fraction
+fig, ax = plt.subplots(figsize=(10, 10), sharex=True)
+ax.hist(sampler.acceptance_fraction)
+ax.set_xlabel('MCMC Acceptance Fraction', fontsize=20)
+plt.savefig('./plots/'+galaxy+'_mcmc_acceptance_plot.png')
+
 
 
 # # Find best-fit model (max logP) and evaluate
@@ -75,10 +67,11 @@ for j in range(nwalkers):
 plt.savefig('./plots/'+galaxy+'_mcmc_samples_plot.png')
 
 
-Nburn=0
-goodsamples=samples[:,Nburn:-1,:]
+Nburn=500
+accept=0
+goodsamples=samples[(sampler.acceptance_fraction>=accept),Nburn:-1,:]
 flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamples)[1],np.shape(goodsamples)[2]))
 #fig = corner.corner(flat_goodsamples, labels=labels, range=[(100,300), (5,100), (1,500), (1,10), (1,30), (1, 10), (0,30)])
-fig = corner.corner(flat_goodsamples, labels=labels, bins=10, hist_bin_factor=2, quantiles=[0.16, 0.5, 0.84], show_titles=True, title_kwargs={"fontsize": 12})
+fig = corner.corner(flat_goodsamples, labels=labels, bins=20, hist_bin_factor=1, quantiles=[0.16, 0.5, 0.84], show_titles=True, title_kwargs={"fontsize": 12})
 
 plt.savefig('./plots/'+galaxy+'_mcmc_corner_plot.png')
