@@ -13,7 +13,7 @@ for infile in infiles:
         file.write('#SBATCH --nodes=1\n')
         file.write('#SBATCH --ntasks=1\n')
         file.write('#SBATCH --ntasks-per-node=24\n')
-        file.write('#SBATCH --time=24:00:00\n')
+        file.write('#SBATCH --time=12:00:00\n')
         file.write('#SBATCH -p OBS\n')
         file.write('#SBATCH --mem-per-cpu=4000\n')
         file.write('#SBATCH --output='+galaxy+'_output.out\n')
