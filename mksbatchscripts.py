@@ -15,7 +15,7 @@ for infile in infiles:
         file.write('#SBATCH --ntasks-per-node=24\n')
         file.write('#SBATCH --time=12:00:00\n')
         file.write('#SBATCH -p OBS,PREEMPTION\n')
-        file.write('#SBATCH --mem-per-cpu=4000\n')
+        file.write('#SBATCH --mem-per-cpu=1000\n')
         file.write('#SBATCH --output='+galaxy+'_output.out\n')
         file.write('#SBATCH --error='+galaxy+'_error.out\n')
         file.write('#SBATCH --mail-user=gblancm@carnegiescience.edu\n')
