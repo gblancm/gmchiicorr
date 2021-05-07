@@ -58,15 +58,28 @@ print("====================================")
 print("Finding Starting Point via curve_fit")
 print("====================================")
 
-def func1(r, p0, p1, p2, p3, p4, p5, p6):
+# All free parameters
+#def func1(r, p0, p1, p2, p3, p4, p5, p6):
+#    bins=r[0:-1]
+#    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=p3, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+#    return np.concatenate([w0,np.array([fhg0])])    
+#p0=np.array([200, 50, 20, 10, 2, 5, 5])
+#auxr=np.concatenate([r0obs,np.array([-1])])
+#auxw=np.concatenate([w0obs,np.array([fhgobs])])
+#auxew=np.concatenate([ew0obs,np.array([efhgobs])])
+#pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
+
+# Fixing ts=5
+def func1(r, p0, p1, p2, p4, p5, p6):
     bins=r[0:-1]
-    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=p3, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
-p0=np.array([200, 50, 20, 10, 2, 5, 5])
+p0=np.array([200, 50, 20, 2, 5, 5])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
 pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
+pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], pstart[4], pstart[5]])
 
 ## Plot pstart fit
 pbest=pstart
@@ -97,7 +110,7 @@ plt.savefig('./plots/'+galaxy+'_pstart.png')
 lrange=np.array([50,500])
 rcrange=np.array([5,150])
 tcrange=np.array([1,50])
-tsrange=np.array([1,50])
+tsrange=np.array([4.999,5.001])
 tfbrange=np.array([1,50])
 Ngrange=np.array([1,30])
 voffrange=np.array([0,50])
@@ -186,6 +199,14 @@ with open('./output/'+galaxy+'_mcmc.pkl', 'wb') as f:
 # # Unpickle MCMC Chain
 with open('./output/'+galaxy+'_mcmc.pkl', 'rb') as f:
     sampler = pickle.load(f)
+
+
+
+## Plot histogram of acceptance fraction
+fig, ax = plt.subplots(figsize=(10, 10), sharex=True)
+ax.hist(sampler.acceptance_fraction)
+ax.set_xlabel('MCMC Acceptance Fraction', fontsize=20)
+plt.savefig('./plots/'+galaxy+'_mcmc_acceptance.png')
 
 
 # # Find best-fit model (max logP) and evaluate

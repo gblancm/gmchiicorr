@@ -1,0 +1,10 @@
+python fitmodel_opt.py IC5332
+python fitmodel_opt.py NGC0628
+python fitmodel_opt.py NGC1087
+python fitmodel_opt.py NGC1365
+python fitmodel_opt.py NGC1512
+python fitmodel_opt.py NGC1672
+python fitmodel_opt.py NGC2835
+python fitmodel_opt.py NGC3351
+python fitmodel_opt.py NGC3627
+python fitmodel_opt.py NGC5068
