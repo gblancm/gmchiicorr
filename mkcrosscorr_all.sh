@@ -1,10 +1,20 @@
-python mkcrosscorr.py IC5332
+#python mkcrosscorr.py IC5332
 python mkcrosscorr.py NGC0628
 python mkcrosscorr.py NGC1087
+python mkcrosscorr.py NGC1300
 python mkcrosscorr.py NGC1365
+python mkcrosscorr.py NGC1385
+python mkcrosscorr.py NGC1433
 python mkcrosscorr.py NGC1512
-python mkcrosscorr.py NGC1672
-python mkcrosscorr.py NGC2835
+python mkcrosscorr.py NGC1566
+#python mkcrosscorr.py NGC1672
+#python mkcrosscorr.py NGC2835
 python mkcrosscorr.py NGC3351
 python mkcrosscorr.py NGC3627
-python mkcrosscorr.py NGC5068
+python mkcrosscorr.py NGC4254
+python mkcrosscorr.py NGC4303
+python mkcrosscorr.py NGC4321
+python mkcrosscorr.py NGC4535
+#python mkcrosscorr.py NGC5068
+#python mkcrosscorr.py NGC7496
+

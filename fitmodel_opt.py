@@ -54,30 +54,30 @@ efhgobs=fhgtab['col2'].data[1]
 selr=(r0obs<=500)
 
 # First fit correlation function and then fhg
-#print("Fitting Correlation Function")
-#def func1(r, p0, p1, p2, p3, p4, p5, p6):
-#    bins=r[0:-1]
-#    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=p3, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
-#    return np.concatenate([w0,np.array([fhg0])])    
-#p0=np.array([200, 50, 20, 10, 2, 5, 5])
-#auxr=np.concatenate([r0obs,np.array([-1])])
-#auxw=np.concatenate([w0obs,np.array([fhgobs])])
-#auxew=np.concatenate([ew0obs,np.array([efhgobs])])
-#pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
-#pbest=pstart
-
-# Fixing ts=5
-def func1(r, p0, p1, p2, p4, p5, p6):
+print("Fitting Correlation Function")
+def func1(r, p0, p1, p2, p3, p4, p5, p6):
     bins=r[0:-1]
-    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=p3, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
-p0=np.array([200, 50, 10, 2, 5, 10])
+p0=np.array([200, 100, 10, 5, 2, 5, 5])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
 pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
-pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], pstart[4], pstart[5]])
 pbest=pstart
+
+# Fixing ts=5
+#def func1(r, p0, p1, p2, p4, p5, p6):
+#    bins=r[0:-1]
+#    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+#    return np.concatenate([w0,np.array([fhg0])])    
+#p0=np.array([200, 100, 10, 2, 5, 5])
+#auxr=np.concatenate([r0obs,np.array([-1])])
+#auxw=np.concatenate([w0obs,np.array([fhgobs])])
+#auxew=np.concatenate([ew0obs,np.array([efhgobs])])
+#pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
+#pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], pstart[4], pstart[5]])
+#pbest=pstart
 
 
 print("Best-fit Parameters:", pbest)

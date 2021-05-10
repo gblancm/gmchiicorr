@@ -9,6 +9,7 @@ from scipy.optimize import curve_fit
 import astropy.io.ascii as ascii
 import astropy.io.fits as fits
 from astropy import wcs
+import glob
 
 
 
@@ -63,15 +64,21 @@ if galaxy=='IC5332':
 
 
 # Get coordinates of GMCs from ALMA and map onto disk coordinates
-gmcdata=fits.open('./catalogs/gmc/'+galaxy.lower()+'_co21_native_props.fits')
+#gmcdata=fits.open('./catalogs/gmc/'+galaxy.lower()+'_co21_native_props.fits')
+gmcdata=fits.open('./catalogs/v4p0_gmccats/homogen_120pc_148mK/'+galaxy.lower()+'_12m+7m+tp_co21_120pc_148mK_props.fits')
 ra1=gmcdata[1].data['XCTR_DEG']
 dec1=gmcdata[1].data['YCTR_DEG']
 x1, y1, r1, theta1, dra1, ddec1 = radec2xy(ra1, dec1, ra0, dec0, D, PA, inc)
 
 # Get coordinates of HII regions from MUSE and map onto disk coordinates
-hiidata=ascii.read('./catalogs/hiireg/'+galaxy+'_emission_region_cat.txt')
-ra2=hiidata['ra_peak'].data
-dec2=hiidata['dec_peak'].data
+#hiidata=ascii.read('./catalogs/hiireg/'+galaxy+'_emission_region_cat.txt')
+#ra2=hiidata['ra_peak'].data
+#dec2=hiidata['dec_peak'].data
+hiitab=fits.open('./catalogs/Nebulae_catalogue_v2.fits')       
+hiidata=hiitab[1].data
+hiidatagal=hiidata[(hiidata['gal_name']==galaxy)*(hiidata['HII_class']==1)] # only HII regions in the galaxy of interest 
+ra2=hiidatagal['cen_ra']
+dec2=hiidatagal['cen_dec']
 x2, y2, r2, theta2, dra2, ddec2 = radec2xy(ra2, dec2, ra0, dec0, D, PA, inc)
 
 
@@ -79,15 +86,15 @@ x2, y2, r2, theta2, dra2, ddec2 = radec2xy(ra2, dec2, ra0, dec0, D, PA, inc)
 print("Creating ALMA, MUSE, and joint masks.")
 
 # read CO map and create mask (NaN are not observed)
-comap=fits.open('./maps/co/'+galaxy.lower()+'_12m+7m+tp_co21_strict_mom0.fits')
+comap=fits.open('./maps/co/'+galaxy.lower()+'_12m+7m+tp_co21_broad_mom0.fits')
 cowcs=wcs.WCS(comap[0], naxis=2)
 nxco=comap[0].header['NAXIS1']
 nyco=comap[0].header['NAXIS2']
 comask=np.ones((nyco, nxco), dtype=bool)
-comask[np.isnan(comap[0].data)]=False
+comask[(np.isnan(comap[0].data))+(comap[0].data==0)]=False
 
 # read Ha map, reproject to CO map and create mask (NaN are not observed)
-hamap=fits.open('./maps/ha/'+galaxy+'_IMAGE_FOV_WFI_NB.fits')
+hamap=fits.open(glob.glob('./maps/ha/'+galaxy+'_IMAGE_FOV_WFI_NB_WCS_Pall_mad_copt_*.fits')[0])
 hamap2, hafootprint = reproject_interp(hamap[1], cowcs, shape_out=(nyco, nxco))
 hamask=np.ones((nyco, nxco), dtype=bool)
 hamask[(hamap2==0)+(np.isnan(hamap2))]=False
@@ -137,12 +144,14 @@ r0, w0, ew0 = w(x1[sel1], y1[sel1], x2[sel2], y2[sel2], xr, yr)
 
 ## Fit and remove large scale (few kpc) correlation using linear model
 
-rmin=500
+rmin=300
 rmax=1500
 
 # restricted fitting raneg for some galaxies
-if galaxy=='NGC0628':
-    rmax=1000
+if galaxy=='NGC3351':
+    rmax=1200
+if galaxy=='NGC3627':
+    rmax=1200
 
 
 sel=(r0>=rmin)*(r0<=rmax)
@@ -171,7 +180,7 @@ ax.plot(r0, w0, 'o', color='black', alpha=1.0)
 ax.axhline(y=0, linestyle='--')
 plt.xlabel('r [pc]', fontsize=20)
 plt.ylabel(r'$\omega(r)$ [pc]', fontsize=20)
-plt.title(galaxy, fontsize=30)
+ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhg)+" ("+"{:.2f}".format(efhg)+")", fontsize=30)
 ax.tick_params(labelsize=20)
 #ax.set_yscale('log')
 plt.savefig('./plots/'+galaxy+'_corr.png')
@@ -185,7 +194,7 @@ ax.set_xlim(0, 500)
 ax.axhline(y=0, linestyle='--')
 plt.xlabel('r [pc]', fontsize=20)
 plt.ylabel(r'$\omega(r)$ [pc]', fontsize=20)
-plt.title(galaxy, fontsize=30)
+ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhg)+" ("+"{:.2f}".format(efhg)+")", fontsize=30)
 ax.tick_params(labelsize=20)
 #ax.set_yscale('log')
 plt.savefig('./plots/'+galaxy+'_corr_zoom.png')
@@ -199,7 +208,7 @@ ax.set_ylim(1e-3, 1e1)
 ax.axhline(y=0, linestyle='--')
 plt.xlabel('r [pc]', fontsize=20)
 plt.ylabel(r'log($\omega(r)$) [pc]', fontsize=20)
-plt.title(galaxy, fontsize=30)
+ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhg)+" ("+"{:.2f}".format(efhg)+")", fontsize=30)
 ax.tick_params(labelsize=20)
 ax.set_yscale('log')
 plt.savefig('./plots/'+galaxy+'_corr_log.png')
@@ -216,7 +225,7 @@ ax.plot(r0, lin(r0, *popt), color='red')
 ax.axhline(y=0, linestyle='--')
 plt.xlabel('r [pc]', fontsize=20)
 plt.ylabel(r'$\omega(r)$ [pc]', fontsize=20)
-plt.title(galaxy, fontsize=30)
+ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhg)+" ("+"{:.2f}".format(efhg)+")", fontsize=30)
 ax.tick_params(labelsize=20)
 #ax.set_yscale('log')
 #ax.set_xscale('log')
