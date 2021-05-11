@@ -68,7 +68,7 @@ plt.savefig('./plots/'+galaxy+'_mcmc_samples_plot.png')
 
 
 Nburn=1000 # burn period
-accept=0.1 # minimum acceptance fraction
+accept=0.0 # minimum acceptance fraction
 goodsamples=samples[(sampler.acceptance_fraction>=accept),Nburn:-1,:]
 flat_goodsamples=goodsamples.reshape((np.shape(goodsamples)[0]*np.shape(goodsamples)[1],np.shape(goodsamples)[2]))
 #fig = corner.corner(flat_goodsamples, labels=labels, range=[(100,300), (5,100), (1,500), (1,10), (1,30), (1, 10), (0,30)])

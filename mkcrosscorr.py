@@ -145,13 +145,13 @@ r0, w0, ew0 = w(x1[sel1], y1[sel1], x2[sel2], y2[sel2], xr, yr)
 ## Fit and remove large scale (few kpc) correlation using linear model
 
 rmin=300
-rmax=1500
+rmax=500
 
-# restricted fitting raneg for some galaxies
-if galaxy=='NGC3351':
-    rmax=1200
-if galaxy=='NGC3627':
-    rmax=1200
+## restricted fitting raneg for some galaxies
+#if galaxy=='NGC3351':
+#    rmax=1200
+#if galaxy=='NGC3627':
+#    rmax=1200
 
 
 sel=(r0>=rmin)*(r0<=rmax)

@@ -14,8 +14,7 @@ bins=None
 
 # Define fiducial model
 rmax=300
-pbest=[200, 100, 10, 5, 2, 5, 5]
-#pbest=[247, 75, 10, 3.8, 0.6, 10, 16.2]
+pbest=[100, 50, 10, 5, 2, 5, 5]
 r00, w00, ew00, fhg00 = eval_w(l0=pbest[0], rc0=pbest[1], tc0=pbest[2], ts0=pbest[3], tfb0=pbest[4], Ng0=pbest[5], voff0=pbest[6], rmax=rmax, bins=bins)
 
 
@@ -135,7 +134,7 @@ plt.savefig('./plots/model_plots_tc.png')
 
 
 # Plots for "rc"
-parr=np.array([75, 100, 125, 150, 175])
+parr=np.array([25, 50, 75, 100, 125])
 fig, ax = plt.subplots(figsize=(12, 8))
 for i in range(len(infiles)):
     tab=ascii.read(infiles[i])
@@ -158,7 +157,7 @@ plt.savefig('./plots/model_plots_rc.png')
 
 
 # Plots for "l"
-parr=np.array([50, 100, 150, 200, 250])
+parr=np.array([50, 75, 100, 125, 150])
 fig, ax = plt.subplots(figsize=(12, 8))
 for i in range(len(infiles)):
     tab=ascii.read(infiles[i])
