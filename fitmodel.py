@@ -69,7 +69,7 @@ print("====================================")
 #auxew=np.concatenate([ew0obs,np.array([efhgobs])])
 #pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
 
- Fixing ts=5
+## Fixing ts=5
 def func1(r, p0, p1, p2, p4, p5, p6):
     bins=r[0:-1]
     r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
