@@ -4,9 +4,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=24
-#SBATCH --time=18:00:00
+#SBATCH --time=24:00:00
 #SBATCH -p OBS,PREEMPTION,SHARED
-#SBATCH --mem-per-cpu=1000
+#SBATCH --mem-per-cpu=2000
 #SBATCH --output=NGC0628_output.out
 #SBATCH --error=NGC0628_error.out
 #SBATCH --mail-user=gblancm@carnegiescience.edu
