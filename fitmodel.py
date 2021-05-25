@@ -113,7 +113,7 @@ tcrange=np.array([1,50])
 tsrange=np.array([4.999,5.001]) # for ts=5
 #tsrange=np.array([0,50])
 tfbrange=np.array([1,50])
-Ngrange=np.array([1,30])
+Ngrange=np.array([1,10])
 voffrange=np.array([0,50])
 
 # Define uniform prior distribution

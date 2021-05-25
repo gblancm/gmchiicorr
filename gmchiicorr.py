@@ -300,6 +300,7 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
     
     ngmc=len(xgmc) # number of GMCs
     nhii=np.sum(Ng.astype(int)) # number of HII regions
+    #print("Number of HII regions:", ngmc, nhii, nhii/ngmc)
     voffaux=voff*3.2e-14*(1e6*365*24*3600) # velocity in pc/Myr
 
     xgmc0=np.zeros(nhii)
@@ -308,9 +309,9 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
 
     k=0 # counter
     for i in range(ngmc):  # drawing HII regions for each GMC independently
-        xgmc0[k:k+Ng[i]-1]=xgmc[i]    # GMC x for this HII region
-        ygmc0[k:k+Ng[i]-1]=ygmc[i]     # GMC y for this HII region
-        tobs0[k:k+Ng[i]-1]=tobs[i]     # GMC y for this HII region
+        xgmc0[k:k+Ng[i]]=xgmc[i]    # GMC x for this HII region
+        ygmc0[k:k+Ng[i]]=ygmc[i]     # GMC y for this HII region
+        tobs0[k:k+Ng[i]]=tobs[i]     # GMC y for this HII region
         k=k+Ng[i]
 
     
@@ -333,7 +334,7 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
      #visibility flag is True if cloud has already formed and emerged, and has not yet faded
     fhii=np.repeat(False,nhii) # HII region visibility flag
     fhii[(t0+tfb[0]<tobs0)*(tobs0<t0+ts[0])]=True
-
+    #print((t0+tfb[0])[0], tobs0[0], (t0+ts[0])[0], fhii[0])
 
     
     return (xhii,yhii,fhii)
