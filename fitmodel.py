@@ -69,17 +69,32 @@ print("====================================")
 #auxew=np.concatenate([ew0obs,np.array([efhgobs])])
 #pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
 
-## Fixing ts=5
-def func1(r, p0, p1, p2, p4, p5, p6):
+### Fixing ts=5
+#def func1(r, p0, p1, p2, p4, p5, p6):
+#    bins=r[0:-1]
+#    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+#    return np.concatenate([w0,np.array([fhg0])])    
+#p0=np.array([200, 100, 10, 2, 5, 5])
+#auxr=np.concatenate([r0obs,np.array([-1])])
+#auxw=np.concatenate([w0obs,np.array([fhgobs])])
+#auxew=np.concatenate([ew0obs,np.array([efhgobs])])
+#pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
+#pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], pstart[4], pstart[5]])
+
+## Fixing ts=5 and Ng=10
+def func1(r, p0, p1, p2, p4, p6):
     bins=r[0:-1]
-    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=p5, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=10, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
-p0=np.array([200, 100, 10, 2, 5, 5])
+p0=np.array([200, 100, 10, 2, 5])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
 pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
-pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], pstart[4], pstart[5]])
+pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], 10.0, pstart[5]])
+
+
+
 
 ## Plot pstart fit
 pbest=pstart
@@ -90,7 +105,8 @@ ax.plot(r0, w0, '-o', color='green', alpha=1.0, label="fhg="+"{:.2f}".format(fhg
 ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
 ax.plot(r0obs, w0obs, 'o', color='black', alpha=0.5)
 #ax.set_xlim(0, 00)
-ax.axhline(y=0, linestyle='--')
+ax.axhline(y=0, linestyle=':', color='grey')
+
 ax.set_xlabel('r [pc]', fontsize=20)
 ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
 ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhgobs)+" ("+"{:.2f}".format(efhgobs)+")", fontsize=30)
@@ -113,7 +129,7 @@ tcrange=np.array([1,50])
 tsrange=np.array([4.999,5.001]) # for ts=5
 #tsrange=np.array([0,50])
 tfbrange=np.array([1,50])
-Ngrange=np.array([1,10])
+Ngrange=np.array([1,20])
 voffrange=np.array([0,50])
 
 # Define uniform prior distribution
@@ -124,9 +140,19 @@ def log_prior(p):
     else:
         return -np.inf
 
+
+# Define normal prior for Ng
+def log_ngprior(p):
+    l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
+    mu = 10
+    sigma = 5
+    return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(Ng1-mu)**2/sigma**2
+
+
 # Define likelihood*prior distriibution
 def log_prob(p):
-    lprior=log_prior(p)
+    #lprior=log_prior(p)  # without extra prior in Ng
+    lprior=log_prior(p)+log_ngprior(p)    # for Gaussian Prior on Ng
     if np.isfinite(lprior):
         r0, w0, ew0, fhg0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6], bins=r0obs, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
         res=w0-w0obs[selr]
@@ -235,7 +261,7 @@ ax.plot(r0, w0, '-o', color='green', alpha=1.0, label="fhg="+"{:.2f}".format(fhg
 ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
 ax.plot(r0obs, w0obs, 'o', color='black', alpha=0.5)
 #ax.set_xlim(0, 00)
-ax.axhline(y=0, linestyle='--')
+ax.axhline(y=0, linestyle=':', color='grey')
 ax.set_xlabel('r [pc]', fontsize=20)
 ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
 ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhgobs)+" ("+"{:.2f}".format(efhgobs)+")", fontsize=30)

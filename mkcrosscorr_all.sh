@@ -12,7 +12,7 @@ python mkcrosscorr.py NGC1566
 python mkcrosscorr.py NGC3351
 python mkcrosscorr.py NGC3627
 python mkcrosscorr.py NGC4254
-python mkcrosscorr.py NGC4303
+#python mkcrosscorr.py NGC4303
 python mkcrosscorr.py NGC4321
 python mkcrosscorr.py NGC4535
 #python mkcrosscorr.py NGC5068

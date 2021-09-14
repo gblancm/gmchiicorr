@@ -73,7 +73,7 @@ ax.plot(r0, w0, '-o', color='green', alpha=1.0, label="fhg="+"{:.2f}".format(fhg
 ax.errorbar(r0obs, w0obs, ew0obs, fmt="o", color='black', capsize=5, alpha=0.5)
 ax.plot(r0obs, w0obs, 'o', color='black', alpha=0.5)
 #ax.set_xlim(0, 00)
-ax.axhline(y=0, linestyle='--')
+ax.axhline(y=0, linestyle=':', color='grey')
 ax.set_xlabel('r [pc]', fontsize=20)
 ax.set_ylabel(r'$\omega(r)$ [pc]', fontsize=20)
 ax.set_title(galaxy+" ; fhg="+"{:.2f}".format(fhgobs)+" ("+"{:.2f}".format(efhgobs)+")", fontsize=30)

@@ -11,9 +11,10 @@ import random
 # ## Routine to get basic positional parameters of a galaxy
 
 def getparams(name):
-    sample=fits.open('./catalogs/phangs_sample_table_v1p4.fits')
+    #sample=fits.open('./catalogs/phangs_sample_table_v1p4.fits')
+    sample=fits.open('./catalogs/phangs_sample_table_v1p6.fits')
     names=sample[1].data['NAME']
-    sel=sample[1].data['NAME']==name
+    sel=sample[1].data['NAME']==name.lower()
     data=sample[1].data[sel]
     
     ra0=data['ORIENT_RA'][0]
@@ -342,8 +343,11 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
 
 # ## Linear Model for fitting large scale correlation function
 
-def lin(x, a, b):
-    return a+b*x
+#def lin(x, a, b):
+#    return a+b*x
+
+def lin(x, a):
+    return np.repeat(a, len(x))
 
 
 # ## Function that Evaluates Cross Correlation Function for Model Parameters

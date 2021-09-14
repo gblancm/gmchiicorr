@@ -42,7 +42,7 @@ plt.savefig('./plots/model_plots_voff.png')
 #plt.show()
 
 # Plots for "Ng"
-parr=np.array([1, 2, 3, 4, 5, 10, 15, 20])
+parr=np.array([1, 2, 5, 10, 20])
 fig, ax = plt.subplots(figsize=(12, 8))
 for i in range(len(infiles)):
     tab=ascii.read(infiles[i])
