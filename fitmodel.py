@@ -126,8 +126,7 @@ plt.savefig('./plots/'+galaxy+'_pstart.png')
 lrange=np.array([50,500])
 rcrange=np.array([5,300])
 tcrange=np.array([1,50])
-tsrange=np.array([4.999,5.001]) # for ts=5
-#tsrange=np.array([0,50])
+tsrange=np.array([0,15])
 tfbrange=np.array([1,50])
 Ngrange=np.array([1,30])
 voffrange=np.array([0,50])
@@ -141,6 +140,13 @@ def log_prior(p):
         return -np.inf
 
 
+# Define normal prior for ts1
+def log_tsprior(p):
+    l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
+    mu = 5
+    sigma = 2
+    return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(ts1-mu)**2/sigma**2
+
 # Define normal prior for Ng
 def log_ngprior(p):
     l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
@@ -152,7 +158,7 @@ def log_ngprior(p):
 # Define likelihood*prior distriibution
 def log_prob(p):
     #lprior=log_prior(p)  # without extra prior in Ng
-    lprior=log_prior(p)+log_ngprior(p)    # for Gaussian Prior on Ng
+    lprior=log_prior(p)+log_tsprior(p)+log_ngprior(p)    # for Gaussian Prior on ts and Ng
     if np.isfinite(lprior):
         r0, w0, ew0, fhg0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6], bins=r0obs, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
         res=w0-w0obs[selr]
