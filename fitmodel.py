@@ -127,7 +127,7 @@ lrange=np.array([50,500])
 rcrange=np.array([5,300])
 tcrange=np.array([1,50])
 tsrange=np.array([0,15])
-tfbrange=np.array([1,50])
+tfbrange=np.array([0,15])
 Ngrange=np.array([1,30])
 voffrange=np.array([0,50])
 
