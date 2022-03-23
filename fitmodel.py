@@ -214,7 +214,7 @@ t0full=time.time()
 
 # run MCMC with multiple cpus
 with Pool() as pool:
-    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool)
+    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool, moves=[(emcee.moves.DEMove(), 0.8),(emcee.moves.DESnookerMove(), 0.2),])
     state = sampler.run_mcmc(p0,Nmc)
 
 ### run MCMC with on cpu
