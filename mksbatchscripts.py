@@ -21,6 +21,7 @@ for infile in infiles:
         file.write('#SBATCH --mail-user=gblancm@carnegiescience.edu\n')
         file.write('#SBATCH --mail-type=BEGIN,END,FAIL\n')
         file.write('\n')
+        file.write('module load python3/3.8.5\n')
         file.write('srun python3 fitmodel.py '+galaxy+'\n')
 
 with open('submitall.sh','w') as file:

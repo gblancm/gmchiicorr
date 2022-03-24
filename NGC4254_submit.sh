@@ -12,4 +12,5 @@
 #SBATCH --mail-user=gblancm@carnegiescience.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 
+module load python3/3.8.5
 srun python3 fitmodel.py NGC4254
