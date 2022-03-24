@@ -182,8 +182,8 @@ def log_prob(p):
 ndim=7
 #nwalkers=256
 #Nmc=3000
-nwalkers=64
-Nmc=300
+nwalkers=32
+Nmc=200
 
 p0 = np.zeros((nwalkers, ndim))
 ## Initialize walkers uniformly across prior paramter space
