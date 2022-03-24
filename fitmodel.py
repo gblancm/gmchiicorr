@@ -81,17 +81,17 @@ print("====================================")
 #pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
 #pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], pstart[4], pstart[5]])
 
-## Fixing ts=5 and Ng=10
+## Fixing ts=5 and Ng=30
 def func1(r, p0, p1, p2, p4, p6):
     bins=r[0:-1]
-    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=10, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=30, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
 p0=np.array([200, 100, 10, 2, 5])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
 pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
-pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], 10.0, pstart[4]])
+pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], 30.0, pstart[4]])
 
 
 
@@ -128,7 +128,7 @@ rcrange=np.array([5,300])
 tcrange=np.array([1,50])
 tsrange=np.array([0,15])
 tfbrange=np.array([0,15])
-Ngrange=np.array([1,30])
+Ngrange=np.array([1,60])
 voffrange=np.array([0,50])
 
 # Define uniform prior distribution
@@ -150,8 +150,8 @@ def log_tsprior(p):
 # Define normal prior for Ng
 def log_ngprior(p):
     l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
-    mu = 10
-    sigma = 5
+    mu = 30
+    sigma = 15
     return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(Ng1-mu)**2/sigma**2
 
 
@@ -180,10 +180,10 @@ def log_prob(p):
 
 ## Set up MCMC
 ndim=7
-#nwalkers=256
-#Nmc=3000
-nwalkers=32
-Nmc=200
+nwalkers=256
+Nmc=1000
+#nwalkers=32
+#Nmc=200
 
 p0 = np.zeros((nwalkers, ndim))
 ## Initialize walkers uniformly across prior paramter space
@@ -216,7 +216,7 @@ t0full=time.time()
 
 # run MCMC with multiple cpus
 with Pool() as pool:
-    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool, moves=[(emcee.moves.StretchMove(a=2.0), 1.0), (emcee.moves.DEMove(), 0.0),(emcee.moves.DESnookerMove(), 0.0),])
+    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, pool=pool, moves=emcee.moves.StretchMove(a=1.5))
     state = sampler.run_mcmc(p0,Nmc)
 
 ### run MCMC with on cpu
