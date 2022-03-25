@@ -61,7 +61,7 @@ fhgobs=fhgtab['col2'].data[0]
 efhgobs=fhgtab['col2'].data[1]
 
 # Get medians of PDF
-Nburn=1000 # burn period
+Nburn=500 # burn period
 pbest=np.zeros(ndim)
 for i in range(ndim):
     pbest[i]=np.array(np.median(samples[:,Nburn:-1,i]))
