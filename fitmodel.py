@@ -125,7 +125,7 @@ plt.savefig('./plots/'+galaxy+'_pstart.png')
 # Define prior parameter space
 lrange=np.array([50,500])
 rcrange=np.array([5,300])
-tcrange=np.array([1,150])
+tcrange=np.array([1,200])
 tsrange=np.array([0,15])
 tfbrange=np.array([0,15])
 Ngrange=np.array([1,60])
