@@ -86,7 +86,7 @@ def func1(r, p0, p1, p2, p4, p6):
     bins=r[0:-1]
     r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=30, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
-p0=np.array([200, 100, 10, 2, 5])
+p0=np.array([200, 100, 50, 2, 10])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
@@ -125,7 +125,7 @@ plt.savefig('./plots/'+galaxy+'_pstart.png')
 # Define prior parameter space
 lrange=np.array([50,500])
 rcrange=np.array([5,300])
-tcrange=np.array([1,50])
+tcrange=np.array([1,150])
 tsrange=np.array([0,15])
 tfbrange=np.array([0,15])
 Ngrange=np.array([1,60])
