@@ -82,16 +82,21 @@ print("====================================")
 #pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], pstart[4], pstart[5]])
 
 ## Fixing ts=5 and Ng=30
+tsprior=5.0
+tspriorwidth=2.0
+Ngprior=30.0
+Ngpriorwidth=15.0
+
 def func1(r, p0, p1, p2, p4, p6):
     bins=r[0:-1]
-    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=5, tfb0=p4, Ng0=30, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=tsprior, tfb0=p4, Ng0=Ngprior, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
 p0=np.array([200, 100, 50, 2, 10])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
 pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
-pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], 30.0, pstart[4]])
+pstart=np.array([pstart[0], pstart[1], pstart[2], tsprior, pstart[3], ngprior, pstart[4]])
 
 
 
@@ -126,9 +131,9 @@ plt.savefig('./plots/'+galaxy+'_pstart.png')
 lrange=np.array([50,500])
 rcrange=np.array([5,300])
 tcrange=np.array([1,200])
-tsrange=np.array([0,15])
+tsrange=np.array([0,3*tsprior])
 tfbrange=np.array([0,15])
-Ngrange=np.array([1,60])
+Ngrange=np.array([1,3*Ngprior])
 voffrange=np.array([0,50])
 
 # Define uniform prior distribution
@@ -139,21 +144,19 @@ def log_prior(p):
     else:
         return -np.inf
 
-
 # Define normal prior for ts1
 def log_tsprior(p):
     l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
-    mu = 5
-    sigma = 2
+    mu = tsprior
+    sigma = tspriorwidth
     return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(ts1-mu)**2/sigma**2
 
 # Define normal prior for Ng
 def log_ngprior(p):
     l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
-    mu = 30
-    sigma = 15
+    mu = Ngprior
+    sigma = Ngpriorwidth
     return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(Ng1-mu)**2/sigma**2
-
 
 # Define likelihood*prior distriibution
 def log_prob(p):
