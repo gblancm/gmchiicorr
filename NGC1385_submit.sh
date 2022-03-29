@@ -14,3 +14,4 @@
 
 module load python3/3.8.5
 srun python3 fitmodel.py NGC1385
+srun python3 plot_mcmc.py NGC1385
