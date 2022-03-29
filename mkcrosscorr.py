@@ -190,7 +190,7 @@ w0small=w0-lin(r0, *popt)
 
 
 # Write all results to disk
-ascii.write([["fhg", "efhg", "Nh", "Ng"], np.array([fhg, efhg, len(x2[sel2]), len(x1[sel1])])], './output/'+galaxy+'_fhg.txt', format='no_header', overwrite=True)
+ascii.write([["fhg", "efhg", "Nh", "Ng", "M_GMC", "L_HII"], np.array([fhg, efhg, len(x2[sel2]), len(x1[sel1]), np.median(mgmc[sel1]), np.median(lha[sel2])])], './output/'+galaxy+'_fhg.txt', format='no_header', overwrite=True)
 ascii.write([r0, w0, ew0], './output/'+galaxy+'_corr.txt', format='no_header', overwrite=True)
 ascii.write([r0[r0<=500], w0small[r0<=500], ew0[r0<=500]], './output/'+galaxy+'_corr_small.txt', format='no_header', overwrite=True)
 ascii.write([x1[sel1], y1[sel1]], './output/'+galaxy+'_xy_gmc.txt', format='no_header', overwrite=True)
