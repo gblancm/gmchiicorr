@@ -84,8 +84,15 @@ print("====================================")
 ## Fixing ts=5 and Ng=30
 tsprior=5.0
 tspriorwidth=2.0
-Ngprior=9.0
-Ngpriorwidth=6.6
+
+auxtab=ascii.read('./output/Ncpirors.txt')
+Ngprior=auxtab['col2'].data[(auxtab['col1'].data==galaxy)][0]
+Ngpriorwidth=auxtab['col3'].data[(auxtab['col1'].data==galaxy)][0]
+#Ngprior=9.0
+#Ngpriorwidth=6.6
+
+
+print("TEST", Ngprior, Ngpriorwidth)
 
 def func1(r, p0, p1, p2, p4, p6):
     bins=r[0:-1]
