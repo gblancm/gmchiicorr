@@ -1,3 +1,4 @@
+module load python3/3.8.5
 #python3 mkcrosscorr.py IC5332
 python3 mkcrosscorr.py NGC0628
 python3 mkcrosscorr.py NGC1087
