@@ -343,11 +343,11 @@ def drawhii(xgmc, ygmc, rc, tc, ts, tfb, Ng, voff, tobs, fgmc):
 
 # ## Linear Model for fitting large scale correlation function
 
-#def lin(x, a, b):
-#    return a+b*x
+def lin(x, a, b):
+    return a+b*x
 
-def lin(x, a):
-    return np.repeat(a, len(x))
+#def lin(x, a):
+#    return np.repeat(a, len(x))
 
 
 # ## Function that Evaluates Cross Correlation Function for Model Parameters

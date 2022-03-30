@@ -14,19 +14,6 @@ import glob
 from matplotlib.colors import LogNorm
 from matplotlib.lines import Line2D
 
-
-
-
-
-
-#from scipy.spatial.distance import cdist
-#from astropy.coordinates import SkyCoord
-#from photutils import SkyCircularAperture
-#from photutils import aperture_photometry
-#import astropy.units as u
-#import time
-
-
 from gmchiicorr import getparams
 from gmchiicorr import radec2xy
 from gmchiicorr import rancat
@@ -65,7 +52,6 @@ if galaxy=='IC5332':
     print('ra0, dec0 = ', ra0, dec0)
     print('D = ', D)
     print('PA, inc = ', PA, inc)
-
 
 
 # Get coordinates of GMCs from ALMA and map onto disk coordinates
@@ -175,7 +161,8 @@ r0, w0, ew0 = w(x1[sel1], y1[sel1], x2[sel2], y2[sel2], xr, yr)
 ## Fit and remove large scale (few kpc) correlation using linear model
 
 rmin=300
-rmax=500
+#rmax=500
+rmax=1000
 
 ## restricted fitting raneg for some galaxies
 #if galaxy=='NGC3351':
@@ -236,8 +223,8 @@ fig, ax = plt.subplots(figsize=(12, 8))
 ax.errorbar(r0, w0, ew0, fmt="o", color='grey', capsize=5, alpha=0.5)
 ax.plot(r0, w0, 'o', color='black', alpha=1.0)
 ax.plot(r0[sel], w0[sel], 'o', color='red', alpha=0.5)
-ax.plot(r0[(r0<=500)], (lin(r0, *popt))[(r0<=500)], color='red')
-ax.set_xlim(0, 500)
+ax.plot(r0[(r0<=rmax)], (lin(r0, *popt))[(r0<=rmax)], color='red')
+ax.set_xlim(0, rmax)
 ax.axhline(y=0, linestyle=':', color='grey')
 plt.xlabel('r [pc]', fontsize=20)
 plt.ylabel(r'$\omega(r)$', fontsize=20)

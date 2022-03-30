@@ -2,6 +2,7 @@
 __pycache__/
 .vscode/
 plots/*png
+plots/*
 output/*mcmc.pkl
 *error.out
 *output.out
