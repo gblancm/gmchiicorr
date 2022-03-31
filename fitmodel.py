@@ -102,7 +102,9 @@ p0=np.array([200, 100, 50, 2, 10])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
-pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
+# Limit initial guess fit to r<200 pc
+auxsel=(auxr<200)
+pstart, pcov = curve_fit(func1, auxr[auxsel], auxw[auxsel], p0=p0, sigma=auxew[auxsel], method='lm', epsfcn=0.01)
 pstart=np.array([pstart[0], pstart[1], pstart[2], tsprior, pstart[3], Ngprior, pstart[4]])
 
 
