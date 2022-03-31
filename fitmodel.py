@@ -98,7 +98,7 @@ def func1(r, p0, p1, p2, p4, p6):
     bins=r[0:-1]
     r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=tsprior, tfb0=p4, Ng0=Ngprior, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
-p0=np.array([200, 100, 50, 2, 10])
+p0=np.array([200, 60, 20, 1, 15])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
