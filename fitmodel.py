@@ -173,7 +173,7 @@ def log_prob(p):
     #lprior=log_prior(p)  # without extra prior in Ng
     lprior=log_prior(p)+log_tsprior(p)+log_ngprior(p)    # for Gaussian Prior on ts and Ng
     if np.isfinite(lprior):
-        r0, w0, ew0, fhg0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6], bins=r0obs[sler], Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+        r0, w0, ew0, fhg0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6], bins=r0obs[selr], Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
         res=w0-w0obs[selr]
         sig=ew0obs[selr]
         prob=1/(2*np.pi*sig**2)*np.exp(-0.5*(res/sig)**2)
