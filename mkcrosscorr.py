@@ -160,7 +160,7 @@ r0, w0, ew0 = w(x1[sel1], y1[sel1], x2[sel2], y2[sel2], xr, yr)
 
 ## Fit and remove large scale (few kpc) correlation using linear model
 
-rmin=300
+rmin=200
 #rmax=500
 rmax=1000
 

@@ -50,7 +50,7 @@ efhgobs=fhgtab['col2'].data[1]
 # # Define Priors and Likelihood Functions
 
 # Select which range in r to fit
-selr=(r0obs<=500)
+selr=(r0obs<=200)
 
 
 # Find initial guess via simple minimization
@@ -99,12 +99,13 @@ def func1(r, p0, p1, p2, p4, p6):
     r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=tsprior, tfb0=p4, Ng0=Ngprior, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
 p0=np.array([200, 60, 20, 1, 15])
-auxr=np.concatenate([r0obs,np.array([-1])])
-auxw=np.concatenate([w0obs,np.array([fhgobs])])
-auxew=np.concatenate([ew0obs,np.array([efhgobs])])
+auxr=np.concatenate([r0obs[selr],np.array([-1])])
+auxw=np.concatenate([w0obs[selr],np.array([fhgobs])])
+auxew=np.concatenate([ew0obs[selr],np.array([efhgobs])])
 # Limit initial guess fit to r<200 pc
-auxsel=(auxr<200)
-pstart, pcov = curve_fit(func1, auxr[auxsel], auxw[auxsel], p0=p0, sigma=auxew[auxsel], method='lm', epsfcn=0.01)
+#auxsel=(auxr<200)
+#pstart, pcov = curve_fit(func1, auxr[auxsel], auxw[auxsel], p0=p0, sigma=auxew[auxsel], method='lm', epsfcn=0.01)
+pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
 pstart=np.array([pstart[0], pstart[1], pstart[2], tsprior, pstart[3], Ngprior, pstart[4]])
 
 
