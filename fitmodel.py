@@ -99,13 +99,13 @@ def func1(r, p0, p1, p2, p4, p6):
     r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=tsprior, tfb0=p4, Ng0=Ngprior, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
 p0=np.array([200, 60, 20, 1, 15])
-auxr=np.concatenate([r0obs,np.array([-1])])
-auxw=np.concatenate([w0obs,np.array([fhgobs])])
-auxew=np.concatenate([ew0obs,np.array([efhgobs])])
+auxr=np.concatenate([r0obs[selr],np.array([-1])])
+auxw=np.concatenate([w0obs[selr],np.array([fhgobs])])
+auxew=np.concatenate([ew0obs[selr],np.array([efhgobs])])
 # Limit initial guess fit to r<200 pc
-auxsel=(auxr<200)
-pstart, pcov = curve_fit(func1, auxr[auxsel], auxw[auxsel], p0=p0, sigma=auxew[auxsel], method='lm', epsfcn=0.01)
-#pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
+#auxsel=(auxr<200)
+#pstart, pcov = curve_fit(func1, auxr[auxsel], auxw[auxsel], p0=p0, sigma=auxew[auxsel], method='lm', epsfcn=0.01)
+pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
 pstart=np.array([pstart[0], pstart[1], pstart[2], tsprior, pstart[3], Ngprior, pstart[4]])
 
 
@@ -173,7 +173,7 @@ def log_prob(p):
     #lprior=log_prior(p)  # without extra prior in Ng
     lprior=log_prior(p)+log_tsprior(p)+log_ngprior(p)    # for Gaussian Prior on ts and Ng
     if np.isfinite(lprior):
-        r0, w0, ew0, fhg0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6], bins=r0obs, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+        r0, w0, ew0, fhg0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6], bins=r0obs[sler], Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
         res=w0-w0obs[selr]
         sig=ew0obs[selr]
         prob=1/(2*np.pi*sig**2)*np.exp(-0.5*(res/sig)**2)
