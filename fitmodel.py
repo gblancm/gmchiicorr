@@ -81,32 +81,31 @@ print("====================================")
 #pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
 #pstart=np.array([pstart[0], pstart[1], pstart[2], 5.0, pstart[3], pstart[4], pstart[5]])
 
-## Fixing ts=5 and Ng=30
+## Prior on HII region lifetime (ts). 
 tsprior=5.0
 tspriorwidth=2.0
 
+# Prior on number of clusters per GMC (Ng)
 auxtab=ascii.read('./output/Ncpirors.txt')
 Ngprior=auxtab['col2'].data[(auxtab['col1'].data==galaxy)][0]
 Ngpriorwidth=auxtab['col3'].data[(auxtab['col1'].data==galaxy)][0]
-#Ngprior=9.0
-#Ngpriorwidth=6.6
+
+# Prior on cloud radius (rc)
+rcprior=fhgtab['col2'].data[6]   
+rcpriorwidth=fhgtab['col2'].data[7]   
 
 
-print("TEST", Ngprior, Ngpriorwidth)
-
-def func1(r, p0, p1, p2, p4, p6):
+# Run standard minimization to get parameters initial guess for MCMC
+def func1(r, p0, p2, p4, p6):
     bins=r[0:-1]
-    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=p1, tc0=p2, ts0=tsprior, tfb0=p4, Ng0=Ngprior, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
+    r0, w0, ew0, fhg0 = eval_w(l0=p0, rc0=rcprior, tc0=p2, ts0=tsprior, tfb0=p4, Ng0=Ngprior, voff0=p6, bins=bins, Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
     return np.concatenate([w0,np.array([fhg0])])    
-p0=np.array([200, 60, 20, 1, 15])
+p0=np.array([200, 10, 1, 15])
 auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
-# Limit initial guess fit to r<200 pc
-#auxsel=(auxr<200)
-#pstart, pcov = curve_fit(func1, auxr[auxsel], auxw[auxsel], p0=p0, sigma=auxew[auxsel], method='lm', epsfcn=0.01)
 pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
-pstart=np.array([pstart[0], pstart[1], pstart[2], tsprior, pstart[3], Ngprior, pstart[4]])
+pstart=np.array([pstart[0], rcprior, pstart[2], tsprior, pstart[3], Ngprior, pstart[4]])
 
 
 
@@ -168,10 +167,19 @@ def log_ngprior(p):
     sigma = Ngpriorwidth
     return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(Ng1-mu)**2/sigma**2
 
+# Define normal prior for rc
+def log_rcprior(p):
+    l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
+    mu = rcprior
+    sigma = rcpriorwidth
+    return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(Ng1-mu)**2/sigma**2
+
+
+
 # Define likelihood*prior distriibution
 def log_prob(p):
     #lprior=log_prior(p)  # without extra prior in Ng
-    lprior=log_prior(p)+log_tsprior(p)+log_ngprior(p)    # for Gaussian Prior on ts and Ng
+    lprior=log_prior(p)+log_tsprior(p)+log_ngprior(p)+log_rcprior(p)    # for Gaussian Prior on ts, Ng, and rc
     if np.isfinite(lprior):
         r0, w0, ew0, fhg0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6], bins=r0obs[selr], Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
         res=w0-w0obs[selr]
