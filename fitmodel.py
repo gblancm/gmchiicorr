@@ -105,7 +105,7 @@ auxr=np.concatenate([r0obs,np.array([-1])])
 auxw=np.concatenate([w0obs,np.array([fhgobs])])
 auxew=np.concatenate([ew0obs,np.array([efhgobs])])
 pstart, pcov = curve_fit(func1, auxr, auxw, p0=p0, sigma=auxew, method='lm', epsfcn=0.01)
-pstart=np.array([pstart[0], rcprior, pstart[2], tsprior, pstart[3], Ngprior, pstart[4]])
+pstart=np.array([pstart[0], rcprior, pstart[1], tsprior, pstart[2], Ngprior, pstart[3]])
 
 
 
