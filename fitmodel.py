@@ -175,7 +175,6 @@ def log_rcprior(p):
     return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(rc1-mu)**2/sigma**2
 
 
-
 # Define likelihood*prior distriibution
 def log_prob(p):
     #lprior=log_prior(p)  # without extra prior in Ng
