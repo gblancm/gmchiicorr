@@ -94,7 +94,6 @@ Ngpriorwidth=auxtab['col3'].data[(auxtab['col1'].data==galaxy)][0]
 rcprior=fhgtab['col2'].data[6]   
 rcpriorwidth=fhgtab['col2'].data[7]   
 
-print("%%%%%%%%TEST%%%%%%%%%%%", rcprior, rcpriorwidth)
 
 
 # Run standard minimization to get parameters initial guess for MCMC
@@ -174,6 +173,7 @@ def log_rcprior(p):
     l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
     mu = rcprior
     sigma = rcpriorwidth
+    print("%%%%%%%%TEST%%%%%%%%%%%", mu, sigma)
     return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(rc1-mu)**2/sigma**2
 
 
