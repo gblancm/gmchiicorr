@@ -94,6 +94,8 @@ Ngpriorwidth=auxtab['col3'].data[(auxtab['col1'].data==galaxy)][0]
 rcprior=fhgtab['col2'].data[6]   
 rcpriorwidth=fhgtab['col2'].data[7]   
 
+print("%%%%%%%%TEST%%%%%%%%%%%", rcprior, rcpriorwidth)
+
 
 # Run standard minimization to get parameters initial guess for MCMC
 def func1(r, p0, p2, p4, p6):
@@ -177,8 +179,8 @@ def log_rcprior(p):
 
 # Define likelihood*prior distriibution
 def log_prob(p):
-    #lprior=log_prior(p)  # without extra prior in Ng
-    lprior=log_prior(p)+log_tsprior(p)+log_ngprior(p)+log_rcprior(p)    # for Gaussian Prior on ts, Ng, and rc
+    #lprior=log_prior(p)  # without extra priors
+    lprior=log_prior(p)+log_tsprior(p)+log_ngprior(p)+log_rcprior(p)    # with Gaussian prior on ts, Ng, and rc
     if np.isfinite(lprior):
         r0, w0, ew0, fhg0 = eval_w(l0=p[0], rc0=p[1], tc0=p[2], ts0=p[3], tfb0=p[4], Ng0=p[5], voff0=p[6], bins=r0obs[selr], Nsamples=150)  #Nsamples=150 yields rms smaller than measurement errors
         res=w0-w0obs[selr]
