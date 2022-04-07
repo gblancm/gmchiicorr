@@ -173,7 +173,6 @@ def log_rcprior(p):
     l1, rc1, tc1, ts1, tfb1, Ng1, voff1 = p
     mu = rcprior
     sigma = rcpriorwidth
-    print("%%%%%%%%TEST%%%%%%%%%%%", mu, sigma)
     return np.log(1.0/(np.sqrt(2*np.pi)*sigma))-0.5*(rc1-mu)**2/sigma**2
 
 
